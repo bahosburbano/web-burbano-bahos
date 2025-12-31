@@ -1,5 +1,5 @@
 ---
-/* index.astro - Versión Identidad de Marca Final: Bahos & Burbano */
+/* index.astro - Versión de Distinción Final: Bahos & Burbano */
 ---
 <html lang="es">
 <head>
@@ -54,6 +54,7 @@
   :root {
     --color-principal: #1F4037;
     --color-dorado: #d4af37;
+    --color-descriptor: #d1dce5; /* Tonalidad clara, elegante y legible */
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
     --fuente-mono: 'B612 Mono', monospace;
@@ -96,22 +97,21 @@
     gap: 0.1em;
   }
 
-  /* ESTILO DEL AMPERSAND (&) */
+  /* Ampersand ahora en blanco para mayor distinción */
   .ampersand {
     font-family: var(--fuente-mono);
     font-weight: 400;
-    color: var(--color-dorado);
-    font-size: 0.75em; /* Un poco más pequeño para equilibrio visual */
+    color: #ffffff; 
+    font-size: 0.75em;
     margin: 0 0.15em;
     opacity: 0.95;
-    /* Ajuste fino de posición para que se vea centrado con Clash Display */
     transform: translateY(-2px);
   }
 
   .subtitle {
     font-family: var(--fuente-titulo);
     font-size: 1rem;
-    color: #aeb9c7;
+    color: var(--color-descriptor);
     letter-spacing: 0.35em;
     margin-top: 1.5rem;
     font-weight: 600;
@@ -162,7 +162,6 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
 
-  /* Ajuste para móviles */
   @media (max-width: 768px) {
     .brand-name { font-size: 2.5rem; }
     .message { font-size: 1.1rem; }
