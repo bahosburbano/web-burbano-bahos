@@ -1,35 +1,41 @@
 ---
-/* index.astro - Edición "Cumplimiento 2025" para Bahos & Burbano */
+/* index.astro - Versión "Excelencia Absoluta 10/10" para Bahos & Burbano */
 ---
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bahos & Burbano | Derecho • Empresa • Estado</title>
-    <meta name="description" content="Bahos & Burbano: Firma legal especializada en Derecho, Empresa y Estado. Transformamos el conocimiento jurídico en soluciones." />
+    <meta name="description" content="Bahos & Burbano: Firma legal de alto nivel. Transformamos el conocimiento jurídico en soluciones integrales." />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="bg-verde" role="main">
-        <div class="container fade-in">
-            <h1 class="brand-name">
+        <div class="container">
+            <h1 class="brand-name reveal-text">
                 Bahos <span class="ampersand" aria-label="y">&</span> Burbano
             </h1>
             
-            <p class="subtitle">Derecho | Empresa | Estado</p>
+            <p class="subtitle fade-in-delayed">Derecho | Empresa | Estado</p>
             
-            <div class="divider" aria-hidden="true"></div>
+            <div class="divider fade-in-delayed" aria-hidden="true"></div>
             
-            <h2 class="status">Sitio web en construcción</h2>
+            <h2 class="status fade-in-delayed">Sitio web en construcción</h2>
             
-            <p class="message">
+            <p class="message fade-in-delayed">
                 Transformamos el conocimiento jurídico en soluciones para usted.<br><br>
                 Actualmente, estamos perfeccionando nuestra plataforma digital para brindarle una experiencia de asesoría integral y de alto nivel. Gracias por su paciencia.
             </p>
 
-            <a href="mailto:contacto@burbanoybahos.com" class="contact-btn" aria-label="Enviar un correo electrónico a la firma">
-                Contactar por Correo
-            </a>
+            <div class="cta-wrapper fade-in-delayed">
+                <a href="mailto:contacto@burbanoybahos.com" class="contact-btn" aria-label="Contactar a la firma">
+                    Contactar por Correo
+                </a>
+            </div>
+
+            <footer class="legal-footer fade-in-delayed">
+                <p>© 2025 Bahos & Burbano. Todos los derechos reservados. | Privacidad y Confidencialidad</p>
+            </footer>
         </div>
     </div>
 </body>
@@ -49,9 +55,9 @@
   }
 
   :root {
-    --color-principal: #16302a; /* Un tono más oscuro para maximizar contraste WCAG */
+    --color-principal: #16302A; /* Tu nuevo verde Bosque Profundo */
     --color-dorado: #d4af37;
-    --color-descriptor: #e2e8f0; /* Más claro para legibilidad absoluta */
+    --color-descriptor: #e2e8f0;
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
     --fuente-mono: 'B612 Mono', monospace;
@@ -68,28 +74,35 @@
     background-color: var(--color-principal);
     min-height: 100vh; width: 100%;
     display: flex; justify-content: center; align-items: center;
-    text-align: center;
+    text-align: center; position: relative;
   }
 
-  .container { padding: 3rem; max-width: 850px; }
+  .container { padding: 2rem; max-width: 850px; z-index: 2; }
 
-  /* Animación de entrada sugerida por tendencias 2025 */
-  .fade-in {
-    animation: fadeIn 1.5s ease-out forwards;
+  /* ANIMACIÓN 1: Revelado de texto (Tracking) */
+  .reveal-text {
+    font-family: var(--fuente-titulo);
+    font-size: 4.2rem; font-weight: 600; margin: 0;
+    color: #ffffff;
+    display: flex; align-items: center; justify-content: center; gap: 0.1em;
+    animation: revealTracking 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  @keyframes revealTracking {
+    from { letter-spacing: 0.5em; opacity: 0; filter: blur(10px); }
+    to { letter-spacing: -0.02em; opacity: 1; filter: blur(0); }
+  }
+
+  /* ANIMACIÓN 2: Fade-in suave para el resto de elementos */
+  .fade-in-delayed {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 1s forwards;
   }
 
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-
-  .brand-name {
-    font-family: var(--fuente-titulo);
-    font-size: 4.2rem; font-weight: 600; margin: 0;
-    color: #ffffff;
-    letter-spacing: -0.02em;
-    display: flex; align-items: center; justify-content: center; gap: 0.1em;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Mejora percepción de contraste */
   }
 
   .ampersand {
@@ -101,51 +114,62 @@
 
   .subtitle {
     font-family: var(--fuente-texto);
-    font-size: 1.1rem;
-    color: var(--color-descriptor);
-    letter-spacing: 0.4em;
-    margin-top: 1.5rem;
-    font-weight: 300;
+    font-size: 1.1rem; color: var(--color-descriptor);
+    letter-spacing: 0.4em; margin-top: 1.5rem; font-weight: 300;
   }
 
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--color-dorado), transparent);
-    margin: 3rem auto; width: 40%; opacity: 0.6;
+    margin: 2.5rem auto; width: 30%; opacity: 0.5;
   }
 
   .status { 
     font-family: var(--fuente-titulo);
-    font-size: 1.5rem; font-weight: 600; 
-    margin-bottom: 2rem; color: #ffffff !important;
+    font-size: 1.4rem; font-weight: 600; 
+    margin-bottom: 1.5rem; color: #ffffff;
   }
 
   .message { 
     font-family: var(--fuente-texto);
-    font-size: 1.3rem;
-    color: #f1f5f9; /* Máximo contraste para usuarios con baja visión */
-    line-height: 1.9; margin-bottom: 3.5rem; font-weight: 300;
+    font-size: 1.2rem; color: #cbd5e1;
+    line-height: 1.9; margin-bottom: 3rem; font-weight: 300;
   }
   
   .contact-btn {
     font-family: var(--fuente-titulo);
     display: inline-block;
     padding: 16px 45px;
-    border: 2px solid var(--color-dorado); /* Borde más grueso para accesibilidad */
+    border: 1px solid var(--color-dorado);
     color: var(--color-dorado);
     text-decoration: none; text-transform: uppercase;
     font-size: 0.8rem; letter-spacing: 0.3em;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s ease;
   }
 
   .contact-btn:hover {
     background-color: var(--color-dorado);
     color: var(--color-principal);
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  /* FOOTER ESTÉTICO */
+  .legal-footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    left: 0;
+    font-family: var(--fuente-texto);
+    font-size: 0.75rem;
+    color: #4a635d; /* Tono muy sutil sobre el verde */
+    letter-spacing: 0.1em;
   }
 
   @media (max-width: 768px) {
-    .brand-name { font-size: 2.8rem; }
-    .message { font-size: 1.1rem; }
+    .reveal-text { font-size: 2.6rem; }
+    .message { font-size: 1.05rem; }
+    .bg-verde { overflow-y: auto; align-items: flex-start; padding-top: 20%; }
+    .legal-footer { position: relative; margin-top: 2rem; bottom: auto; padding-bottom: 2rem; }
   }
 </style>
