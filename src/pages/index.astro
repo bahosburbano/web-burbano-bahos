@@ -1,23 +1,24 @@
 ---
-/* index.astro - Versión de Perfección Tipográfica: Bahos & Burbano */
+/* index.astro - Edición "Cumplimiento 2025" para Bahos & Burbano */
 ---
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bahos & Burbano | Abogados</title>
+    <title>Bahos & Burbano | Derecho • Empresa • Estado</title>
+    <meta name="description" content="Bahos & Burbano: Firma legal especializada en Derecho, Empresa y Estado. Transformamos el conocimiento jurídico en soluciones." />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-verde">
-        <div class="container">
+    <div class="bg-verde" role="main">
+        <div class="container fade-in">
             <h1 class="brand-name">
-                Bahos <span class="ampersand">&</span> Burbano
+                Bahos <span class="ampersand" aria-label="y">&</span> Burbano
             </h1>
             
             <p class="subtitle">Derecho | Empresa | Estado</p>
             
-            <div class="divider"></div>
+            <div class="divider" aria-hidden="true"></div>
             
             <h2 class="status">Sitio web en construcción</h2>
             
@@ -26,7 +27,7 @@
                 Actualmente, estamos perfeccionando nuestra plataforma digital para brindarle una experiencia de asesoría integral y de alto nivel. Gracias por su paciencia.
             </p>
 
-            <a href="mailto:contacto@burbanoybahos.com" class="contact-btn">
+            <a href="mailto:contacto@burbanoybahos.com" class="contact-btn" aria-label="Enviar un correo electrónico a la firma">
                 Contactar por Correo
             </a>
         </div>
@@ -38,133 +39,113 @@
   @font-face {
     font-family: 'Clash Display Semibold';
     src: url('/ClashDisplay-Semibold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+    font-weight: 600; font-style: normal; font-display: swap;
   }
 
   @font-face {
     font-family: 'Clash Display Light';
     src: url('/ClashDisplay-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+    font-weight: 300; font-style: normal; font-display: swap;
   }
 
   :root {
-    --color-principal: #1F4037;
+    --color-principal: #16302a; /* Un tono más oscuro para maximizar contraste WCAG */
     --color-dorado: #d4af37;
-    --color-descriptor: #aeb9c7; /* Volvemos al tono original, más sobrio */
+    --color-descriptor: #e2e8f0; /* Más claro para legibilidad absoluta */
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
     --fuente-mono: 'B612 Mono', monospace;
   }
 
   html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0; padding: 0;
     background-color: var(--color-principal) !important;
-    height: 100%;
-    overflow: hidden;
+    height: 100%; overflow: hidden;
+    color: white;
   }
 
   .bg-verde {
     background-color: var(--color-principal);
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh; width: 100%;
+    display: flex; justify-content: center; align-items: center;
     text-align: center;
-    color: white;
   }
 
-  .container { 
-    padding: 3rem; 
-    max-width: 850px; 
+  .container { padding: 3rem; max-width: 850px; }
+
+  /* Animación de entrada sugerida por tendencias 2025 */
+  .fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .brand-name {
     font-family: var(--fuente-titulo);
-    font-size: 4.2rem;
-    font-weight: 600;
-    margin: 0;
+    font-size: 4.2rem; font-weight: 600; margin: 0;
     color: #ffffff;
     letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.1em;
+    display: flex; align-items: center; justify-content: center; gap: 0.1em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Mejora percepción de contraste */
   }
 
   .ampersand {
     font-family: var(--fuente-mono);
-    font-weight: 400;
-    color: #ffffff; 
-    font-size: 0.75em;
-    margin: 0 0.15em;
-    opacity: 0.95;
+    font-weight: 400; color: #ffffff; 
+    font-size: 0.75em; margin: 0 0.15em;
     transform: translateY(-2px);
   }
 
-  /* AJUSTE CLAVE: Fuente Light y espaciado elegante para el descriptor */
   .subtitle {
     font-family: var(--fuente-texto);
     font-size: 1.1rem;
     color: var(--color-descriptor);
-    letter-spacing: 0.4em; /* Un poco más de aire para compensar el trazo fino */
+    letter-spacing: 0.4em;
     margin-top: 1.5rem;
-    font-weight: 300; /* Forzamos el peso ligero */
-    text-transform: none;
+    font-weight: 300;
   }
 
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--color-dorado), transparent);
-    margin: 3rem auto;
-    width: 40%;
-    opacity: 0.6;
+    margin: 3rem auto; width: 40%; opacity: 0.6;
   }
 
   .status { 
     font-family: var(--fuente-titulo);
-    font-size: 1.5rem;
-    font-weight: 600; 
-    margin-bottom: 2rem; 
-    color: #ffffff !important;
+    font-size: 1.5rem; font-weight: 600; 
+    margin-bottom: 2rem; color: #ffffff !important;
   }
 
   .message { 
     font-family: var(--fuente-texto);
     font-size: 1.3rem;
-    color: #e2e8f0;
-    line-height: 1.9;
-    margin-bottom: 3.5rem;
-    font-weight: 300;
+    color: #f1f5f9; /* Máximo contraste para usuarios con baja visión */
+    line-height: 1.9; margin-bottom: 3.5rem; font-weight: 300;
   }
   
   .contact-btn {
     font-family: var(--fuente-titulo);
     display: inline-block;
     padding: 16px 45px;
-    border: 1px solid var(--color-dorado);
+    border: 2px solid var(--color-dorado); /* Borde más grueso para accesibilidad */
     color: var(--color-dorado);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
+    text-decoration: none; text-transform: uppercase;
+    font-size: 0.8rem; letter-spacing: 0.3em;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .contact-btn:hover {
     background-color: var(--color-dorado);
     color: var(--color-principal);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: scale(1.05);
   }
 
   @media (max-width: 768px) {
-    .brand-name { font-size: 2.5rem; }
+    .brand-name { font-size: 2.8rem; }
     .message { font-size: 1.1rem; }
   }
 </style>
