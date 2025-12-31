@@ -1,10 +1,10 @@
 ---
-/* index.astro - Versión "Distinción Máxima" para Bahos & Burbano */
+/* index.astro - Versión Optimizada para Móvil y PC */
 ---
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Bahos & Burbano | Derecho • Empresa • Estado</title>
     <meta name="description" content="Bahos & Burbano: Firma legal. Transformamos el conocimiento jurídico en soluciones integrales." />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
             </p>
 
             <div class="cta-wrapper">
-                <a href="mailto:contacto@burbanoybahos.com" class="contact-btn" aria-label="Contactar a la firma">
+                <a href="mailto:contacto@bahosburbano.com" class="contact-btn" aria-label="Contactar a la firma">
                     Contactar por Correo
                 </a>
             </div>
@@ -58,7 +58,6 @@
   :root {
     --color-principal: #16302A;
     --color-dorado: #d4af37;
-    --color-descriptor: #e2e8f0;
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
     --fuente-mono: 'B612 Mono', monospace;
@@ -66,101 +65,133 @@
 
   html, body {
     margin: 0; padding: 0;
-    background-color: var(--color-principal) !important;
-    height: 100%; overflow: hidden;
+    background-color: var(--color-principal);
+    /* Cambiamos height: 100% por min-height para permitir scroll en móviles */
+    min-height: 100%;
     color: white;
-  }
-
-  /* Animación general casi imperceptible */
-  .fade-general {
-    animation: simpleFade 2s ease-in forwards;
-  }
-
-  @keyframes simpleFade {
-    from { opacity: 0.85; } /* Empieza casi visible para que sea muy sutil */
-    to { opacity: 1; }
   }
 
   .bg-verde {
     background-color: var(--color-principal);
-    min-height: 100vh; width: 100%;
-    display: flex; justify-content: center; align-items: center;
-    text-align: center; position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Permitimos que el contenido fluya si es más largo que la pantalla */
+    padding: 40px 0;
   }
 
-  .container { padding: 2rem; max-width: 850px; z-index: 2; }
+  .fade-general {
+    animation: simpleFade 1.5s ease-in forwards;
+  }
+
+  @keyframes simpleFade {
+    from { opacity: 0.85; }
+    to { opacity: 1; }
+  }
+
+  .container {
+    padding: 20px;
+    width: 90%;
+    max-width: 850px;
+    z-index: 2;
+  }
 
   .brand-name {
     font-family: var(--fuente-titulo);
-    font-size: 4.2rem; font-weight: 600; margin: 0;
-    color: #ffffff;
-    display: flex; align-items: center; justify-content: center; gap: 0.1em;
-    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 8vw, 4.2rem); /* Tamaño fluido: se encoge en móvil */
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que el nombre baje de renglón si es necesario */
+    align-items: center;
+    justify-content: center;
+    gap: 0.1em;
   }
 
   .ampersand {
     font-family: var(--fuente-mono);
-    font-weight: 400; color: #ffffff; 
-    font-size: 0.75em; margin: 0 0.15em;
-    transform: translateY(-2px);
+    font-size: 0.8em;
   }
 
   .subtitle {
     font-family: var(--fuente-texto);
-    font-size: 1.1rem; color: var(--color-descriptor);
-    letter-spacing: 0.4em; margin-top: 1.5rem; font-weight: 300;
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+    letter-spacing: 0.3em;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
   }
 
   .divider {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--color-dorado), transparent);
-    margin: 2.5rem auto; width: 30%; opacity: 0.5;
+    margin: 2rem auto;
+    width: 60%;
+    max-width: 300px;
+    opacity: 0.5;
   }
 
-  .status { 
+  .status {
     font-family: var(--fuente-titulo);
-    font-size: 1.4rem; font-weight: 600; 
-    margin-bottom: 1.5rem; color: #ffffff;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    margin-bottom: 1.5rem;
   }
 
-  .message { 
+  .message {
     font-family: var(--fuente-texto);
-    font-size: 1.2rem; color: #cbd5e1;
-    line-height: 1.9; margin-bottom: 3rem; font-weight: 300;
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: #cbd5e1;
   }
-  
+
   .contact-btn {
     font-family: var(--fuente-titulo);
     display: inline-block;
-    padding: 16px 45px;
+    padding: 14px 35px;
     border: 1px solid var(--color-dorado);
     color: var(--color-dorado);
-    text-decoration: none; text-transform: uppercase;
-    font-size: 0.8rem; letter-spacing: 0.3em;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
   }
 
   .contact-btn:hover {
     background-color: var(--color-dorado);
     color: var(--color-principal);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
   }
 
   .legal-footer {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    left: 0;
+    margin-top: 4rem;
     font-family: var(--fuente-texto);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: #4a635d;
-    letter-spacing: 0.1em;
+    padding-bottom: 20px;
   }
 
-  @media (max-width: 768px) {
-    .brand-name { font-size: 2.6rem; }
-    .bg-verde { overflow-y: auto; align-items: flex-start; padding-top: 20%; }
-    .legal-footer { position: relative; margin-top: 2rem; bottom: auto; padding-bottom: 2rem; }
+  /* AJUSTES ESPECÍFICOS PARA MÓVIL */
+  @media (max-width: 600px) {
+    .bg-verde {
+      align-items: flex-start; /* Empieza desde arriba para que no se corte */
+      padding-top: 60px;
+    }
+    .brand-name {
+      flex-direction: column; /* Apila el nombre en móvil para mejor legibilidad */
+      gap: 0;
+    }
+    .ampersand {
+      margin: 5px 0;
+    }
+    .divider {
+      width: 80%;
+    }
+    .legal-footer {
+      position: static; /* Evita que el footer flote sobre el texto */
+    }
   }
 </style>
