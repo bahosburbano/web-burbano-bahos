@@ -1,5 +1,5 @@
 ---
-/* index.astro - Versión de Distinción Final: Bahos & Burbano */
+/* index.astro - Versión de Perfección Tipográfica: Bahos & Burbano */
 ---
 <html lang="es">
 <head>
@@ -54,7 +54,7 @@
   :root {
     --color-principal: #1F4037;
     --color-dorado: #d4af37;
-    --color-descriptor: #d1dce5; /* Tonalidad clara, elegante y legible */
+    --color-descriptor: #aeb9c7; /* Volvemos al tono original, más sobrio */
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
     --fuente-mono: 'B612 Mono', monospace;
@@ -97,7 +97,6 @@
     gap: 0.1em;
   }
 
-  /* Ampersand ahora en blanco para mayor distinción */
   .ampersand {
     font-family: var(--fuente-mono);
     font-weight: 400;
@@ -108,13 +107,15 @@
     transform: translateY(-2px);
   }
 
+  /* AJUSTE CLAVE: Fuente Light y espaciado elegante para el descriptor */
   .subtitle {
-    font-family: var(--fuente-titulo);
-    font-size: 1rem;
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
     color: var(--color-descriptor);
-    letter-spacing: 0.35em;
+    letter-spacing: 0.4em; /* Un poco más de aire para compensar el trazo fino */
     margin-top: 1.5rem;
-    font-weight: 600;
+    font-weight: 300; /* Forzamos el peso ligero */
+    text-transform: none;
   }
 
   .divider {
