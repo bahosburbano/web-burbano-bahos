@@ -1,16 +1,19 @@
 ---
-/* index.astro - Versión "Excelencia" 10/10 para Bahos Burbano */
+/* index.astro - Versión Identidad de Marca Final: Bahos & Burbano */
 ---
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bahos Burbano | Abogados</title>
+    <title>Bahos & Burbano | Abogados</title>
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="bg-verde">
         <div class="container">
-            <h1 class="brand-name">Bahos Burbano</h1>
+            <h1 class="brand-name">
+                Bahos <span class="ampersand">&</span> Burbano
+            </h1>
             
             <p class="subtitle">Derecho | Empresa | Estado</p>
             
@@ -53,6 +56,7 @@
     --color-dorado: #d4af37;
     --fuente-titulo: 'Clash Display Semibold', sans-serif;
     --fuente-texto: 'Clash Display Light', sans-serif;
+    --fuente-mono: 'B612 Mono', monospace;
   }
 
   html, body {
@@ -79,24 +83,37 @@
     max-width: 850px; 
   }
 
-  /* AJUSTE 1: Kerning sutil en el nombre */
   .brand-name {
     font-family: var(--fuente-titulo);
     font-size: 4.2rem;
     font-weight: 600;
     margin: 0;
     color: #ffffff;
-    letter-spacing: -0.02em; /* Hace que se vea más compacto y moderno */
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1em;
   }
 
-  /* AJUSTE 2: Más espacio superior y tracking elegante */
+  /* ESTILO DEL AMPERSAND (&) */
+  .ampersand {
+    font-family: var(--fuente-mono);
+    font-weight: 400;
+    color: var(--color-dorado);
+    font-size: 0.75em; /* Un poco más pequeño para equilibrio visual */
+    margin: 0 0.15em;
+    opacity: 0.95;
+    /* Ajuste fino de posición para que se vea centrado con Clash Display */
+    transform: translateY(-2px);
+  }
+
   .subtitle {
     font-family: var(--fuente-titulo);
     font-size: 1rem;
-    color: #aeb9c7; /* Color un poco más claro para mejor visibilidad */
-    letter-spacing: 0.35em; /* Aumentamos el aire entre letras */
-    text-transform: none;
-    margin-top: 1.5rem; /* Más separación del nombre */
+    color: #aeb9c7;
+    letter-spacing: 0.35em;
+    margin-top: 1.5rem;
     font-weight: 600;
   }
 
@@ -104,31 +121,27 @@
     height: 1px;
     background: linear-gradient(to right, transparent, var(--color-dorado), transparent);
     margin: 3rem auto;
-    width: 40%; /* Un divisor más corto es más elegante */
+    width: 40%;
     opacity: 0.6;
   }
 
-  /* AJUSTE 3: Blanco absoluto */
   .status { 
     font-family: var(--fuente-titulo);
     font-size: 1.5rem;
     font-weight: 600; 
     margin-bottom: 2rem; 
     color: #ffffff !important;
-    letter-spacing: 0.05em;
   }
 
-  /* AJUSTE 4: Interlineado profesional (Line-height) */
   .message { 
     font-family: var(--fuente-texto);
     font-size: 1.3rem;
-    color: #e2e8f0; /* Blanco azulado muy claro para contraste perfecto */
-    line-height: 1.9; /* Más aire entre líneas */
+    color: #e2e8f0;
+    line-height: 1.9;
     margin-bottom: 3.5rem;
     font-weight: 300;
   }
   
-  /* AJUSTE 5: Botón con más tracking y efecto hover suave */
   .contact-btn {
     font-family: var(--fuente-titulo);
     display: inline-block;
@@ -137,7 +150,7 @@
     color: var(--color-dorado);
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.75rem; /* Texto un poco más pequeño para verse más fino */
+    font-size: 0.75rem;
     letter-spacing: 0.3em;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -145,7 +158,13 @@
   .contact-btn:hover {
     background-color: var(--color-dorado);
     color: var(--color-principal);
-    transform: translateY(-2px); /* Pequeña elevación al pasar el mouse */
+    transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Ajuste para móviles */
+  @media (max-width: 768px) {
+    .brand-name { font-size: 2.5rem; }
+    .message { font-size: 1.1rem; }
   }
 </style>
