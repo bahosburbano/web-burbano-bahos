@@ -1,9 +1,9 @@
-/* global.css - ADN Visual Bahos & Burbano Corregido */
+/* global.css - Versión Final Identidad Institucional */
 
 @font-face {
-    font-family: 'Clash Display Semibold';
-    src: url('/ClashDisplay-Semibold.woff') format('woff');
-    font-weight: 600; font-style: normal; font-display: swap;
+    font-family: 'Clash Display Bold';
+    src: url('/ClashDisplay-Bold.woff') format('woff'); /* Asegúrate de que el archivo se llame así en tu carpeta public */
+    font-weight: 700; font-style: normal; font-display: swap;
 }
 
 :root {
@@ -12,7 +12,7 @@
     --color-texto: #1A1A1A;     
     --color-acento: #8A704D;    
     
-    --font-logo: 'Clash Display Semibold', sans-serif;
+    --font-apellidos: 'Clash Display Bold', sans-serif;
     --font-ampersand: 'B612 Mono', monospace;
     --font-serif: 'Libre Baskerville', serif;
     --font-sans: 'Inter', sans-serif;
@@ -36,32 +36,32 @@ body {
     text-align: center;
 }
 
-/* Estilo del Logo Corregido */
+/* Estilo del Logo (Fuentes Bold) */
 .brand-name {
-    font-family: var(--font-logo);
+    font-family: var(--font-apellidos);
     font-size: clamp(2rem, 8vw, 4.2rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 700; /* Bold */
+    letter-spacing: -0.01em;
     margin: 0;
-    color: var(--color-institucional); /* Apellidos en Verde */
+    color: var(--color-institucional);
 }
 
 .ampersand {
     font-family: var(--font-ampersand);
-    font-weight: 700;
-    color: var(--color-institucional); /* Ampersand en Verde */
+    font-weight: 700; /* Bold */
+    color: var(--color-institucional);
     font-size: 0.85em;
     margin: 0 0.15em;
 }
 
-/* Descriptor con Mayúscula Inicial */
+/* Descriptor: Derecho | Empresa | Estado */
 .tagline {
     font-family: var(--font-sans);
     font-weight: 400;
-    text-transform: none; /* Quitamos la mayúscula sostenida */
-    letter-spacing: 0.2em;
-    font-size: 1.1rem;
-    margin-top: 1rem;
+    text-transform: none; 
+    letter-spacing: 0.15em;
+    font-size: 1.15rem;
+    margin-top: 1.2rem;
     color: var(--color-institucional);
 }
 
@@ -76,11 +76,11 @@ body {
 .message {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: 1.2rem;
-    line-height: 2;
-    max-width: 700px;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    max-width: 750px;
     margin: 0 auto 3rem auto;
-    color: #444;
+    color: #333;
 }
 
 .btn-contact {
@@ -89,10 +89,10 @@ body {
     text-decoration: none;
     color: var(--color-institucional);
     border: 1px solid var(--color-institucional);
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 2.8rem;
     font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     transition: all 0.4s ease;
 }
 
