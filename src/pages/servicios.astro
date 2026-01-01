@@ -6,9 +6,9 @@ import { ClientRouter } from 'astro:transitions';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bahos & Burbano | Inicio</title>
+    <title>Servicios | Bahos & Burbano</title>
     <ClientRouter />
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav-minimal">
@@ -21,17 +21,42 @@ import { ClientRouter } from 'astro:transitions';
             <a href="/contacto">Contacto</a>
         </div>
     </nav>
+
     <main class="main-container">
         <header>
-            <h1 class="brand-name">Bahos <span class="ampersand">&</span> Burbano</h1>
-            <p class="tagline">Derecho | Empresa | Estado</p>
+            <h1 class="brand-name">Servicios</h1>
             <div class="gold-divider"></div>
         </header>
-        <section>
-            <p class="message">Soluciones jurídicas de alta complejidad en la intersección de los sectores público y privado.</p>
-            <a href="/nosotros" class="btn-contact">Conozca la Firma</a>
-        </section>
-        <footer class="minimal-footer"><p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p></footer>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">/ 01</span>
+                <h2 class="service-title">Derecho Corporativo</h2>
+                <p class="service-description">Asesoría integral en fusiones, adquisiciones y estructuras societarias complejas para el mercado global.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">/ 02</span>
+                <h2 class="service-title">Gestión Pública</h2>
+                <p class="service-description">Navegamos la intersección entre el Estado y el sector privado con rigor técnico en contratación estatal.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">/ 03</span>
+                <h2 class="service-title">Litigio Estratégico</h2>
+                <p class="service-description">Representación de alto nivel en disputas civiles, administrativas y arbitrajes de gran escala.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">/ 04</span>
+                <h2 class="service-title">Derecho de Empresa</h2>
+                <p class="service-description">Protección de activos y cumplimiento regulatorio preventivo para asegurar la continuidad del negocio.</p>
+            </div>
+        </div>
+
+        <footer class="minimal-footer">
+            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
     </main>
 </body>
 </html>
