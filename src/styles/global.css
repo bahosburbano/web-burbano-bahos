@@ -1,11 +1,109 @@
+/* global.css - ADN Visual Bahos & Burbano */
+
+@font-face {
+    font-family: 'Clash Display Semibold';
+    src: url('/ClashDisplay-Semibold.woff') format('woff');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+
 :root {
-  --fondo-elegante: #F5F5F3; 
-  --texto-principal: #1A1A1A;
-  --dorado-firma: #8A704D;
+    /* Paleta de colores inspirada en Slaughter and May / A&O Shearman */
+    --color-fondo: #F5F5F3;     /* Crema sofisticado */
+    --color-texto: #1A1A1A;     /* Negro carbón */
+    --color-acento: #8A704D;    /* Dorado bronce / envejecido */
+    
+    /* Tipografías */
+    --font-logo: 'Clash Display Semibold', sans-serif;
+    --font-ampersand: 'B612 Mono', monospace;
+    --font-serif: 'Libre Baskerville', serif;
+    --font-sans: 'Inter', sans-serif;
 }
 
 body {
-  background-color: var(--fondo-elegante);
-  color: var(--texto-principal);
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Estilo del Logo (Innegociable) */
+.brand-name {
+    font-family: var(--font-logo);
+    font-size: clamp(2rem, 8vw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.ampersand {
+    font-family: var(--font-ampersand);
+    font-weight: 700;
+    color: var(--color-acento);
+    font-size: 0.85em;
+    margin: 0 0.1em;
+}
+
+.tagline {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Elementos de Diseño */
+.gold-divider {
+    height: 1px;
+    background-color: var(--color-acento);
+    width: 60px;
+    margin: 3.5rem auto;
+    opacity: 0.4;
+}
+
+.message {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 2;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    color: #444;
+}
+
+/* Botón de Contacto */
+.btn-contact {
+    display: inline-block;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto);
+    padding: 1.2rem 2.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    transition: all 0.4s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+}
+
+.minimal-footer {
+    margin-top: 5rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: #999;
 }
