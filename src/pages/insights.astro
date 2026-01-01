@@ -1,28 +1,35 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 ---
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <title>Insights | Bahos & Burbano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bahos & Burbano | Inicio</title>
+    <ClientRouter />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav-minimal">
-        <div class="nav-links"><a href="/">Inicio</a><a href="/servicios">Servicios</a><a href="/nosotros">Nosotros</a><a href="/talento">Talento</a><a href="/insights">Insights</a></div>
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/servicios">Servicios</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/talento">Talento</a>
+            <a href="/insights">Insights</a>
+            <a href="/contacto">Contacto</a>
+        </div>
     </nav>
     <main class="main-container">
         <header>
-            <h1 class="brand-name">Insights</h1>
+            <h1 class="brand-name">Bahos <span class="ampersand">&</span> Burbano</h1>
+            <p class="tagline">Derecho | Empresa | Estado</p>
             <div class="gold-divider"></div>
         </header>
         <section>
-            <p class="message">Perspectivas sobre la actualidad jurídica y regulatoria.</p>
-            <article style="border-top: 1px solid rgba(31,64,55,0.1); padding: 2rem 0; max-width: 600px; margin: 0 auto;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--color-acento); text-transform: uppercase;">Próximamente</span>
-                <h2 style="font-family: 'Libre Baskerville', serif; font-weight: 400; margin: 1rem 0;">Nuevas tendencias en la contratación estatal 2025</h2>
-                <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; opacity: 0.7;">Análisis detallado sobre las reformas recientes y su impacto en el sector privado.</p>
-            </article>
+            <p class="message">Soluciones jurídicas de alta complejidad en la intersección de los sectores público y privado.</p>
+            <a href="/nosotros" class="btn-contact">Conozca la Firma</a>
         </section>
         <footer class="minimal-footer"><p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p></footer>
     </main>
