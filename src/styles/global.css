@@ -1,17 +1,17 @@
-/* global.css - Identidad Institucional Bahos & Burbano */
+/* global.css - Bahos & Burbano | Corrección Definitiva de Fuentes */
 
-/* Declaración de Fuentes Locales */
 @font-face {
-    font-family: 'Clash Display Semibold';
-    src: url(/ClashDisplay-Semibold.woff) format('woff');
+    font-family: 'ClashDisplay-Semibold'; /* Sin espacios para evitar errores */
+    src: url('/ClashDisplay-Semibold.woff') format('woff'),
+         url('/ClashDisplay-Semibold.woff2') format('woff2'); /* Soporte extra */
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Clash Display Light';
-    src: url(/ClashDisplay-Light.woff) format('woff');
+    font-family: 'ClashDisplay-Light';
+    src: url('/ClashDisplay-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -19,12 +19,13 @@
 
 :root {
     --color-fondo: #F5F5F3;     
-    --color-institucional: #1F4037; /* Verde Bahos & Burbano */
+    --color-institucional: #1F4037; 
     --color-texto: #1A1A1A;     
     --color-acento: #8A704D;    
     
-    --font-apellidos: 'Clash Display Semibold', sans-serif;
-    --font-descriptor: 'Clash Display Light', sans-serif;
+    /* Referencias a los nombres exactos declarados arriba */
+    --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
+    --font-descriptor: 'ClashDisplay-Light', sans-serif;
     --font-ampersand: 'B612 Mono', monospace;
     --font-serif: 'Libre Baskerville', serif;
     --font-sans: 'Inter', sans-serif;
@@ -35,7 +36,6 @@ body {
     padding: 0;
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    -webkit-font-smoothing: antialiased;
 }
 
 .main-container {
@@ -48,11 +48,11 @@ body {
     text-align: center;
 }
 
-/* Encabezado: Logo y Descriptor */
+/* Aplicación de la fuente a los Apellidos */
 .brand-name {
     font-family: var(--font-apellidos);
     font-size: clamp(2.2rem, 8vw, 4.2rem);
-    font-weight: 600;
+    font-weight: 600; /* Debe coincidir con el @font-face */
     letter-spacing: -0.01em;
     margin: 0;
     color: var(--color-institucional);
@@ -63,4 +63,60 @@ body {
     font-weight: 700;
     color: var(--color-institucional);
     font-size: 0.85em;
-    margin: 0 0.
+    margin: 0 0.15em;
+}
+
+/* Aplicación de la fuente al Descriptor */
+.tagline {
+    font-family: var(--font-descriptor);
+    font-weight: 300;
+    text-transform: none; 
+    letter-spacing: 0.05em;
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+    color: var(--color-institucional);
+}
+
+.gold-divider {
+    height: 1px;
+    background-color: var(--color-acento);
+    width: 60px;
+    margin: 3.5rem auto;
+    opacity: 0.4;
+}
+
+.message {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    color: #333;
+}
+
+.btn-contact {
+    display: inline-block;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    color: var(--color-institucional);
+    border: 1px solid var(--color-institucional);
+    padding: 1.2rem 2.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--color-institucional);
+    color: var(--color-fondo);
+}
+
+.minimal-footer {
+    margin-top: 5rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: #999;
+}
