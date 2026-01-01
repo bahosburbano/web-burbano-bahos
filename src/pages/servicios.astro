@@ -5,6 +5,7 @@ import { ClientRouter } from 'astro:transitions';
 <html lang="es">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios | Bahos & Burbano</title>
     <ClientRouter />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -20,24 +21,50 @@ import { ClientRouter } from 'astro:transitions';
             <a href="/contacto">Contacto</a>
         </div>
     </nav>
+
     <main class="main-container">
         <header>
             <h1 class="brand-name">Servicios</h1>
             <div class="gold-divider"></div>
         </header>
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1100px; margin-top: 2rem; text-align: left;">
-            <div class="service-card" style="padding: 2rem; border: 1px solid rgba(31, 64, 55, 0.05);">
-                <span style="font-family: var(--font-ampersand); color: var(--color-acento); display: block; margin-bottom: 1.5rem;">/ 01</span>
-                <h2 style="font-family: var(--font-apellidos); font-size: 1.1rem; text-transform: uppercase;">Derecho Corporativo</h2>
-                <p style="font-family: var(--font-sans); font-size: 0.85rem; opacity: 0.8; font-weight: 300; line-height: 1.8;">Asesoría integral en fusiones, adquisiciones y estructuras societarias complejas.</p>
+
+        <div class="services-wrapper">
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="accordion-title">Derecho Corporativo</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="practice-list">
+                        <li class="practice-item">Derecho Tributario y Planeación Fiscal</li>
+                        <li class="practice-item">Cumplimiento Normativo y Gobierno Corporativo</li>
+                        <li class="practice-item">Derecho de la Salud y Responsabilidad Médica</li>
+                        <li class="practice-item">Privacidad, Habeas Data y Activos Digitales</li>
+                        <li class="practice-item">Derecho Societario y Mercantil</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card" style="padding: 2rem; border: 1px solid rgba(31, 64, 55, 0.05);">
-                <span style="font-family: var(--font-ampersand); color: var(--color-acento); display: block; margin-bottom: 1.5rem;">/ 02</span>
-                <h2 style="font-family: var(--font-apellidos); font-size: 1.1rem; text-transform: uppercase;">Gestión Pública</h2>
-                <p style="font-family: var(--font-sans); font-size: 0.85rem; opacity: 0.8; font-weight: 300; line-height: 1.8;">Rigor técnico en la navegación de la intersección entre el Estado y el sector privado.</p>
+
+            <div class="accordion-section">
+                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
+                    <span class="accordion-title">Gestión Pública</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <ul class="practice-list">
+                        <li class="practice-item">Derecho Administrativo y Gestión Pública</li>
+                        <li class="practice-item">Litigio Constitucional y de Alto Impacto</li>
+                        <li class="practice-item">Constitucionalización del Derecho</li>
+                        <li class="practice-item">Responsabilidad del Estado y Régimen de Control</li>
+                        <li class="practice-item">Movilidad Internacional y Derechos Humanos</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <footer class="minimal-footer"><p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p></footer>
+
+        <footer class="minimal-footer">
+            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
     </main>
 </body>
 </html>
