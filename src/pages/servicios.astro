@@ -5,7 +5,6 @@ import { ClientRouter } from 'astro:transitions';
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios | Bahos & Burbano</title>
     <ClientRouter />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
@@ -21,42 +20,24 @@ import { ClientRouter } from 'astro:transitions';
             <a href="/contacto">Contacto</a>
         </div>
     </nav>
-
     <main class="main-container">
         <header>
             <h1 class="brand-name">Servicios</h1>
             <div class="gold-divider"></div>
         </header>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">/ 01</span>
-                <h2 class="service-title">Derecho Corporativo</h2>
-                <p class="service-description">Asesoría integral en fusiones, adquisiciones y estructuras societarias complejas para el mercado global.</p>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1100px; margin-top: 2rem; text-align: left;">
+            <div class="service-card" style="padding: 2rem; border: 1px solid rgba(31, 64, 55, 0.05);">
+                <span style="font-family: var(--font-ampersand); color: var(--color-acento); display: block; margin-bottom: 1.5rem;">/ 01</span>
+                <h2 style="font-family: var(--font-apellidos); font-size: 1.1rem; text-transform: uppercase;">Derecho Corporativo</h2>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; opacity: 0.8; font-weight: 300; line-height: 1.8;">Asesoría integral en fusiones, adquisiciones y estructuras societarias complejas.</p>
             </div>
-
-            <div class="service-card">
-                <span class="service-icon">/ 02</span>
-                <h2 class="service-title">Gestión Pública</h2>
-                <p class="service-description">Navegamos la intersección entre el Estado y el sector privado con rigor técnico en contratación estatal.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">/ 03</span>
-                <h2 class="service-title">Litigio Estratégico</h2>
-                <p class="service-description">Representación de alto nivel en disputas civiles, administrativas y arbitrajes de gran escala.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">/ 04</span>
-                <h2 class="service-title">Derecho de Empresa</h2>
-                <p class="service-description">Protección de activos y cumplimiento regulatorio preventivo para asegurar la continuidad del negocio.</p>
+            <div class="service-card" style="padding: 2rem; border: 1px solid rgba(31, 64, 55, 0.05);">
+                <span style="font-family: var(--font-ampersand); color: var(--color-acento); display: block; margin-bottom: 1.5rem;">/ 02</span>
+                <h2 style="font-family: var(--font-apellidos); font-size: 1.1rem; text-transform: uppercase;">Gestión Pública</h2>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; opacity: 0.8; font-weight: 300; line-height: 1.8;">Rigor técnico en la navegación de la intersección entre el Estado y el sector privado.</p>
             </div>
         </div>
-
-        <footer class="minimal-footer">
-            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
-        </footer>
+        <footer class="minimal-footer"><p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p></footer>
     </main>
 </body>
 </html>
