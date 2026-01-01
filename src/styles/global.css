@@ -1,6 +1,5 @@
-/* global.css - Identidad Final Bahos & Burbano */
+/* global.css - Identidad Bahos & Burbano | Versión Servicios Avanzada */
 
-/* 1. CARGA DE FUENTES LOCALES */
 @font-face {
     font-family: 'ClashDisplay-Semibold';
     src: url(/ClashDisplay-Semibold.woff) format('woff');
@@ -19,7 +18,7 @@
     --color-acento: #8A704D;    
     --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
     --font-descriptor: 'ClashDisplay-Light', sans-serif;
-    --font-ampersand: 'B612 Mono', monospace; /* Fuente específica corregida */
+    --font-ampersand: 'B612 Mono', monospace;
     --font-serif: 'Libre Baskerville', serif;
     --font-sans: 'Inter', sans-serif;
 }
@@ -31,87 +30,115 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* 2. NAVEGACIÓN CON EFECTO DE LÍNEA */
+/* --- NAVEGACIÓN --- */
 .nav-minimal {
     position: fixed; top: 0; width: 100%; padding: 2.5rem 0;
     display: flex; justify-content: center;
     background-color: rgba(245, 245, 243, 0.95); z-index: 1000;
 }
-
 .nav-links { display: flex; gap: 3rem; }
-
 .nav-links a {
     font-family: var(--font-sans); text-decoration: none;
     color: var(--color-institucional); font-size: 0.75rem;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    opacity: 0.7; position: relative; padding-bottom: 6px;
-    transition: opacity 0.3s ease;
+    text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.7;
+    position: relative; padding-bottom: 6px; transition: opacity 0.3s;
 }
-
 .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 50%;
-    width: 0; height: 1px; background-color: var(--color-acento);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateX(-50%);
+    content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 1px;
+    background-color: var(--color-acento); transition: all 0.4s ease; transform: translateX(-50%);
 }
-
 .nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { opacity: 1; }
 
-/* 3. ESTRUCTURA Y LOGO */
+/* --- CONTENEDOR --- */
 .main-container {
     display: flex; flex-direction: column; align-items: center;
-    justify-content: center; min-height: 100vh;
-    padding: 8rem 2rem 4rem 2rem; text-align: center;
+    min-height: 100vh; padding: 10rem 2rem 6rem 2rem; text-align: center;
 }
 
-.brand-name {
+.brand-name { font-family: var(--font-apellidos); font-size: 3.5rem; margin: 0; }
+.ampersand { font-family: var(--font-ampersand) !important; font-weight: 700; font-style: normal; }
+.gold-divider { height: 1px; background-color: var(--color-acento); width: 50px; margin: 3rem auto; opacity: 0.4; }
+
+/* --- SISTEMA DE ACORDEONES --- */
+.services-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.accordion-section {
+    border-bottom: 1px solid rgba(31, 64, 55, 0.1);
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 2rem 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--color-institucional);
+    transition: all 0.3s ease;
+}
+
+.accordion-title {
     font-family: var(--font-apellidos);
-    font-size: clamp(2.5rem, 8vw, 4.2rem);
-    font-weight: 600; margin: 0;
-}
-
-/* Corrección del Ampersand */
-.ampersand {
-    font-family: var(--font-ampersand) !important;
-    font-weight: 700;
-    font-size: 0.85em;
-    margin: 0 0.15em;
-    font-style: normal;
-}
-
-.tagline {
-    font-family: var(--font-descriptor);
-    font-size: 1.25rem; margin-top: 1rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-.gold-divider {
-    height: 1px; background-color: var(--color-acento);
-    width: 50px; margin: 3.5rem auto; opacity: 0.4;
+.accordion-icon {
+    font-family: var(--font-ampersand);
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    transition: transform 0.4s ease;
 }
 
-.message {
-    font-family: var(--font-serif); font-style: italic;
-    font-size: 1.35rem; line-height: 2; max-width: 750px;
-    margin-bottom: 3rem;
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
-.btn-contact {
-    display: inline-block; font-family: var(--font-sans);
-    text-decoration: none; color: var(--color-institucional);
-    border: 1px solid var(--color-institucional);
-    padding: 1.1rem 2.8rem; font-size: 0.75rem;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    transition: all 0.4s ease;
+.accordion-section.active .accordion-content {
+    max-height: 1000px;
+    transition: max-height 1s ease-in;
 }
 
-.btn-contact:hover {
-    background-color: var(--color-institucional);
-    color: var(--color-fondo);
+.accordion-section.active .accordion-icon {
+    transform: rotate(45deg); /* Efecto de X al abrir */
 }
 
-.minimal-footer {
-    margin-top: 6rem; font-family: var(--font-sans);
-    font-size: 0.65rem; opacity: 0.5;
+/* --- LISTADO INTERNO --- */
+.practice-list {
+    list-style: none;
+    padding: 0 0 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
+
+.practice-item {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    padding-left: 1.5rem;
+    position: relative;
+    opacity: 0.8;
+}
+
+.practice-item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-acento);
+}
+
+.minimal-footer { margin-top: 6rem; font-family: var(--font-sans); font-size: 0.65rem; opacity: 0.5; }
