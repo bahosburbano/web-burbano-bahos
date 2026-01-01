@@ -1,50 +1,41 @@
 ---
-/* index.astro - Versión Sólida (Sin parpadeos) */
----
+/* index.astro - Versión Institucional Bahos & Burbano */
 import '../styles/global.css';
+---
+
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bahos & Burbano | Derecho • Empresa • Estado</title>
-    <meta name="description" content="Bahos & Burbano: Firma legal de alto nivel." />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-verde" role="main">
-        <div class="container">
+    <main class="main-container">
+        <header class="hero">
             <h1 class="brand-name">
-                Bahos <span class="ampersand" aria-label="y">&</span> Burbano
+                BAHOS <span class="ampersand">&</span> BURBANO
             </h1>
-            
-            <p class="subtitle">Derecho | Empresa | Estado</p>
-            
-            <div class="divider" aria-hidden="true"></div>
-            
-            <h2 class="status">Sitio web en construcción</h2>
-            
-            <p class="message">
-                Transformamos el conocimiento jurídico en soluciones para usted.<br><br>
-                Actualmente, estamos perfeccionando nuestra plataforma digital para brindarle una experiencia de asesoría integral y de alto nivel.<br><br>
-                Gracias por su paciencia.
-            </p>
+            <p class="tagline">Derecho • Empresa • Estado</p>
+            <div class="gold-divider"></div>
+        </header>
 
+        <section class="content-section">
+            <p class="message">
+                Estamos perfeccionando nuestra plataforma digital para brindarles <br>
+                una experiencia de asesoría jurídica integral y de alto nivel.
+            </p>
+            
             <div class="cta-wrapper">
-                <a href="mailto:infolegal@bahosburbano.com" class="contact-btn" aria-label="Contactar a la firma">
-                    Contactar por Correo
+                <a href="mailto:infolegal@bahosburbano.com" class="btn-contact">
+                    CONTACTAR A LA FIRMA
                 </a>
             </div>
+        </section>
 
-            <footer class="legal-footer">
-                <p>© 2025 Bahos & Burbano</p>
-                <p>Todos los derechos reservados</p>
-            </footer>
-        </div>
-    </div>
+        <footer class="minimal-footer">
+            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
+    </main>
 </body>
 </html>
-
-<style is:global>
-  
-</style>
