@@ -5,30 +5,31 @@ import { ClientRouter } from 'astro:transitions';
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <title>Talento | Bahos & Burbano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bahos & Burbano | Inicio</title>
+    <ClientRouter />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav-minimal">
-        <div class="nav-links"><a href="/">Inicio</a><a href="/servicios">Servicios</a><a href="/nosotros">Nosotros</a><a href="/talento">Talento</a><a href="/insights">Insights</a></div>
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/servicios">Servicios</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/talento">Talento</a>
+            <a href="/insights">Insights</a>
+            <a href="/contacto">Contacto</a>
+        </div>
     </nav>
     <main class="main-container">
         <header>
-            <h1 class="brand-name">Talento</h1>
+            <h1 class="brand-name">Bahos <span class="ampersand">&</span> Burbano</h1>
+            <p class="tagline">Derecho | Empresa | Estado</p>
             <div class="gold-divider"></div>
         </header>
         <section>
-            <p class="message">Un equipo multidisciplinar de primer nivel.</p>
-            <div style="display: flex; gap: 4rem; justify-content: center; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem;">
-                <div>
-                    <h3 style="color: var(--color-institucional);">Socio Director</h3>
-                    <p style="opacity: 0.6;">Área de Derecho Público</p>
-                </div>
-                <div>
-                    <h3 style="color: var(--color-institucional);">Socio Senior</h3>
-                    <p style="opacity: 0.6;">Área Corporativa</p>
-                </div>
-            </div>
+            <p class="message">Soluciones jurídicas de alta complejidad en la intersección de los sectores público y privado.</p>
+            <a href="/nosotros" class="btn-contact">Conozca la Firma</a>
         </section>
         <footer class="minimal-footer"><p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p></footer>
     </main>
