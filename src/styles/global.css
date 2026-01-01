@@ -136,3 +136,8 @@ body {
     letter-spacing: 0.15em;
     opacity: 0.5;
 }
+/* Sutil indicación de página activa */
+.nav-links a[href]:active {
+    opacity: 1;
+    border-bottom: 1px solid var(--color-acento);
+}
