@@ -1,5 +1,5 @@
 ---
-/* index.astro - Versión Final con Ajustes de Precisión Móvil y Footer */
+/* index.astro - Versión Sólida (Sin parpadeos) */
 ---
 <html lang="es">
 <head>
@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Bahos & Burbano | Derecho • Empresa • Estado</title>
     <meta name="description" content="Bahos & Burbano: Firma legal de alto nivel." />
-<link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-verde fade-general" role="main">
+    <div class="bg-verde" role="main">
         <div class="container">
             <h1 class="brand-name">
                 Bahos <span class="ampersand" aria-label="y">&</span> Burbano
@@ -67,7 +67,7 @@
 
   html, body {
     margin: 0; padding: 0;
-    background-color: var(--color-principal);
+    background-color: var(--color-principal); /* Esto evita el pantallazo blanco */
     min-height: 100%;
     color: white;
   }
@@ -84,14 +84,7 @@
     padding: 40px 0;
   }
 
-  .fade-general {
-    animation: simpleFade 1.5s ease-in forwards;
-  }
-
-  @keyframes simpleFade {
-    from { opacity: 0.85; }
-    to { opacity: 1; }
-  }
+  /* SE ELIMINARON LAS ANIMACIONES (fade-general y keyframes) PARA EVITAR EL PARPADEO */
 
   .container {
     padding: 20px;
@@ -102,16 +95,15 @@
 
   .brand-name {
     font-family: var(--fuente-titulo);
-    /* clamp ajustado para forzar una sola línea en casi cualquier dispositivo */
     font-size: clamp(1.4rem, 7.5vw, 4.2rem); 
     font-weight: 600;
     margin: 0;
     display: flex;
-    flex-wrap: nowrap; /* Prohibe que el nombre se divida */
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     gap: 0.15em;
-    white-space: nowrap; /* Fuerza el texto a una sola línea */
+    white-space: nowrap;
   }
 
   .ampersand {
@@ -171,7 +163,6 @@
     margin-top: 5rem;
     font-family: var(--fuente-texto);
     font-size: 0.75rem;
-    /* Color levemente más claro que el anterior, pero no blanco puro */
     color: #6a827c; 
     line-height: 1.8;
     letter-spacing: 0.1em;
@@ -181,7 +172,6 @@
     margin: 0;
   }
 
-  /* AJUSTES ESPECÍFICOS PARA MÓVIL */
   @media (max-width: 480px) {
     .bg-verde {
       padding-top: 50px;
