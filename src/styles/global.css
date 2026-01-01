@@ -1,9 +1,17 @@
-/* global.css - Versión Final Identidad Institucional */
+/* global.css - Versión Final con Clash Display Semibold y Light */
 
+/* Cargamos la variante Semibold para los Apellidos */
 @font-face {
-    font-family: 'Clash Display Bold';
-    src: url('/ClashDisplay-Bold.woff') format('woff'); /* Asegúrate de que el archivo se llame así en tu carpeta public */
-    font-weight: 700; font-style: normal; font-display: swap;
+    font-family: 'Clash Display Semibold';
+    src: url('/ClashDisplay-Semibold.woff') format('woff');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+
+/* Cargamos la variante Light para el Descriptor */
+@font-face {
+    font-family: 'Clash Display Light';
+    src: url('/ClashDisplay-Light.woff') format('woff');
+    font-weight: 300; font-style: normal; font-display: swap;
 }
 
 :root {
@@ -12,7 +20,8 @@
     --color-texto: #1A1A1A;     
     --color-acento: #8A704D;    
     
-    --font-apellidos: 'Clash Display Bold', sans-serif;
+    --font-apellidos: 'Clash Display Semibold', sans-serif;
+    --font-descriptor: 'Clash Display Light', sans-serif;
     --font-ampersand: 'B612 Mono', monospace;
     --font-serif: 'Libre Baskerville', serif;
     --font-sans: 'Inter', sans-serif;
@@ -36,32 +45,33 @@ body {
     text-align: center;
 }
 
-/* Estilo del Logo (Fuentes Bold) */
+/* Apellidos en Clash Display Semibold */
 .brand-name {
     font-family: var(--font-apellidos);
     font-size: clamp(2rem, 8vw, 4.2rem);
-    font-weight: 700; /* Bold */
+    font-weight: 600;
     letter-spacing: -0.01em;
     margin: 0;
     color: var(--color-institucional);
 }
 
+/* Ampersand en B612 Mono Bold */
 .ampersand {
     font-family: var(--font-ampersand);
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     color: var(--color-institucional);
     font-size: 0.85em;
     margin: 0 0.15em;
 }
 
-/* Descriptor: Derecho | Empresa | Estado */
+/* Descriptor en Clash Display Light */
 .tagline {
-    font-family: var(--font-sans);
-    font-weight: 400;
+    font-family: var(--font-descriptor);
+    font-weight: 300;
     text-transform: none; 
-    letter-spacing: 0.15em;
-    font-size: 1.15rem;
-    margin-top: 1.2rem;
+    letter-spacing: 0.05em;
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
     color: var(--color-institucional);
 }
 
@@ -94,17 +104,3 @@ body {
     font-weight: 600;
     letter-spacing: 0.2em;
     transition: all 0.4s ease;
-}
-
-.btn-contact:hover {
-    background-color: var(--color-institucional);
-    color: var(--color-fondo);
-}
-
-.minimal-footer {
-    margin-top: 5rem;
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: #999;
-}
