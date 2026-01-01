@@ -1,79 +1,57 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-
-const metadata = {
-  title: 'Contact',
-};
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 ---
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Bahos & Burbano</title>
+    <ClientRouter />
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-minimal">
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/servicios">Servicios</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/talento">Talento</a>
+            <a href="/insights">Insights</a>
+            <a href="/contacto">Contacto</a>
+        </div>
+    </nav>
 
-<Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+    <main class="main-container">
+        <header>
+            <h1 class="brand-name">Contacto</h1>
+            <div class="gold-divider"></div>
+        </header>
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 900px; text-align: left; font-family: 'Inter', sans-serif;">
+            <div>
+                <h3 style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--color-acento);">Canales Oficiales</h3>
+                <p style="font-size: 1.1rem; margin-top: 1.5rem;">
+                    <a href="mailto:infolegal@bahosburbano.com" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(31,64,55,0.2);">infolegal@bahosburbano.com</a>
+                </p>
+                <p style="opacity: 0.7; font-weight: 300; margin-top: 2rem; line-height: 1.6;">
+                    Nuestra firma atiende consultas bajo cita previa para garantizar la confidencialidad y atención personalizada que su caso requiere.
+                </p>
+            </div>
+            
+            <div style="border-left: 1px solid rgba(31,64,55,0.1); padding-left: 4rem;">
+                <h3 style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--color-acento);">Ubicación</h3>
+                <p style="font-size: 0.95rem; margin-top: 1.5rem; line-height: 1.8; opacity: 0.8;">
+                    Centro Empresarial Institucional<br>
+                    Popayán, Cauca<br>
+                    Colombia
+                </p>
+            </div>
+        </section>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
-</Layout>
+        <footer class="minimal-footer">
+            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
+        </footer>
+    </main>
+</body>
+</html>
