@@ -1,4 +1,4 @@
-/* global.css - Versión Corregida sin errores de cierre */
+/* global.css - Identidad Bahos & Burbano | Versión Final */
 
 @font-face {
     font-family: 'ClashDisplay-Semibold';
@@ -20,37 +20,81 @@
     --color-fondo: #F5F5F3;     
     --color-institucional: #1F4037; 
     --color-acento: #8A704D;    
+    
     --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
     --font-descriptor: 'ClashDisplay-Light', sans-serif;
+    --font-ampersand: 'B612 Mono', monospace;
+    --font-serif: 'Libre Baskerville', serif;
+    --font-sans: 'Inter', sans-serif;
 }
 
 body {
     margin: 0;
+    padding: 0;
     background-color: var(--color-fondo);
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
+    padding: 2rem;
     text-align: center;
 }
 
+/* Logo: Mayúscula inicial + Semibold */
 .brand-name {
     font-family: var(--font-apellidos);
-    font-size: 4rem;
-    color: var(--color-institucional);
+    font-size: clamp(2.2rem, 8vw, 4.2rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin: 0;
+    color: var(--color-institucional);
+    text-transform: capitalize; /* Fuerza mayúscula inicial */
 }
 
+/* Ampersand: B612 Mono Bold */
+.ampersand {
+    font-family: var(--font-ampersand);
+    font-weight: 700;
+    color: var(--color-institucional);
+    font-size: 0.85em;
+    margin: 0 0.15em;
+}
+
+/* Descriptor: Clash Display Light */
 .tagline {
     font-family: var(--font-descriptor);
+    font-weight: 300;
     font-size: 1.3rem;
+    margin-top: 0.8rem;
     color: var(--color-institucional);
-    margin-top: 10px;
 }
 
 .gold-divider {
     height: 1px;
     background-color: var(--color-acento);
     width: 60px;
-    margin: 40px auto;
+    margin: 3.5rem auto;
+    opacity: 0.4;
 }
+
+.message {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.9;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    color: #333;
+}
+
+.btn-contact {
+    display: inline-block;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    color: var(--color-institucional);
