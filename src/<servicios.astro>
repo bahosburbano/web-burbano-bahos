@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 ---
-
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -19,23 +18,17 @@ import '../styles/global.css';
             <a href="/insights">Insights</a>
         </div>
     </nav>
-
     <main class="main-container">
         <header>
             <h1 class="brand-name">Servicios</h1>
             <div class="gold-divider"></div>
         </header>
-
-        <section class="content-grid">
+        <section>
             <p class="message">Áreas de Práctica Jurídica Estratégica</p>
-            <ul style="list-style: none; padding: 0; font-family: 'Inter', sans-serif; line-height: 2.5; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">
-                <li>Derecho Corporativo y M&A</li>
-                <li>Derecho Administrativo y del Estado</li>
-                <li>Litigio de Alta Complejidad</li>
-                <li>Asesoría en Contratación Pública</li>
-            </ul>
+            <p style="font-family: 'Inter', sans-serif; opacity: 0.8; letter-spacing: 0.1em; line-height: 2;">
+                DERECHO CORPORATIVO | M&A | DERECHO ADMINISTRATIVO | LITIGIO ESTRATÉGICO
+            </p>
         </section>
-
         <footer class="minimal-footer">
             <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
         </footer>
