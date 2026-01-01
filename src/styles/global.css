@@ -1,6 +1,5 @@
-/* global.css - Bahos & Burbano | Estilo Magic Circle */
+/* global.css - Identidad Bahos & Burbano */
 
-/* 1. CARGA DE FUENTES LOCALES */
 @font-face {
     font-family: 'ClashDisplay-Semibold';
     src: url('/ClashDisplay-Semibold.woff') format('woff');
@@ -17,10 +16,9 @@
     font-display: swap;
 }
 
-/* 2. VARIABLES DE DISEÑO */
 :root {
     --color-fondo: #F5F5F3;     
-    --color-institucional: #1F4037; /* Verde Bahos & Burbano */
+    --color-institucional: #1F4037; 
     --color-acento: #8A704D;    
     --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
     --font-descriptor: 'ClashDisplay-Light', sans-serif;
@@ -29,7 +27,6 @@
     --font-sans: 'Inter', sans-serif;
 }
 
-/* 3. RESET Y ESTRUCTURA BASE */
 body {
     margin: 0;
     padding: 0;
@@ -48,7 +45,6 @@ body {
     text-align: center;
 }
 
-/* 4. COMPONENTES DEL LOGO */
 .brand-name {
     font-family: var(--font-apellidos);
     font-size: clamp(2.2rem, 8vw, 4.2rem);
@@ -74,7 +70,6 @@ body {
     color: var(--color-institucional);
 }
 
-/* 5. DECORACIÓN Y BOTONES */
 .gold-divider {
     height: 1px;
     background-color: var(--color-acento);
