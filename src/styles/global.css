@@ -1,12 +1,10 @@
 /* src/styles/global.css */
-
-/* 1. CARGA DE FUENTES (Rutas directas a carpeta public, sin /fonts/) */
+/* 1. CARGA DE FUENTES (Rutas directas a carpeta public) */
 @font-face {
   font-family: 'ClashDisplay-Semibold';
   src: url('/ClashDisplay-Semibold.woff') format('woff');
   font-weight: 600; font-style: normal; font-display: swap;
 }
-
 @font-face {
   font-family: 'ClashDisplay-Light';
   src: url('/ClashDisplay-Light.woff') format('woff');
