@@ -1,8 +1,8 @@
 /* global.css - Identidad Bahos & Burbano */
 
-/* 1. CARGA DE FUENTES (Asegúrate de tener los archivos en tu carpeta) */
+/* 1. FUENTES EXTERNAS (Asegúrate de que los archivos estén en la carpeta /fonts/) */
 @font-face {
-    font-family: 'ClashDisplay';
+    font-family: 'ClashDisplay-Semibold';
     src: url('/fonts/ClashDisplay-Semibold.woff2') format('woff2');
     font-weight: 600;
 }
@@ -13,91 +13,90 @@
     font-weight: 300;
 }
 
+/* 2. VARIABLES DE DISEÑO */
 :root {
-    --color-fondo: #FDFDFB;     /* Blanco editorial */
-    --color-firma: #1F4037;     /* Tu verde institucional */
-    --color-acento: #8A704D;    /* Dorado sobrio */
-    --font-clash: 'ClashDisplay', sans-serif;
-    --font-clash-light: 'ClashDisplay-Light', sans-serif;
-    --font-mono: 'B612 Mono', monospace;
+    --color-fondo: #FDFDFB;     /* Blanco roto editorial */
+    --color-firma: #1F4037;     /* Verde Institucional */
+    --color-oro: #8A704D;       /* Acento dorado */
+    --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
+    --font-descriptor: 'ClashDisplay-Light', sans-serif;
+    --font-ampersand: 'B 612 Mono', monospace;
+    --font-cuerpo: 'Inter', sans-serif;
+    --font-serif: 'Libre Baskerville', serif;
 }
 
 body {
-    margin: 0; padding: 0;
     background-color: var(--color-fondo);
     color: var(--color-firma);
+    margin: 0;
     -webkit-font-smoothing: antialiased;
 }
 
-/* 2. NAVEGACIÓN SOFISTICADA */
-.nav-magic-circle {
-    width: 100%;
-    padding: 3rem 0;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid rgba(31, 64, 55, 0.05);
+/* 3. NAVEGACIÓN (MAGIC CIRCLE STYLE) */
+.nav-minimal {
+    position: fixed; top: 0; width: 100%; padding: 2.5rem 0;
+    display: flex; justify-content: center;
+    background-color: rgba(253, 253, 251, 0.9); z-index: 1000;
 }
 
-.nav-links {
-    display: flex;
-    gap: 4rem;
-}
-
+.nav-links { display: flex; gap: 4rem; }
 .nav-links a {
-    font-family: var(--font-clash-light);
-    text-decoration: none;
-    color: var(--color-firma);
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    transition: all 0.4s ease;
+    font-family: var(--font-descriptor);
+    text-decoration: none; color: var(--color-firma);
+    font-size: 0.8rem; letter-spacing: 0.25em;
+    text-transform: uppercase; opacity: 0.6;
+    transition: opacity 0.4s ease;
+}
+.nav-links a:hover { opacity: 1; }
+
+/* 4. LOGO Y DESCRIPTOR */
+.hero-branding {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 80vh; text-align: center;
 }
 
-.nav-links a:hover {
-    opacity: 1;
-    letter-spacing: 0.25em; /* Efecto sutil de expansión */
-}
-
-/* 3. LOGO Y DESCRIPTOR */
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 70vh;
-    text-align: center;
-}
-
-.brand-logo {
-    font-family: var(--font-clash);
-    font-size: 4.5rem;
+.logo-apellidos {
+    font-family: var(--font-apellidos);
+    font-size: clamp(2.5rem, 7vw, 4rem);
     color: var(--color-firma);
     margin: 0;
     font-weight: 600;
 }
 
 .ampersand {
-    font-family: var(--font-mono) !important;
-    font-weight: 400;
-    font-size: 0.8em;
-    margin: 0 0.2em;
+    font-family: var(--font-ampersand) !important;
+    font-size: 0.8em; margin: 0 0.1em;
 }
 
-.descriptor {
-    font-family: var(--font-clash-light); /* Clash Display para el descriptor */
-    font-size: 1.2rem;
-    letter-spacing: 0.4em;
-    margin-top: 1.5rem;
-    color: var(--color-firma);
+.descriptor-clash {
+    font-family: var(--font-descriptor);
+    font-size: 1.2rem; letter-spacing: 0.3em;
+    margin-top: 1.5rem; color: var(--color-firma);
 }
 
-/* 4. FOOTER ACTUALIZADO */
-.footer-sophisticated {
-    padding: 4rem 0;
-    text-align: center;
-    font-family: var(--font-clash-light);
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    opacity: 0.4;
+/* 5. ÁREAS DE PRÁCTICA */
+.practica-container {
+    max-width: 900px; margin: 0 auto;
+    padding: 12rem 2rem 8rem;
+}
+
+.area-card {
+    border-top: 1px solid rgba(31, 64, 55, 0.1);
+    padding: 4rem 0; margin-bottom: 2rem;
+}
+
+.area-titulo {
+    font-family: var(--font-apellidos);
+    font-size: 2.2rem; margin-bottom: 0.8rem;
+}
+
+.area-enfoque {
+    font-family: var(--font-serif); font-style: italic;
+    font-size: 1.15rem; color: var(--color-oro);
+    margin-bottom: 2rem; display: block;
+}
+
+.area-texto {
+    font-family: var(--font-cuerpo); font-size: 1.05rem;
+    line-height: 1.9; text-align: justify; color: #333;
 }
