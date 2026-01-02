@@ -1,81 +1,82 @@
-/* global.css - Arquitectura Final Bahos & Burbano */
+/* global.css - Estética Final Bahos & Burbano */
 
-/* 1. FUENTES */
+/* 1. CARGA DE FUENTES */
+/* Asegúrate de que los archivos estén en la raíz de tu proyecto */
 @font-face {
     font-family: 'ClashDisplay-Semibold';
     src: url('/ClashDisplay-Semibold.woff') format('woff');
-    font-weight: 600; font-display: swap;
+    font-weight: 600; font-style: normal; font-display: swap;
 }
 
 @font-face {
     font-family: 'ClashDisplay-Light';
     src: url('/ClashDisplay-Light.woff') format('woff');
-    font-weight: 300; font-display: swap;
+    font-weight: 300; font-style: normal; font-display: swap;
 }
 
 :root {
-    --fondo: #FDFDFB;           /* Blanco editorial */
-    --firma: #1F4037;           /* Verde institucional */
-    --oro: #8A704D;             /* Acento sofisticado */
-    --clash-bold: 'ClashDisplay-Semibold', sans-serif;
-    --clash-light: 'ClashDisplay-Light', sans-serif;
-    --ampersand: 'B612 Mono', monospace;
-    --serif: 'Libre Baskerville', serif;
-    --sans: 'Inter', sans-serif;
+    --color-fondo: #F5F5F3;     /* Blanco roto editorial */
+    --color-institucional: #1F4037; /* Tu verde exacto */
+    --color-acento: #8A704D;    /* Dorado sobrio */
+    --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
+    --font-descriptor: 'ClashDisplay-Light', sans-serif;
+    --font-ampersand: 'B 612 Mono', monospace;
+    --font-serif: 'Libre Baskerville', serif;
+    --font-sans: 'Inter', sans-serif;
 }
-
-* { box-sizing: border-box; }
 
 body {
-    margin: 0; background-color: var(--fondo);
-    color: var(--firma); font-family: var(--sans);
-    -webkit-font-smoothing: antialiased; line-height: 1.6;
+    margin: 0; padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-institucional);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 2. NAVEGACIÓN (SOFISTICACIÓN MÁXIMA) */
-nav {
+/* 2. NAVEGACIÓN MAGIC CIRCLE */
+.nav-minimal {
     position: fixed; top: 0; width: 100%; padding: 3rem 0;
     display: flex; justify-content: center;
-    background-color: rgba(253, 253, 251, 0.98); z-index: 1000;
+    background-color: rgba(245, 245, 243, 0.98); z-index: 1000;
 }
 
 .nav-links { display: flex; gap: 4rem; }
 
 .nav-links a {
-    text-decoration: none; color: var(--firma);
-    font-family: var(--clash-light); font-size: 0.75rem;
+    font-family: var(--font-descriptor); text-decoration: none;
+    color: var(--color-institucional); font-size: 0.8rem;
     text-transform: uppercase; letter-spacing: 0.25em;
-    opacity: 0.5; transition: opacity 0.4s ease;
+    opacity: 0.5; transition: all 0.4s ease;
 }
 
-.nav-links a:hover { opacity: 1; }
+.nav-links a:hover { opacity: 1; letter-spacing: 0.3em; }
 
-/* 3. HERO (LOGO Y DESCRIPTOR) */
-.hero {
+/* 3. ESTRUCTURA LOGO PRINCIPAL */
+.hero-container {
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; min-height: 100vh; text-align: center;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
-.logo-principal {
-    font-family: var(--clash-bold);
-    font-size: clamp(2.5rem, 8vw, 4.2rem);
+.brand-name {
+    font-family: var(--font-apellidos);
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
     margin: 0; font-weight: 600;
 }
 
-.amp {
-    font-family: var(--ampersand) !important;
-    font-size: 0.8em; margin: 0 0.15em; font-weight: 400;
+.ampersand {
+    font-family: var(--font-ampersand) !important;
+    font-weight: 700; font-size: 0.85em; margin: 0 0.15em;
 }
 
-.descriptor {
-    font-family: var(--clash-light);
-    font-size: 1.25rem; letter-spacing: 0.35em;
-    margin-top: 1.5rem; color: var(--firma);
+.tagline {
+    font-family: var(--font-descriptor);
+    font-size: 1.3rem; margin-top: 1.5rem;
+    letter-spacing: 0.4em; /* Espaciado premium */
 }
 
-/* 4. ÁREAS DE PRÁCTICA (EDITORIAL CONTEMPORÁNEO) */
-.content-wrapper {
+/* 4. ÁREAS DE PRÁCTICA (DISEÑO DE REVISTA LEGAL) */
+.practica-main {
     max-width: 850px; margin: 0 auto;
     padding: 12rem 2rem 6rem;
 }
@@ -87,18 +88,18 @@ nav {
 }
 
 .titulo-editorial {
-    font-family: var(--clash-bold);
-    font-size: 2.2rem; margin-bottom: 0.5rem;
+    font-family: var(--font-apellidos);
+    font-size: 2.2rem; margin-bottom: 0.8rem;
 }
 
-.enfoque-itinerario {
-    font-family: var(--serif); font-style: italic;
-    font-size: 1.1rem; color: var(--oro);
+.enfoque-italic {
+    font-family: var(--font-serif); font-style: italic;
+    font-size: 1.15rem; color: var(--color-acento);
     display: block; margin-bottom: 2rem;
 }
 
-.texto-cuerpo {
-    font-size: 1.05rem; line-height: 1.9;
+.cuerpo-texto {
+    font-size: 1.05rem; line-height: 2;
     text-align: justify; margin-bottom: 2.5rem;
 }
 
@@ -108,11 +109,11 @@ nav {
     padding-left: 1.5rem; position: relative;
 }
 .lista-intervencion li::before {
-    content: "—"; position: absolute; left: 0; color: var(--oro);
+    content: "—"; position: absolute; left: 0; color: var(--color-acento);
 }
 
-footer {
+.minimal-footer {
     padding: 4rem 0; text-align: center;
-    font-family: var(--clash-light); font-size: 0.7rem;
+    font-family: var(--font-descriptor); font-size: 0.7rem;
     letter-spacing: 0.15em; opacity: 0.4;
 }
