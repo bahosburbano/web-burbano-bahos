@@ -1,5 +1,6 @@
 /* global.css - Identidad Bahos & Burbano */
 
+/* 1. FUENTES */
 @font-face {
     font-family: 'ClashDisplay-Semibold';
     src: url(/ClashDisplay-Semibold.woff) format('woff');
@@ -23,7 +24,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* NAVEGACIÓN - Corregida */
+/* 2. NAVEGACIÓN */
 .nav-minimal {
     position: fixed; top: 0; width: 100%; padding: 2.5rem 0;
     display: flex; justify-content: center;
@@ -38,7 +39,13 @@ body {
     opacity: 0.7; transition: opacity 0.3s ease;
 }
 
-/* EL LOGO Y DESCRIPTOR */
+/* 3. LOGO Y DESCRIPTOR (HERO SECCIÓN) */
+.main-container {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 100vh; text-align: center;
+    padding: 2rem;
+}
+
 .brand-name {
     font-family: var(--font-logo);
     font-size: clamp(2.5rem, 8vw, 4.2rem);
@@ -48,23 +55,59 @@ body {
 
 .ampersand {
     font-family: var(--font-ampersand) !important;
-    font-size: 0.85em;
-    margin: 0 0.15em;
+    font-size: 0.85em; margin: 0 0.15em;
 }
 
 .tagline {
     font-family: var(--font-sans);
-    font-size: 1rem;
-    letter-spacing: 0.2em;
+    font-size: 1rem; letter-spacing: 0.2em;
     margin-top: 1.2rem;
-    /* Eliminamos text-transform para que respete tus mayúsculas manuales */
-    text-transform: none; 
+    text-transform: none; /* Respeta tus Mayúsculas Iniciales */
 }
 
-/* CONTENEDOR DE SECCIONES (Áreas de Práctica) */
-.practica-container {
+/* 4. ÁREAS DE PRÁCTICA (DISEÑO EDITORIAL) */
+.practica-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 10rem 2rem;
+    padding: 12rem 2rem 6rem; /* Espacio para que respire */
     text-align: left;
+}
+
+.seccion-card {
+    margin-bottom: 5rem;
+    border-top: 1px solid rgba(31, 64, 55, 0.1);
+    padding-top: 2.5rem;
+}
+
+.titulo-area {
+    font-family: var(--font-logo);
+    font-size: 2rem; margin-bottom: 0.5rem;
+    color: var(--color-institucional);
+}
+
+.enfoque-texto {
+    font-family: var(--font-serif);
+    font-style: italic; font-size: 1.1rem;
+    color: var(--color-acento);
+    margin-bottom: 1.5rem; display: block;
+}
+
+.descripcion-texto {
+    font-family: var(--font-sans);
+    font-size: 1.05rem; line-height: 1.8;
+    color: #333; margin-bottom: 2rem;
+}
+
+.lista-intervencion {
+    list-style: none; padding: 0;
+}
+
+.lista-intervencion li {
+    font-family: var(--font-sans);
+    font-size: 0.95rem; margin-bottom: 0.6rem;
+    padding-left: 1.5rem; position: relative;
+}
+
+.lista-intervencion li::before {
+    content: "—"; position: absolute; left: 0; color: var(--color-acento);
 }
