@@ -1,5 +1,5 @@
 ---
-// index.astro
+// src/pages/index.astro
 import '../styles/global.css';
 ---
 
@@ -24,23 +24,17 @@ import '../styles/global.css';
     </nav>
 
     <main class="hero-container">
-        
         <h1 class="brand-identity">
             Bahos <span class="amp">&</span> Burbano
         </h1>
-        
         <div class="descriptor">
             Derecho | Empresa | Estado
         </div>
-        
         <div class="gold-divider"></div>
-        
         <p class="mission-statement">
             Soluciones jurídicas de alta complejidad en la intersección de los sectores público y privado.
         </p>
-
         <a href="/nosotros" class="cta-link">Conozca la Firma</a>
-
     </main>
 
     <footer class="minimal-footer">
@@ -51,104 +45,51 @@ import '../styles/global.css';
 </html>
 
 <style>
-    /* ESTILOS DE LA PORTADA */
-
-    /* Navbar Flotante */
+    /* Estilos Locales (Hero & Nav) */
     .nav-header {
-        padding: 2.5rem 0;
-        display: flex; justify-content: center;
-        background: rgba(253,253,251, 0.98);
-        position: fixed; top: 0; width: 100%; z-index: 1000;
+        padding: 2.5rem 0; display: flex; justify-content: center;
+        background: rgba(253,253,251, 0.98); position: fixed; top: 0; width: 100%; z-index: 1000;
         border-bottom: 1px solid rgba(31,64,55,0.05);
     }
-
     .nav-links { display: flex; gap: 2.5rem; }
-
     .nav-links a {
-        text-decoration: none;
-        color: var(--color-firma);
-        /* Usamos la Light para el menú también por elegancia, o Inter si prefieres */
-        font-family: var(--font-descriptor); 
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
+        text-decoration: none; color: var(--color-firma);
+        font-family: var(--font-descriptor); font-size: 0.75rem;
+        text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.7; transition: opacity 0.3s;
     }
     .nav-links a:hover { opacity: 1; }
 
-    /* Hero Central */
     .hero-container {
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; min-height: 100vh;
-        text-align: center; padding: 0 2rem;
-        margin-top: 2rem; /* Compensar el navbar fijo */
+        text-align: center; padding: 0 2rem; margin-top: 2rem;
     }
-
     .brand-identity {
-        font-family: var(--font-apellidos); /* AQUÍ ESTÁ EL SEMIBOLD */
-        font-size: clamp(3rem, 9vw, 5rem);
-        font-weight: 600;
-        color: var(--color-firma);
-        margin: 0;
-        line-height: 1.1;
+        font-family: var(--font-apellidos); font-size: clamp(3rem, 9vw, 5rem);
+        font-weight: 600; margin: 0; line-height: 1.1;
     }
-
     .amp {
-        font-family: var(--font-mono); /* B612 Mono */
-        font-weight: 400;
-        font-size: 0.75em; /* Un poco más pequeño visualmente */
-        vertical-align: middle;
-        color: var(--color-firma);
+        font-family: var(--font-mono); font-weight: 400; font-size: 0.75em; vertical-align: middle;
     }
-
     .descriptor {
-        font-family: var(--font-descriptor); /* AQUÍ ESTÁ EL LIGHT */
-        font-size: 1.35rem;
-        margin-top: 1.5rem;
-        letter-spacing: 0.15em;
-        color: var(--color-firma);
-        /* Quitamos negrita forzada para que se vea Light real */
-        font-weight: 300; 
+        font-family: var(--font-descriptor); font-size: 1.35rem; margin-top: 1.5rem;
+        letter-spacing: 0.15em; font-weight: 300;
     }
-
     .gold-divider {
-        width: 60px; height: 1px;
-        background: var(--color-oro);
-        margin: 4rem 0;
-        opacity: 0.5;
+        width: 60px; height: 1px; background: var(--color-oro); margin: 4rem 0; opacity: 0.5;
     }
-
     .mission-statement {
-        font-family: 'Libre Baskerville', serif;
-        font-style: italic;
-        font-size: 1.5rem;
-        line-height: 1.8;
-        max-width: 800px;
-        color: var(--color-firma);
-        margin-bottom: 5rem;
+        font-family: var(--font-serif); font-style: italic; font-size: 1.5rem;
+        line-height: 1.8; max-width: 800px; margin-bottom: 5rem;
     }
-
     .cta-link {
-        font-family: 'Inter', sans-serif;
-        text-decoration: none;
-        color: var(--color-firma);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        border-bottom: 1px solid var(--color-oro);
-        padding-bottom: 5px;
-        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif; text-decoration: none; color: var(--color-firma);
+        font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em;
+        border-bottom: 1px solid var(--color-oro); padding-bottom: 5px;
     }
-    .cta-link:hover { border-bottom: 1px solid var(--color-firma); }
-
     .minimal-footer {
-        text-align: center; padding: 4rem 0;
-        font-family: 'Inter', sans-serif;
-        font-size: 0.65rem; letter-spacing: 0.2em;
-        opacity: 0.5;
-        width: 100%;
+        text-align: center; padding: 4rem 0; font-family: 'Inter', sans-serif;
+        font-size: 0.65rem; letter-spacing: 0.2em; opacity: 0.5; width: 100%;
     }
-    
     .amp-footer { font-family: var(--font-mono); }
 </style>
