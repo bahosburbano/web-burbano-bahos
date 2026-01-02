@@ -1,52 +1,116 @@
-<!DOCTYPE html>
+---
+// areas-de-practica.astro
+import '../styles/global.css'; // Ajusta la ruta si tu CSS está en otra carpeta
+---
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Áreas de Práctica | Bahos & Burbano</title>
-    <link rel="stylesheet" href="global.css">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav-minimal">
+
+    <nav class="nav-header">
         <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="areas-de-practica.html">Áreas de Práctica</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
+            <a href="/">Inicio</a>
+            <a href="/areas-de-practica">Áreas de Práctica</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/talento">Talento</a>
+            <a href="/insights">Insights</a>
+            <a href="/contacto">Contáctenos</a> 
         </div>
     </nav>
 
-    <main class="practica-main">
-        <section class="seccion-editorial">
-            <h2 class="titulo-editorial">Derecho Público y Constitucional</h2>
-            <span class="enfoque-italic">Enfoque: Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
-            <p class="cuerpo-texto">Intervenimos en la relación con el Estado desde una perspectiva estructural y de alta especialización. Nuestra práctica se concentra en la gobernanza de entidades descentralizadas y en el acompañamiento a órganos de dirección.</p>
-            <ul class="lista-intervencion">
+    <main style="max-width: 900px; margin: 0 auto; padding: 6rem 2rem;">
+        
+        <header style="text-align: center; margin-bottom: 6rem;">
+            <h1 style="font-family: var(--font-display); font-size: 3rem; margin-bottom: 1rem;">Áreas de Práctica</h1>
+            <div style="width: 40px; height: 1px; background: var(--color-oro); margin: 0 auto;"></div>
+        </header>
+
+        <section class="area-block">
+            <h2 class="area-title">Derecho Público y Constitucional</h2>
+            <span class="area-focus">Enfoque: Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
+            <p>Intervenimos en la relación con el Estado desde una perspectiva estructural. Supervisamos la legalidad de la gestión pública y asumimos la defensa de intereses jurídicos complejos ante la jurisdicción contencioso-administrativa.</p>
+            <ul class="area-list">
                 <li>Gobierno y funcionamiento de juntas directivas en entidades descentralizadas.</li>
-                <li>Representación judicial en litigios estratégicos y procesos de control constitucional.</li>
+                <li>Representación judicial en litigios estratégicos y control constitucional.</li>
+                <li>Estructuración jurídica de contratación estatal.</li>
+                <li>Defensa técnica en responsabilidad fiscal y disciplinaria.</li>
             </ul>
         </section>
 
-        <section class="seccion-editorial">
-            <h2 class="titulo-editorial">Derecho Corporativo, Negocios y Compliance</h2>
-            <span class="enfoque-italic">Enfoque: Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
-            <p class="cuerpo-texto">Acompañamos a compañías y grupos empresariales en la protección de sus negocios. Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión.</p>
+        <section class="area-block">
+            <h2 class="area-title">Derecho Corporativo, Negocios y Compliance</h2>
+            <span class="area-focus">Enfoque: Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
+            <p>Acompañamos a compañías en la estructuración y protección de sus negocios. Diseñamos vehículos societarios que facilitan la inversión, integrando criterios de eficiencia tributaria y compliance.</p>
+            <ul class="area-list">
+                <li>Derecho societario y estructuración de operaciones.</li>
+                <li>Planeación tributaria corporativa.</li>
+                <li>Auditorías legales (Due Diligence).</li>
+                <li>Gobierno corporativo y transparencia.</li>
+            </ul>
         </section>
 
-        <section class="seccion-editorial">
-            <h2 class="titulo-editorial">Derecho Médico y Sanitario</h2>
-            <span class="enfoque-italic">Enfoque: Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
-            <p class="cuerpo-texto">Diseñamos la infraestructura jurídica de la práctica médica, mitigando riesgos de responsabilidad y asegurando el cumplimiento de estándares sanitarios.</p>
+        <section class="area-block">
+            <h2 class="area-title">Derecho Médico y Sanitario</h2>
+            <span class="area-focus">Enfoque: Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
+            <p>Fortalecemos la infraestructura jurídica de la práctica médica, mitigando riesgos de responsabilidad y asegurando el cumplimiento de estándares regulatorios sanitarios.</p>
+            <ul class="area-list">
+                <li>Defensa en responsabilidad civil médica y bioética.</li>
+                <li>Protocolos de atención y consentimiento informado.</li>
+                <li>Habilitación de servicios de salud.</li>
+            </ul>
         </section>
 
-        <section class="seccion-editorial">
-            <h2 class="titulo-editorial">Movilidad Internacional y Derecho Migratorio</h2>
-            <span class="enfoque-italic">Enfoque: Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</span>
-            <p class="cuerpo-texto">Gestionamos la movilidad de personas naturales y grupos familiares como un componente estratégico de inversión y desarrollo profesional.</p>
+        <section class="area-block">
+            <h2 class="area-title">Movilidad Internacional y Derecho Migratorio</h2>
+            <span class="area-focus">Enfoque: Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</span>
+            <p>Gestionamos la movilidad internacional como componente estratégico de inversión. Facilitamos el establecimiento de inversionistas y ejecutivos bajo criterios de eficiencia.</p>
+            <ul class="area-list">
+                <li>Estrategias migratorias para inversionistas.</li>
+                <li>Trámite de visas y naturalización.</li>
+                <li>Cumplimiento normativo en extranjería.</li>
+            </ul>
         </section>
+
     </main>
 
-    <footer class="minimal-footer">
-        © 2026 BAHOS <span class="ampersand">&</span> BURBANO.
+    <footer style="text-align: center; padding: 4rem 0; opacity: 0.5; font-size: 0.8rem; letter-spacing: 0.1em;">
+        © 2026 BAHOS <span style="font-family: var(--font-mono);">&</span> BURBANO.
     </footer>
+
 </body>
 </html>
+
+<style>
+    /* Estilos específicos para esta página (Scoped CSS de Astro) */
+    .area-block {
+        margin-bottom: 6rem;
+        border-top: 1px solid rgba(31, 64, 55, 0.1);
+        padding-top: 3rem;
+    }
+    .area-title {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-firma);
+    }
+    .area-focus {
+        display: block;
+        font-family: 'Inter', sans-serif; /* O una serif si prefieres */
+        font-style: italic;
+        color: var(--color-oro);
+        margin-bottom: 1.5rem;
+    }
+    .area-list {
+        list-style: none; padding: 0; margin-top: 1.5rem;
+    }
+    .area-list li {
+        position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem;
+    }
+    .area-list li::before {
+        content: "—"; position: absolute; left: 0; color: var(--color-oro);
+    }
+</style>
