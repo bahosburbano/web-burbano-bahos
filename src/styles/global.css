@@ -1,20 +1,16 @@
-/* global.css */
+/* src/styles/global.css */
 
-/* 1. CARGA DE FUENTES (Rutas corregidas según tu carpeta public) */
+/* 1. CARGA DE FUENTES (Rutas directas a carpeta public) */
 @font-face {
   font-family: 'ClashDisplay-Semibold';
-  src: url('/ClashDisplay-Semibold.woff') format('woff'); /* Ruta directa a public */
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  src: url('/ClashDisplay-Semibold.woff') format('woff');
+  font-weight: 600; font-style: normal; font-display: swap;
 }
 
 @font-face {
   font-family: 'ClashDisplay-Light';
-  src: url('/ClashDisplay-Light.woff') format('woff'); /* Ruta directa a public */
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+  src: url('/ClashDisplay-Light.woff') format('woff');
+  font-weight: 300; font-style: normal; font-display: swap;
 }
 
 /* 2. VARIABLES GLOBALES */
@@ -23,11 +19,12 @@
   --color-oro: #8A704D;
   --bg-color: #FDFDFB;
   
-  /* Definimos las fuentes exactas */
+  /* Mapeo de Fuentes */
   --font-apellidos: 'ClashDisplay-Semibold', serif; 
   --font-descriptor: 'ClashDisplay-Light', sans-serif;
-  --font-mono: 'B612 Mono', monospace; /* Google Fonts (se carga en el HTML) */
+  --font-mono: 'B612 Mono', monospace; 
   --font-body: 'Inter', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
 }
 
 body {
