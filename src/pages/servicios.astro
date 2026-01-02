@@ -4,155 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios | Bahos & Burbano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Estilo Base Estilo "Magic Circle" */
         :root {
-            --color-fondo: #ffffff;
-            --color-texto: #1a1a1a;
-            --color-acento: #8e735b; /* Tono bronce/dorado mate */
-            --fuente-serif: 'Playfair Display', Georgia, serif;
-            --fuente-sans: 'Inter', Helvetica, sans-serif;
+            --primary-color: #1a1a1a;
+            --accent-color: #c5a059; /* Dorado sutil */
+            --bg-color: #ffffff;
+            --text-main: #333333;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
-            background-color: var(--color-fondo);
-            color: var(--color-texto);
-            font-family: var(--fuente-sans);
-            line-height: 1.6;
+            padding: 40px 20px;
         }
 
-        /* Contenedor Editorial */
-        .editorial-container {
-            max-width: 1000px;
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 20px;
         }
 
-        /* Secciones de Servicio */
-        .servicio-section {
-            margin-bottom: 120px; /* Espacio editorial amplio */
-            border-top: 1px solid #eaeaea;
-            padding-top: 40px;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
-        .servicio-section:first-child {
-            border-top: none;
+        /* Tarjeta Vista Inicial */
+        .service-card {
+            border: 1px solid #e0e0e0;
+            padding: 40px 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 200px;
+            background: #fff;
         }
 
-        h2 {
-            font-family: var(--fuente-serif);
-            font-size: 2.5rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            color: var(--color-texto);
+        .service-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
         }
 
-        .enfoque {
+        .service-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .service-card p.focus {
             font-style: italic;
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Modal (La expansión suave) */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            display: none; /* Oculto por defecto */
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 60px 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .close-btn {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: 0.3s;
+        }
+
+        .close-btn:hover { color: var(--accent-color); }
+
+        .modal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .modal .focus-detail {
+            font-style: italic;
+            color: var(--accent-color);
             font-size: 1.2rem;
-            color: var(--color-acento);
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
             display: block;
         }
 
-        .descripcion {
-            font-size: 1.15rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
-            text-align: justify;
+        .modal p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
         }
 
-        /* Áreas de Intervención */
-        .areas-intervencion {
+        .modal h3 {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .modal ul {
             list-style: none;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
         }
 
-        .areas-intervencion li {
-            padding-left: 20px;
+        .modal ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #fafafa;
             position: relative;
-            font-size: 1rem;
+            padding-left: 25px;
         }
 
-        .areas-intervencion li::before {
+        .modal ul li::before {
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--color-acento);
+            color: var(--accent-color);
         }
 
-        /* Ajustes para móviles */
-        @media (max-width: 768px) {
-            h2 { font-size: 1.8rem; }
-            .editorial-container { padding: 40px 20px; }
-            .servicio-section { margin-bottom: 60px; }
-        }
+        /* Bloqueo de scroll al abrir modal */
+        body.modal-open { overflow: hidden; }
+
     </style>
 </head>
 <body>
 
-<div class="editorial-container">
+<div class="container">
+    <div class="services-grid">
+        
+        <div class="service-card" onclick="openModal('m1')">
+            <h2>Derecho Público y Constitucional</h2>
+            <p class="focus">Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</p>
+        </div>
 
-    <section class="servicio-section">
-        <h2>Derecho público y constitucional</h2>
-        <span class="enfoque">Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
-        <p class="descripcion">
-            Intervenimos en la relación con el Estado desde una perspectiva estructural y de alta especialización. Nuestra práctica se concentra en la gobernanza de entidades descentralizadas y en el acompañamiento a órganos de dirección con competencias nacionales y territoriales. Supervisamos la legalidad de la gestión pública y asumimos la defensa de intereses jurídicos complejos ante la jurisdicción contencioso-administrativa y las altas cortes, aplicando un rigor constitucional orientado a la estabilidad institucional y la seguridad jurídica.
-        </p>
-        <ul class="areas-intervencion">
+        <div class="service-card" onclick="openModal('m2')">
+            <h2>Derecho Corporativo, Negocios y Compliance</h2>
+            <p class="focus">Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</p>
+        </div>
+
+        <div class="service-card" onclick="openModal('m3')">
+            <h2>Derecho Médico y Sanitario</h2>
+            <p class="focus">Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</p>
+        </div>
+
+        <div class="service-card" onclick="openModal('m4')">
+            <h2>Movilidad Internacional y Derecho Migratorio</h2>
+            <p class="focus">Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</p>
+        </div>
+
+    </div>
+</div>
+
+<div id="m1" class="modal">
+    <span class="close-btn" onclick="closeModal('m1')">&times;</span>
+    <div class="modal-content">
+        <h2>Derecho Público y Constitucional</h2>
+        <span class="focus-detail">Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
+        <p>Intervenimos en la relación con el Estado desde una perspectiva estructural y de alta especialización. Nuestra práctica se concentra en la gobernanza de entidades descentralizadas y en el acompañamiento a órganos de dirección con competencias nacionales y territoriales. Supervisamos la legalidad de la gestión pública y asumimos la defensa de intereses jurídicos complejos ante la jurisdicción contencioso-administrativa y las altas cortes, aplicando un rigor constitucional orientado a la estabilidad institucional y la seguridad jurídica.</p>
+        <h3>Áreas de intervención</h3>
+        <ul>
             <li>Gobierno y funcionamiento de juntas directivas en entidades descentralizadas.</li>
             <li>Representación judicial en litigios estratégicos y procesos de control constitucional.</li>
             <li>Estructuración jurídica de contratación estatal y proyectos de infraestructura.</li>
             <li>Defensa técnica en procesos de responsabilidad fiscal, disciplinaria y administrativa.</li>
         </ul>
-    </section>
+    </div>
+</div>
 
-    <section class="servicio-section">
-        <h2>Derecho corporativo, negocios y compliance</h2>
-        <span class="enfoque">Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
-        <p class="descripcion">
-            Acompañamos a compañías y grupos empresariales en la estructuración, operación y protección de sus negocios. Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión, el crecimiento y la transferencia de valor, integrando criterios de eficiencia tributaria, gestión del riesgo y cumplimiento normativo. Nuestra práctica combina una visión transaccional aguda con estándares internacionales de gobierno corporativo y compliance.
-        </p>
-        <ul class="areas-intervencion">
+<div id="m2" class="modal">
+    <span class="close-btn" onclick="closeModal('m2')">&times;</span>
+    <div class="modal-content">
+        <h2>Derecho Corporativo, Negocios y Compliance</h2>
+        <span class="focus-detail">Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
+        <p>Acompañamos a compañías y grupos empresariales en la estructuración, operación y protección de sus negocios. Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión, el crecimiento y la transferencia de valor, integrando criterios de eficiencia tributaria, gestión del riesgo y cumplimiento normativo. Nuestra práctica combina una visión transaccional aguda con estándares internacionales de gobierno corporativo y compliance.</p>
+        <h3>Áreas de intervención</h3>
+        <ul>
             <li>Derecho societario, comercial y estructuración de operaciones transaccionales.</li>
             <li>Planeación tributaria corporativa y defensa en sede administrativa.</li>
             <li>Auditorías legales (Due Diligence) en procesos de fusiones, adquisiciones y reorganizaciones.</li>
             <li>Implementación de esquemas de gobierno corporativo, cumplimiento y transparencia empresarial.</li>
         </ul>
-    </section>
-
-    <section class="servicio-section">
-        <h2>Derecho médico y sanitario</h2>
-        <span class="enfoque">Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
-        <p class="descripcion">
-            Diseñamos y fortalecemos la infraestructura jurídica de la práctica médica y de la industria de la salud, mitigando riesgos de responsabilidad y asegurando el cumplimiento de los estándares regulatorios sanitarios aplicables. Nuestra intervención combina la defensa especializada con la prevención jurídica en contextos de alta exposición legal, protegiendo tanto la operatividad institucional como el prestigio profesional.
-        </p>
-        <ul class="areas-intervencion">
-            <li>Defensa especializada en responsabilidad civil médica y bioética.</li>
-            <li>Estructuración jurídica de protocolos de atención y consentimiento informado.</li>
-            <li>Consultoría para la habilitación de servicios de salud y cumplimiento normativo sanitario.</li>
-        </ul>
-    </section>
-
-    <section class="servicio-section">
-        <h2>Movilidad internacional y derecho migratorio</h2>
-        <span class="enfoque">Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</span>
-        <p class="descripcion">
-            Gestionamos la movilidad internacional de personas naturales y grupos familiares como un componente estratégico de inversión y desarrollo profesional. Facilitamos el establecimiento de inversionistas, ejecutivos y profesionales en Colombia bajo criterios de eficiencia, planeación migratoria y estricto cumplimiento del régimen administrativo de extranjería, evitando enfoques meramente procedimentales.
-        </p>
-        <ul class="areas-intervencion">
-            <li>Diseño de estrategias migratorias para inversionistas y perfiles de alto impacto.</li>
-            <li>Tramitación de visas, residencia y procesos de naturalización.</li>
-            <li>Cumplimiento normativo en materia de extranjería y movilidad internacional.</li>
-        </ul>
-    </section>
-
+    </div>
 </div>
 
-</body>
-</html>
+<div id="m3" class="modal">
+    <span class="close-btn" onclick="closeModal('m3')">&times;</span>
+    <div class="modal-content">
+        <h2>Derecho Médico y Sanitario</h2>
+        <span class="focus-detail">Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
+        <p>Diseñamos y fortalecemos la infraestructura jurídica de la práctica médica y de
