@@ -2,3 +2,116 @@
 // src/pages/contactenos.astro
 import '../styles/global.css';
 ---
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contáctenos | Bahos & Burbano</title>
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav-header">
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/areas-de-practica">Áreas de Práctica</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/talento">Talento</a>
+            <a href="/insights">Insights</a>
+            <a href="/contactenos" class="active">Contáctenos</a>
+        </div>
+    </nav>
+
+    <main class="contact-wrapper">
+        
+        <header class="page-header">
+            <h1 class="page-title">Contáctenos</h1>
+            <div class="gold-line"></div>
+            <p class="page-subtitle">
+                Estamos a su disposición para abordar asuntos de alta complejidad jurídica.
+            </p>
+        </header>
+
+        <div class="contact-grid">
+            
+            <div class="info-column">
+                <div class="info-block">
+                    <h3 class="info-label">Oficina Principal</h3>
+                    <p class="info-text">
+                        Calle de la Escopeta, Cra. 10 # 3-10<br>
+                        Edificio Pombo, Oficina 301<br>
+                        Cali, Colombia
+                    </p>
+                </div>
+
+                <div class="info-block">
+                    <h3 class="info-label">Contacto Directo</h3>
+                    <p class="info-text">
+                        <a href="mailto:info@bahosburbano.com" class="contact-link">info@bahosburbano.com</a><br>
+                        <span class="phone-number">(+57) 602 555 0000</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-column">
+                <form class="elegant-form">
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="nombre@empresa.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describa brevemente su requerimiento..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="minimal-footer">
+        © 2026 BAHOS <span class="amp-footer">&</span> BURBANO.
+    </footer>
+
+</body>
+</html>
+
+<style>
+    /* ESTILOS INTERNOS */
+    .nav-header { padding: 2.5rem 0; display: flex; justify-content: center; background: rgba(253,253,251, 0.98); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); }
+    .nav-links { display: flex; gap: 2.5rem; }
+    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.6; transition: opacity 0.3s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--color-oro); }
+
+    .contact-wrapper { max-width: 1000px; margin: 0 auto; padding: 10rem 2rem 6rem; }
+    .page-header { text-align: center; margin-bottom: 5rem; }
+    .page-title { font-family: var(--font-apellidos); font-size: 3.5rem; color: var(--color-firma); margin: 0; }
+    .gold-line { width: 50px; height: 1px; background: var(--color-oro); margin: 2rem auto; opacity: 0.6; }
+    .page-subtitle { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.2rem; opacity: 0.8; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 4rem; } }
+
+    .info-label { font-family: var(--font-descriptor); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-oro); margin-bottom: 1rem; }
+    .info-text { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+    
+    .form-group { margin-bottom: 2rem; }
+    .form-group label { display: block; font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.8rem; }
+    .form-group input, .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(31,64,55, 0.2); padding: 0.8rem 0; font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--color-firma); outline: none; }
+    .form-group input:focus, .form-group textarea:focus { border-bottom: 1px solid var(--color-firma); }
+
+    .submit-btn { background: transparent; border: 1px solid var(--color-firma); color: var(--color-firma); padding: 1rem 3rem; font-family: var(--font-descriptor); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; cursor: pointer; margin-top: 1rem; }
+    .submit-btn:hover { background: var(--color-firma); color: #FDFDFB; }
+
+    .minimal-footer { text-align: center; padding: 4rem 0; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; opacity: 0.5; }
+    .amp-footer { font-family: var(--font-mono); }
+</style>
