@@ -1,63 +1,39 @@
 /* global.css */
 
-/* 1. CONEXIÓN DE TU FUENTE LOCAL */
+/* 1. CARGA DE FUENTES (Rutas corregidas según tu carpeta public) */
 @font-face {
-  font-family: 'ClashDisplay';
-  src: url('/fonts/ClashDisplay-Medium.woff2') format('woff2'); /* Ruta Astro estándar */
-  font-weight: 500;
+  font-family: 'ClashDisplay-Semibold';
+  src: url('/ClashDisplay-Semibold.woff') format('woff'); /* Ruta directa a public */
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
-/* 2. VARIABLES DE IDENTIDAD */
-:root {
-  --color-fondo: #FDFDFB;       /* Blanco editorial */
-  --color-firma: #1F4037;       /* Verde Bahos & Burbano */
-  --color-oro: #8A704D;         /* Dorado sobrio */
-  
-  --font-display: 'ClashDisplay', sans-serif; /* Tu fuente premium */
-  --font-body: 'Inter', system-ui, sans-serif; /* Lectura limpia */
-  --font-mono: 'B612 Mono', monospace; /* Para el Ampersand */
+@font-face {
+  font-family: 'ClashDisplay-Light';
+  src: url('/ClashDisplay-Light.woff') format('woff'); /* Ruta directa a public */
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* 3. RESET BÁSICO */
-html, body {
+/* 2. VARIABLES GLOBALES */
+:root {
+  --color-firma: #1F4037;
+  --color-oro: #8A704D;
+  --bg-color: #FDFDFB;
+  
+  /* Definimos las fuentes exactas */
+  --font-apellidos: 'ClashDisplay-Semibold', serif; 
+  --font-descriptor: 'ClashDisplay-Light', sans-serif;
+  --font-mono: 'B612 Mono', monospace; /* Google Fonts (se carga en el HTML) */
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
   margin: 0; padding: 0;
-  background-color: var(--color-fondo);
+  background-color: var(--bg-color);
   color: var(--color-firma);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-}
-
-/* 4. MENÚ DE NAVEGACIÓN (SOFISTICADO) */
-.nav-header {
-  padding: 2.5rem 4rem;
-  display: flex;
-  justify-content: space-between; /* Logo a un lado, menú al otro si quisieras, aquí centrado */
-  align-items: center;
-  background: rgba(253,253,251, 0.95);
-  position: sticky; top: 0; z-index: 100;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-  margin: 0 auto; /* Centrado */
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--color-firma);
-  font-family: var(--font-display); /* Clash en el menú */
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-  text-decoration: underline 1px solid var(--color-oro);
-  text-underline-offset: 4px;
 }
