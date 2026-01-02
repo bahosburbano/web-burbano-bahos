@@ -1,130 +1,118 @@
-/* global.css - Identidad Bahos & Burbano */
+/* global.css - Arquitectura Final Bahos & Burbano */
 
-/* 1. CARGA DE FUENTES LOCALES */
+/* 1. FUENTES */
 @font-face {
     font-family: 'ClashDisplay-Semibold';
-    src: url(/ClashDisplay-Semibold.woff) format('woff');
-    font-weight: 600; font-style: normal; font-display: swap;
+    src: url('/ClashDisplay-Semibold.woff') format('woff');
+    font-weight: 600; font-display: swap;
 }
 
 @font-face {
     font-family: 'ClashDisplay-Light';
-    src: url(/ClashDisplay-Light.woff) format('woff');
-    font-weight: 300; font-style: normal; font-display: swap;
+    src: url('/ClashDisplay-Light.woff') format('woff');
+    font-weight: 300; font-display: swap;
 }
 
 :root {
-    --color-fondo: #F5F5F3;     
-    --color-institucional: #1F4037; /* Tu verde exacto */
-    --color-acento: #8A704D;    
-    --font-apellidos: 'ClashDisplay-Semibold', sans-serif;
-    --font-descriptor: 'ClashDisplay-Light', sans-serif;
-    --font-ampersand: 'B612 Mono', monospace;
-    --font-serif: 'Libre Baskerville', serif;
-    --font-sans: 'Inter', sans-serif;
+    --fondo: #FDFDFB;           /* Blanco editorial */
+    --firma: #1F4037;           /* Verde institucional */
+    --oro: #8A704D;             /* Acento sofisticado */
+    --clash-bold: 'ClashDisplay-Semibold', sans-serif;
+    --clash-light: 'ClashDisplay-Light', sans-serif;
+    --ampersand: 'B612 Mono', monospace;
+    --serif: 'Libre Baskerville', serif;
+    --sans: 'Inter', sans-serif;
 }
+
+* { box-sizing: border-box; }
 
 body {
-    margin: 0; padding: 0;
-    background-color: var(--color-fondo);
-    color: var(--color-institucional);
-    -webkit-font-smoothing: antialiased;
+    margin: 0; background-color: var(--fondo);
+    color: var(--firma); font-family: var(--sans);
+    -webkit-font-smoothing: antialiased; line-height: 1.6;
 }
 
-/* 2. NAVEGACIÓN SOFISTICADA */
-.nav-minimal {
-    position: fixed; top: 0; width: 100%; padding: 2.5rem 0;
+/* 2. NAVEGACIÓN (SOFISTICACIÓN MÁXIMA) */
+nav {
+    position: fixed; top: 0; width: 100%; padding: 3rem 0;
     display: flex; justify-content: center;
-    background-color: rgba(245, 245, 243, 0.95); z-index: 1000;
+    background-color: rgba(253, 253, 251, 0.98); z-index: 1000;
 }
 
-.nav-links { display: flex; gap: 3rem; }
+.nav-links { display: flex; gap: 4rem; }
+
 .nav-links a {
-    font-family: var(--font-sans); text-decoration: none;
-    color: var(--color-institucional); font-size: 0.75rem;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    opacity: 0.7; position: relative; padding-bottom: 6px;
-    transition: opacity 0.3s ease;
+    text-decoration: none; color: var(--firma);
+    font-family: var(--clash-light); font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.25em;
+    opacity: 0.5; transition: opacity 0.4s ease;
 }
 
-.nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 50%;
-    width: 0; height: 1px; background-color: var(--color-acento);
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateX(-50%);
-}
-.nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { opacity: 1; }
 
-/* 3. LOGO Y DESCRIPTOR (HERO) */
-.main-container {
+/* 3. HERO (LOGO Y DESCRIPTOR) */
+.hero {
     display: flex; flex-direction: column; align-items: center;
-    justify-content: center; min-height: 100vh;
-    padding: 8rem 2rem 4rem 2rem; text-align: center;
+    justify-content: center; min-height: 100vh; text-align: center;
+    padding: 2rem;
 }
 
-.brand-name {
-    font-family: var(--font-apellidos);
+.logo-principal {
+    font-family: var(--clash-bold);
     font-size: clamp(2.5rem, 8vw, 4.2rem);
-    color: var(--color-institucional);
     margin: 0; font-weight: 600;
 }
 
-.ampersand {
-    font-family: var(--font-ampersand) !important;
-    font-weight: 700; font-size: 0.85em; margin: 0 0.15em;
+.amp {
+    font-family: var(--ampersand) !important;
+    font-size: 0.8em; margin: 0 0.15em; font-weight: 400;
 }
 
-.tagline {
-    font-family: var(--font-descriptor); /* Clash Display para el descriptor */
-    font-size: 1.25rem; margin-top: 1rem;
-    letter-spacing: 0.05em; color: var(--color-institucional);
+.descriptor {
+    font-family: var(--clash-light);
+    font-size: 1.25rem; letter-spacing: 0.35em;
+    margin-top: 1.5rem; color: var(--firma);
 }
 
-/* 4. ESTRUCTURA DE ÁREAS DE PRÁCTICA */
-.practica-container {
+/* 4. ÁREAS DE PRÁCTICA (EDITORIAL CONTEMPORÁNEO) */
+.content-wrapper {
     max-width: 850px; margin: 0 auto;
-    padding: 10rem 2rem 6rem; text-align: left;
+    padding: 12rem 2rem 6rem;
 }
 
-.seccion-practica {
-    margin-bottom: 6rem; border-top: 1px solid rgba(31, 64, 55, 0.1);
-    padding-top: 3rem;
+.seccion-editorial {
+    margin-bottom: 7rem;
+    border-top: 1px solid rgba(31, 64, 55, 0.1);
+    padding-top: 3.5rem;
 }
 
-.titulo-area {
-    font-family: var(--font-apellidos); font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.titulo-editorial {
+    font-family: var(--clash-bold);
+    font-size: 2.2rem; margin-bottom: 0.5rem;
 }
 
-.enfoque-area {
-    font-family: var(--font-serif); font-style: italic;
-    font-size: 1.1rem; color: var(--color-acento);
+.enfoque-itinerario {
+    font-family: var(--serif); font-style: italic;
+    font-size: 1.1rem; color: var(--oro);
     display: block; margin-bottom: 2rem;
 }
 
-.descripcion-area {
-    font-family: var(--font-sans); font-size: 1.05rem;
-    line-height: 1.8; margin-bottom: 2.5rem; text-align: justify;
-}
-
-.intervencion-titulo {
-    font-family: var(--font-sans); font-size: 0.75rem;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    font-weight: 600; margin-bottom: 1.5rem; display: block;
-    color: var(--color-acento);
+.texto-cuerpo {
+    font-size: 1.05rem; line-height: 1.9;
+    text-align: justify; margin-bottom: 2.5rem;
 }
 
 .lista-intervencion { list-style: none; padding: 0; }
 .lista-intervencion li {
-    font-family: var(--font-sans); font-size: 0.95rem;
-    margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative;
+    font-size: 0.95rem; margin-bottom: 0.8rem;
+    padding-left: 1.5rem; position: relative;
 }
 .lista-intervencion li::before {
-    content: "—"; position: absolute; left: 0; color: var(--color-acento);
+    content: "—"; position: absolute; left: 0; color: var(--oro);
 }
 
-.minimal-footer {
+footer {
     padding: 4rem 0; text-align: center;
-    font-family: var(--font-sans); font-size: 0.65rem; opacity: 0.5;
+    font-family: var(--clash-light); font-size: 0.7rem;
+    letter-spacing: 0.15em; opacity: 0.4;
 }
