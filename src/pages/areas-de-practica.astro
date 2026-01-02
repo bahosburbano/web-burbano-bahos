@@ -2,6 +2,7 @@
 // src/pages/areas-de-practica.astro
 import '../styles/global.css';
 ---
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,7 @@ import '../styles/global.css';
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav class="nav-header">
         <div class="nav-links">
             <a href="/">Inicio</a>
@@ -20,23 +22,81 @@ import '../styles/global.css';
         </div>
     </nav>
 
-    <main style="max-width: 900px; margin: 0 auto; padding: 10rem 2rem 6rem;">
-        </main>
-    
+    <main class="content-wrapper">
+        
+        <header style="text-align: center; margin-bottom: 6rem;">
+            <h1 style="font-family: var(--font-apellidos); font-size: 3rem; margin-bottom: 1rem;">Áreas de Práctica</h1>
+            <div style="width: 40px; height: 1px; background: var(--color-oro); margin: 0 auto;"></div>
+        </header>
+
+        <section class="area-block">
+            <h2 class="area-title">Derecho Público y Constitucional</h2>
+            <span class="area-focus">Enfoque: Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
+            <p>Intervenimos en la relación con el Estado desde una perspectiva estructural y de alta especialización. Supervisamos la legalidad de la gestión pública y asumimos la defensa de intereses jurídicos complejos ante la jurisdicción contencioso-administrativa.</p>
+            <ul class="area-list">
+                <li>Gobierno y funcionamiento de juntas directivas en entidades descentralizadas.</li>
+                <li>Representación judicial en litigios estratégicos y procesos de control constitucional.</li>
+                <li>Estructuración jurídica de contratación estatal y proyectos de infraestructura.</li>
+                <li>Defensa técnica en procesos de responsabilidad fiscal, disciplinaria y administrativa.</li>
+            </ul>
+        </section>
+
+        <section class="area-block">
+            <h2 class="area-title">Derecho Corporativo, Negocios y Compliance</h2>
+            <span class="area-focus">Enfoque: Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
+            <p>Acompañamos a compañías y grupos empresariales en la estructuración, operación y protección de sus negocios. Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión, integrando criterios de eficiencia tributaria y cumplimiento normativo.</p>
+            <ul class="area-list">
+                <li>Derecho societario, comercial y estructuración de operaciones transaccionales.</li>
+                <li>Planeación tributaria corporativa y defensa en sede administrativa.</li>
+                <li>Auditorías legales (Due Diligence) en procesos de fusiones y adquisiciones.</li>
+                <li>Implementación de esquemas de gobierno corporativo y transparencia empresarial.</li>
+            </ul>
+        </section>
+
+        <section class="area-block">
+            <h2 class="area-title">Derecho Médico y Sanitario</h2>
+            <span class="area-focus">Enfoque: Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
+            <p>Diseñamos y fortalecemos la infraestructura jurídica de la práctica médica y de la industria de la salud, mitigando riesgos de responsabilidad y asegurando el cumplimiento de los estándares regulatorios sanitarios aplicables.</p>
+            <ul class="area-list">
+                <li>Defensa especializada en responsabilidad civil médica y bioética.</li>
+                <li>Estructuración jurídica de protocolos de atención y consentimiento informado.</li>
+                <li>Consultoría para la habilitación de servicios de salud y cumplimiento normativo sanitario.</li>
+            </ul>
+        </section>
+
+        <section class="area-block" style="border-bottom: none;">
+            <h2 class="area-title">Movilidad Internacional y Derecho Migratorio</h2>
+            <span class="area-focus">Enfoque: Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</span>
+            <p>Gestionamos la movilidad internacional de personas naturales y grupos familiares como un componente estratégico de inversión y desarrollo profesional. Facilitamos el establecimiento bajo criterios de eficiencia y estricto cumplimiento del régimen de extranjería.</p>
+            <ul class="area-list">
+                <li>Diseño de estrategias migratorias para inversionistas y perfiles de alto impacto.</li>
+                <li>Tramitación de visas, residencia y procesos de naturalización.</li>
+                <li>Cumplimiento normativo en materia de extranjería y movilidad internacional.</li>
+            </ul>
+        </section>
+
+    </main>
+
     <footer style="text-align: center; padding: 4rem 0; opacity: 0.5; font-size: 0.8rem; letter-spacing: 0.1em;">
         © 2026 BAHOS <span style="font-family: var(--font-mono);">&</span> BURBANO.
     </footer>
+
 </body>
 </html>
+
 <style>
-    /* CSS Scoped igual al aprobado */
-    .nav-header { padding: 2.5rem 0; display: flex; justify-content: center; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; border-bottom: 1px solid rgba(31,64,55,0.05); }
+    /* ESTILOS INTERNOS */
+    .nav-header { padding: 2.5rem 0; display: flex; justify-content: center; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; border-bottom: 1px solid rgba(31,64,55,0.05); z-index: 1000; }
     .nav-links { display: flex; gap: 2.5rem; }
-    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.7; }
-    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.7; transition: opacity 0.3s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--color-oro); }
+    
+    .content-wrapper { max-width: 900px; margin: 0 auto; padding: 10rem 2rem 6rem; }
     
     .area-block { margin-bottom: 6rem; border-top: 1px solid rgba(31,64,55,0.1); padding-top: 3rem; }
     .area-title { font-family: var(--font-apellidos); font-size: 2rem; margin-bottom: 0.5rem; }
     .area-focus { display: block; font-family: var(--font-serif); font-style: italic; color: var(--color-oro); margin-bottom: 1.5rem; }
+    .area-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+    .area-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
     .area-list li::before { content: "—"; position: absolute; left: 0; color: var(--color-oro); }
 </style>
