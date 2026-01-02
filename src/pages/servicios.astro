@@ -1,70 +1,158 @@
----
-import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
----
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios | Bahos & Burbano</title>
-    <ClientRouter />
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Inter:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo Base Estilo "Magic Circle" */
+        :root {
+            --color-fondo: #ffffff;
+            --color-texto: #1a1a1a;
+            --color-acento: #8e735b; /* Tono bronce/dorado mate */
+            --fuente-serif: 'Playfair Display', Georgia, serif;
+            --fuente-sans: 'Inter', Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            font-family: var(--fuente-sans);
+            line-height: 1.6;
+        }
+
+        /* Contenedor Editorial */
+        .editorial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Secciones de Servicio */
+        .servicio-section {
+            margin-bottom: 120px; /* Espacio editorial amplio */
+            border-top: 1px solid #eaeaea;
+            padding-top: 40px;
+        }
+
+        .servicio-section:first-child {
+            border-top: none;
+        }
+
+        h2 {
+            font-family: var(--fuente-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--color-texto);
+        }
+
+        .enfoque {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--color-acento);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .descripcion {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        /* Áreas de Intervención */
+        .areas-intervencion {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .areas-intervencion li {
+            padding-left: 20px;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .areas-intervencion li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--color-acento);
+        }
+
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            h2 { font-size: 1.8rem; }
+            .editorial-container { padding: 40px 20px; }
+            .servicio-section { margin-bottom: 60px; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="nav-minimal">
-        <div class="nav-links">
-            <a href="/">Inicio</a>
-            <a href="/servicios">Servicios</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/talento">Talento</a>
-            <a href="/insights">Insights</a>
-            <a href="/contacto">Contacto</a>
-        </div>
-    </nav>
 
-    <main class="main-container">
-        <header>
-            <h1 class="brand-name">Servicios</h1>
-            <div class="gold-divider"></div>
-        </header>
+<div class="editorial-container">
 
-        <div class="services-wrapper">
-            <div class="accordion-section">
-                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-                    <span class="accordion-title">Derecho Corporativo</span>
-                    <span class="accordion-icon">+</span>
-                </button>
-                <div class="accordion-content">
-                    <ul class="practice-list">
-                        <li class="practice-item">Derecho Tributario y Planeación Fiscal</li>
-                        <li class="practice-item">Cumplimiento Normativo y Gobierno Corporativo</li>
-                        <li class="practice-item">Derecho de la Salud y Responsabilidad Médica</li>
-                        <li class="practice-item">Privacidad, Habeas Data y Activos Digitales</li>
-                        <li class="practice-item">Derecho Societario y Mercantil</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="servicio-section">
+        <h2>Derecho público y constitucional</h2>
+        <span class="enfoque">Arquitectura institucional, gobernanza pública y control jurídico del poder estatal.</span>
+        <p class="descripcion">
+            Intervenimos en la relación con el Estado desde una perspectiva estructural y de alta especialización. Nuestra práctica se concentra en la gobernanza de entidades descentralizadas y en el acompañamiento a órganos de dirección con competencias nacionales y territoriales. Supervisamos la legalidad de la gestión pública y asumimos la defensa de intereses jurídicos complejos ante la jurisdicción contencioso-administrativa y las altas cortes, aplicando un rigor constitucional orientado a la estabilidad institucional y la seguridad jurídica.
+        </p>
+        <ul class="areas-intervencion">
+            <li>Gobierno y funcionamiento de juntas directivas en entidades descentralizadas.</li>
+            <li>Representación judicial en litigios estratégicos y procesos de control constitucional.</li>
+            <li>Estructuración jurídica de contratación estatal y proyectos de infraestructura.</li>
+            <li>Defensa técnica en procesos de responsabilidad fiscal, disciplinaria y administrativa.</li>
+        </ul>
+    </section>
 
-            <div class="accordion-section">
-                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">
-                    <span class="accordion-title">Gestión Pública</span>
-                    <span class="accordion-icon">+</span>
-                </button>
-                <div class="accordion-content">
-                    <ul class="practice-list">
-                        <li class="practice-item">Derecho Administrativo y Gestión Pública</li>
-                        <li class="practice-item">Litigio Constitucional y de Alto Impacto</li>
-                        <li class="practice-item">Constitucionalización del Derecho</li>
-                        <li class="practice-item">Responsabilidad del Estado y Régimen de Control</li>
-                        <li class="practice-item">Movilidad Internacional y Derechos Humanos</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <section class="servicio-section">
+        <h2>Derecho corporativo, negocios y compliance</h2>
+        <span class="enfoque">Estructuración empresarial, transacciones complejas y cumplimiento corporativo.</span>
+        <p class="descripcion">
+            Acompañamos a compañías y grupos empresariales en la estructuración, operación y protección de sus negocios. Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión, el crecimiento y la transferencia de valor, integrando criterios de eficiencia tributaria, gestión del riesgo y cumplimiento normativo. Nuestra práctica combina una visión transaccional aguda con estándares internacionales de gobierno corporativo y compliance.
+        </p>
+        <ul class="areas-intervencion">
+            <li>Derecho societario, comercial y estructuración de operaciones transaccionales.</li>
+            <li>Planeación tributaria corporativa y defensa en sede administrativa.</li>
+            <li>Auditorías legales (Due Diligence) en procesos de fusiones, adquisiciones y reorganizaciones.</li>
+            <li>Implementación de esquemas de gobierno corporativo, cumplimiento y transparencia empresarial.</li>
+        </ul>
+    </section>
 
-        <footer class="minimal-footer">
-            <p>© 2025 BAHOS & BURBANO. TODOS LOS DERECHOS RESERVADOS.</p>
-        </footer>
-    </main>
+    <section class="servicio-section">
+        <h2>Derecho médico y sanitario</h2>
+        <span class="enfoque">Gestión del riesgo legal y cumplimiento regulatorio en el sector salud.</span>
+        <p class="descripcion">
+            Diseñamos y fortalecemos la infraestructura jurídica de la práctica médica y de la industria de la salud, mitigando riesgos de responsabilidad y asegurando el cumplimiento de los estándares regulatorios sanitarios aplicables. Nuestra intervención combina la defensa especializada con la prevención jurídica en contextos de alta exposición legal, protegiendo tanto la operatividad institucional como el prestigio profesional.
+        </p>
+        <ul class="areas-intervencion">
+            <li>Defensa especializada en responsabilidad civil médica y bioética.</li>
+            <li>Estructuración jurídica de protocolos de atención y consentimiento informado.</li>
+            <li>Consultoría para la habilitación de servicios de salud y cumplimiento normativo sanitario.</li>
+        </ul>
+    </section>
+
+    <section class="servicio-section">
+        <h2>Movilidad internacional y derecho migratorio</h2>
+        <span class="enfoque">Estrategia jurídica para movilidad internacional y establecimiento en Colombia.</span>
+        <p class="descripcion">
+            Gestionamos la movilidad internacional de personas naturales y grupos familiares como un componente estratégico de inversión y desarrollo profesional. Facilitamos el establecimiento de inversionistas, ejecutivos y profesionales en Colombia bajo criterios de eficiencia, planeación migratoria y estricto cumplimiento del régimen administrativo de extranjería, evitando enfoques meramente procedimentales.
+        </p>
+        <ul class="areas-intervencion">
+            <li>Diseño de estrategias migratorias para inversionistas y perfiles de alto impacto.</li>
+            <li>Tramitación de visas, residencia y procesos de naturalización.</li>
+            <li>Cumplimiento normativo en materia de extranjería y movilidad internacional.</li>
+        </ul>
+    </section>
+
+</div>
+
 </body>
 </html>
