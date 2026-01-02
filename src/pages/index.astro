@@ -8,20 +8,7 @@ import '../styles/global.css';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahos & Burbano | Derecho | Empresa | Estado</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    
-    <style>
-        /* DEFINICIÓN DIRECTA DE LA FUENTE CLASH DISPLAY */
-        /* Usamos exactamente el archivo que tienes: ClashDisplay-Medium.woff2 */
-        @font-face {
-            font-family: 'ClashDisplay';
-            src: url('/fonts/ClashDisplay-Medium.woff2') format('woff2');
-            font-weight: 500; /* Medium */
-            font-style: normal;
-            font-display: swap;
-        }
-    </style>
 </head>
 <body>
 
@@ -65,26 +52,14 @@ import '../styles/global.css';
 
 <style>
     /* ESTILOS DE LA PORTADA */
-    
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #8A704D;
-        /* Forzamos el uso de la fuente definida arriba */
-        --font-clash: 'ClashDisplay', sans-serif; 
-        --font-mono: 'B612 Mono', monospace;
-    }
 
-    body {
-        margin: 0;
-        background-color: #FDFDFB; /* Blanco editorial */
-    }
-
-    /* Navbar */
+    /* Navbar Flotante */
     .nav-header {
         padding: 2.5rem 0;
         display: flex; justify-content: center;
         background: rgba(253,253,251, 0.98);
         position: fixed; top: 0; width: 100%; z-index: 1000;
+        border-bottom: 1px solid rgba(31,64,55,0.05);
     }
 
     .nav-links { display: flex; gap: 2.5rem; }
@@ -92,26 +67,28 @@ import '../styles/global.css';
     .nav-links a {
         text-decoration: none;
         color: var(--color-firma);
-        font-family: var(--font-clash); /* Clash también en el menú si gustas, o Inter */
-        font-size: 0.8rem;
+        /* Usamos la Light para el menú también por elegancia, o Inter si prefieres */
+        font-family: var(--font-descriptor); 
+        font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
-        opacity: 0.6;
+        letter-spacing: 0.2em;
+        opacity: 0.7;
         transition: opacity 0.3s ease;
     }
     .nav-links a:hover { opacity: 1; }
 
-    /* Hero */
+    /* Hero Central */
     .hero-container {
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; min-height: 100vh;
         text-align: center; padding: 0 2rem;
+        margin-top: 2rem; /* Compensar el navbar fijo */
     }
 
     .brand-identity {
-        font-family: var(--font-clash); /* APLICANDO CLASH DISPLAY */
+        font-family: var(--font-apellidos); /* AQUÍ ESTÁ EL SEMIBOLD */
         font-size: clamp(3rem, 9vw, 5rem);
-        font-weight: 500; /* Coincide con el peso Medium */
+        font-weight: 600;
         color: var(--color-firma);
         margin: 0;
         line-height: 1.1;
@@ -120,17 +97,19 @@ import '../styles/global.css';
     .amp {
         font-family: var(--font-mono); /* B612 Mono */
         font-weight: 400;
-        font-size: 0.8em;
+        font-size: 0.75em; /* Un poco más pequeño visualmente */
+        vertical-align: middle;
         color: var(--color-firma);
     }
 
     .descriptor {
-        font-family: var(--font-clash); /* APLICANDO CLASH DISPLAY */
-        font-size: 1.25rem;
+        font-family: var(--font-descriptor); /* AQUÍ ESTÁ EL LIGHT */
+        font-size: 1.35rem;
         margin-top: 1.5rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.15em;
         color: var(--color-firma);
-        font-weight: 500;
+        /* Quitamos negrita forzada para que se vea Light real */
+        font-weight: 300; 
     }
 
     .gold-divider {
@@ -143,11 +122,11 @@ import '../styles/global.css';
     .mission-statement {
         font-family: 'Libre Baskerville', serif;
         font-style: italic;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         line-height: 1.8;
-        max-width: 750px;
+        max-width: 800px;
         color: var(--color-firma);
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
     }
 
     .cta-link {
@@ -159,15 +138,16 @@ import '../styles/global.css';
         letter-spacing: 0.2em;
         border-bottom: 1px solid var(--color-oro);
         padding-bottom: 5px;
+        transition: all 0.3s ease;
     }
+    .cta-link:hover { border-bottom: 1px solid var(--color-firma); }
 
     .minimal-footer {
         text-align: center; padding: 4rem 0;
         font-family: 'Inter', sans-serif;
-        font-size: 0.7rem; letter-spacing: 0.15em;
+        font-size: 0.65rem; letter-spacing: 0.2em;
         opacity: 0.5;
-        position: absolute; bottom: 0; width: 100%;
-        color: var(--color-firma);
+        width: 100%;
     }
     
     .amp-footer { font-family: var(--font-mono); }
