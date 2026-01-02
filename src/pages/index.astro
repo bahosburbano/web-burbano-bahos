@@ -1,7 +1,6 @@
 ---
 // index.astro
-// Importamos los estilos globales para asegurar la fuente Clash Display
-import '../styles/global.css'; 
+import '../styles/global.css';
 ---
 
 <html lang="es">
@@ -9,7 +8,20 @@ import '../styles/global.css';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahos & Burbano | Derecho | Empresa | Estado</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* DEFINICIÓN DIRECTA DE LA FUENTE CLASH DISPLAY */
+        /* Usamos exactamente el archivo que tienes: ClashDisplay-Medium.woff2 */
+        @font-face {
+            font-family: 'ClashDisplay';
+            src: url('/fonts/ClashDisplay-Medium.woff2') format('woff2');
+            font-weight: 500; /* Medium */
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,7 +32,8 @@ import '../styles/global.css';
             <a href="/nosotros">Nosotros</a>
             <a href="/talento">Talento</a>
             <a href="/insights">Insights</a>
-            <a href="/contactenos">Contáctenos</a> </div>
+            <a href="/contactenos">Contáctenos</a>
+        </div>
     </nav>
 
     <main class="hero-container">
@@ -51,21 +64,26 @@ import '../styles/global.css';
 </html>
 
 <style>
-    /* ESTILOS ESPECÍFICOS DE LA PORTADA */
+    /* ESTILOS DE LA PORTADA */
     
-    /* Hereda variables del global.css, pero definimos fallbacks por seguridad */
     :root {
         --color-firma: #1F4037;
         --color-oro: #8A704D;
-        --font-display: 'ClashDisplay', sans-serif;
+        /* Forzamos el uso de la fuente definida arriba */
+        --font-clash: 'ClashDisplay', sans-serif; 
         --font-mono: 'B612 Mono', monospace;
     }
 
-    /* Ajustes del Navbar (Debe coincidir con areas-de-practica) */
+    body {
+        margin: 0;
+        background-color: #FDFDFB; /* Blanco editorial */
+    }
+
+    /* Navbar */
     .nav-header {
         padding: 2.5rem 0;
         display: flex; justify-content: center;
-        background: rgba(253,253,251, 0.95);
+        background: rgba(253,253,251, 0.98);
         position: fixed; top: 0; width: 100%; z-index: 1000;
     }
 
@@ -74,7 +92,7 @@ import '../styles/global.css';
     .nav-links a {
         text-decoration: none;
         color: var(--color-firma);
-        font-family: var(--font-display);
+        font-family: var(--font-clash); /* Clash también en el menú si gustas, o Inter */
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -83,7 +101,7 @@ import '../styles/global.css';
     }
     .nav-links a:hover { opacity: 1; }
 
-    /* Hero Central */
+    /* Hero */
     .hero-container {
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; min-height: 100vh;
@@ -91,28 +109,28 @@ import '../styles/global.css';
     }
 
     .brand-identity {
-        font-family: var(--font-display);
-        font-size: clamp(3rem, 9vw, 5rem); /* Grande y responsivo */
-        font-weight: 600;
+        font-family: var(--font-clash); /* APLICANDO CLASH DISPLAY */
+        font-size: clamp(3rem, 9vw, 5rem);
+        font-weight: 500; /* Coincide con el peso Medium */
         color: var(--color-firma);
         margin: 0;
         line-height: 1.1;
     }
 
     .amp {
-        font-family: var(--font-mono);
+        font-family: var(--font-mono); /* B612 Mono */
         font-weight: 400;
         font-size: 0.8em;
         color: var(--color-firma);
     }
 
     .descriptor {
-        font-family: var(--font-display);
+        font-family: var(--font-clash); /* APLICANDO CLASH DISPLAY */
         font-size: 1.25rem;
         margin-top: 1.5rem;
-        letter-spacing: 0.2em; /* Aire sofisticado */
+        letter-spacing: 0.2em;
         color: var(--color-firma);
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .gold-divider {
@@ -149,6 +167,7 @@ import '../styles/global.css';
         font-size: 0.7rem; letter-spacing: 0.15em;
         opacity: 0.5;
         position: absolute; bottom: 0; width: 100%;
+        color: var(--color-firma);
     }
     
     .amp-footer { font-family: var(--font-mono); }
