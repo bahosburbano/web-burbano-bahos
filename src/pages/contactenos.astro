@@ -1,144 +1,124 @@
 ---
 // src/pages/contactenos.astro
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import ImageMagic from '../components/ImageMagic.astro';
 ---
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Bahos & Burbano</title>
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+<Layout title="Contacto">
+  
+  <section class="relative h-[60vh] flex items-center overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <ImageMagic src="/fondo-contacto.webp" alt="Contacto Bahos & Burbano" aspect="wide" className="h-full w-full" />
+    </div>
+    <div class="relative z-10 px-8 md:px-24 max-w-5xl">
+      <div class="flex items-center gap-4 mb-8 reveal-text" style="animation-delay: 0.2s;">
+        <p class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5]">Sección 04 — CONFLUENCIA</p>
+        <div class="w-12 h-[1px] bg-[#d4c3a5]/30"></div>
+      </div>
+      <h1 class="text-6xl md:text-8xl font-light mb-8 reveal-text" style="animation-delay: 0.4s;">
+        Cont<span class="italic font-serif text-[#d4c3a5]">acto</span>
+      </h1>
+      <p class="text-xl font-light text-[#e5e7eb]/60 max-w-xl reveal-text" style="animation-delay: 0.6s;">
+        Inicie un canal de comunicación técnica para la gestión de sus asuntos de alta incidencia.
+      </p>
+    </div>
+  </section>
 
-    <nav class="nav-header">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="/">Inicio</a>
-                <a href="/la-firma">La Firma</a>
-                <a href="/areas-de-practica">Práctica</a> 
-                <a href="/talento">Talento</a>
-            </div>
-            <a href="/contactenos" class="nav-cta active">Consulta Estratégica</a>
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16]">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-32">
+      
+      <div class="space-y-24">
+        <div>
+          <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-12">Canales Oficiales</h2>
+          <div class="group inline-block">
+            <p class="text-sm tracking-widest uppercase text-[#e5e7eb]/40 mb-4">Correo Electrónico Único</p>
+            <a href="mailto:contacto@bahosburbano.com" class="text-2xl md:text-4xl font-light text-[#e5e7eb] group-hover:text-[#d4c3a5] transition-seda">
+              contacto@bahosburbano.com
+            </a>
+            <div class="w-0 group-hover:w-full h-[1px] bg-[#d4c3a5] mt-4 transition-all duration-700"></div>
+          </div>
         </div>
-    </nav>
 
-    <main>
-        <header class="contact-header">
-            <div class="header-image-wrapper">
-                <ImageMagic 
-                    src="/fondo-contacto.webp" 
-                    alt="Contacto Bahos & Burbano" 
-                    className="h-full w-full"
-                />
-            </div>
-            <div class="header-overlay">
-                <span class="descriptor">CANALES DE ACCESO</span>
-                <h1 class="page-title">Contacto</h1>
-                <div class="gold-line"></div>
-            </div>
-        </header>
-
-        <section class="contact-grid-section">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2 class="info-heading">Iniciar Diálogo <br>Profesional</h2>
-                    <p class="info-text">Establezca contacto con nuestra firma para evaluaciones técnicas o requerimientos de alta complejidad.</p>
-                    
-                    <div class="direct-channels">
-                        <div class="channel-item">
-                            <span class="channel-label">Correo Electrónico</span>
-                            <a href="mailto:contacto@bahosburbano.com" class="channel-link">contacto@bahosburbano.com</a>
-                        </div>
-                        <div class="channel-item">
-                            <span class="channel-label">Atención Central</span>
-                            <a href="tel:+570000000" class="channel-link">+57 (601) 000 0000</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="locations-block">
-                    <h3 class="locations-title">Ubicuidad Estratégica</h3>
-                    <div class="locations-list">
-                        <div class="city-item">
-                            <h4>Bogotá D.C.</h4>
-                            <p>Centro Internacional / Área Financiera</p>
-                        </div>
-                        <div class="city-item">
-                            <h4>Cali</h4>
-                            <p>Valle del Cauca</p>
-                        </div>
-                        <div class="city-item">
-                            <h4>Popayán</h4>
-                            <p>Sede Histórica / Cauca</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <span class="footer-logo">B <span class="amp">&</span> B</span>
-                <span class="footer-descriptor">Derecho | Empresa | Estado</span>
-            </div>
-            <div class="footer-center">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </div>
-            <div class="footer-right">
-                <p>Bogotá | Cali | Popayán</p>
-                <p class="copyright">© 2026 Bahos <span class="amp">&</span> Burbano.</p>
-            </div>
+        <div class="pt-16 border-t border-[#e5e7eb]/10 relative">
+          <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-12">Ubicuidad Operativa</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {['Bogotá', 'Cali', 'Popayán'].map(city => (
+              <div class="group">
+                <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5] block mb-2 opacity-40 group-hover:opacity-100 transition-opacity italic">Node // {city.toUpperCase()}</span>
+                <span class="text-xl font-light tracking-widest text-[#e5e7eb] uppercase">{city}</span>
+              </div>
+            ))}
+          </div>
+          <p class="mt-12 text-sm text-[#e5e7eb]/40 font-light leading-relaxed max-w-md">
+            Operamos bajo un esquema de movilidad estratégica, garantizando intervención técnica directa en las principales jurisdicciones de Colombia y escenarios internacionales.
+          </p>
         </div>
-    </footer>
 
-</body>
-</html>
+        <div>
+          <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-12">Capital Intelectual</h2>
+          <a href="https://www.linkedin.com/company/bahosburbano/" target="_blank" class="group flex items-center gap-6 text-[10px] tracking-[0.5em] uppercase text-[#e5e7eb]/60 hover:text-[#d4c3a5] transition-seda">
+            <span class="w-12 h-[1px] bg-[#d4c3a5]/30 group-hover:w-20 group-hover:bg-[#d4c3a5] transition-all duration-700"></span>
+            LinkedIn / Company Profile
+          </a>
+        </div>
+      </div>
 
-<style>
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #C5A059;
-        --font-apellidos: 'Libre Baskerville', serif;
-        --font-descriptor: 'Inter', sans-serif;
-        --font-mono: 'B612 Mono', monospace;
-    }
+      <div class="relative">
+        <div class="absolute -top-10 -right-10 w-40 h-40 border-r border-t border-[#d4c3a5]/10 z-0"></div>
+        
+        <div class="bg-[#e5e7eb]/[0.02] p-10 md:p-16 border border-[#e5e7eb]/5 relative z-10 backdrop-blur-sm">
+          <div class="mb-12">
+            <h3 class="text-2xl font-light mb-4">Protocolo de Consulta</h3>
+            <p class="text-[10px] tracking-widest uppercase text-[#d4c3a5]/60 font-['B612_Mono']">
+              Briefing de Información Confidencial
+            </p>
+          </div>
 
-    .amp { font-family: var(--font-mono); font-style: normal; }
+          <form action="https://formspree.io/f/xvzgqjnb" method="POST" class="space-y-12">
+            <div class="group relative">
+              <label class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5] block mb-2 opacity-60 group-focus-within:opacity-100 transition-opacity">Nombre o Razón Social</label>
+              <input type="text" name="name" required class="w-full bg-transparent border-b border-[#e5e7eb]/10 py-4 text-[#e5e7eb] focus:border-[#d4c3a5] outline-none transition-seda font-light tracking-wide" placeholder="Identidad del consultante..." />
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+              <div class="group">
+                <label class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5] block mb-2 opacity-60">Canal de Respuesta</label>
+                <input type="email" name="email" required class="w-full bg-transparent border-b border-[#e5e7eb]/10 py-4 text-[#e5e7eb] focus:border-[#d4c3a5] outline-none transition-seda font-light" placeholder="email@institucion.com" />
+              </div>
+              <div class="group">
+                <label class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5] block mb-2 opacity-60">Área de Intervención</label>
+                <select name="subject" class="w-full bg-transparent border-b border-[#e5e7eb]/10 py-4 text-[#e5e7eb]/60 focus:text-[#e5e7eb] focus:border-[#d4c3a5] outline-none transition-seda font-light appearance-none cursor-pointer">
+                  <option value="publico" class="bg-[#0d1a16]">D. Público & Constitucional</option>
+                  <option value="corporativo" class="bg-[#0d1a16]">D. Corporativo & Compliance</option>
+                  <option value="medico" class="bg-[#0d1a16]">D. Médico & Sanitario</option>
+                  <option value="otro" class="bg-[#0d1a16]">Consulta General</option>
+                </select>
+              </div>
+            </div>
 
-    /* HEADER */
-    .contact-header { height: 50vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .header-image-wrapper { position: absolute; inset: 0; z-index: -1; }
-    .header-overlay { text-align: center; color: white; z-index: 10; }
-    .descriptor { display: block; font-family: var(--font-descriptor); font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1rem; opacity: 0.8; }
-    .page-title { font-family: var(--font-apellidos); font-size: 3.5rem; margin-bottom: 1.5rem; }
-    .gold-line { width: 40px; height: 1px; background: var(--color-oro); margin: 0 auto; }
+            <div class="group">
+              <label class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5] block mb-2 opacity-60">Resumen Ejecutivo del Asunto</label>
+              <textarea name="message" rows="4" required class="w-full bg-transparent border-b border-[#e5e7eb]/10 py-4 text-[#e5e7eb] focus:border-[#d4c3a5] outline-none transition-seda font-light resize-none placeholder:text-[#e5e7eb]/10" placeholder="Describa brevemente la necesidad técnica..."></textarea>
+            </div>
 
-    /* GRID SECTION */
-    .contact-grid-section { padding: 8rem 2rem; background-color: #fdfdfb; }
-    .contact-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+            <div class="flex items-start gap-4 p-4 bg-[#d4c3a5]/5 border-l border-[#d4c3a5]/30">
+              <div class="mt-1">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 1V11M1 6H11" stroke="#d4c3a5" stroke-width="0.5"/>
+                </svg>
+              </div>
+              <p class="text-[9px] leading-relaxed text-[#e5e7eb]/40 uppercase tracking-widest">
+                Toda información suministrada será tratada bajo estrictos protocolos de confidencialidad y nuestra política de seguridad de la información.
+              </p>
+            </div>
 
-    .info-heading { font-family: var(--font-apellidos); font-size: 2.5rem; line-height: 1.2; color: var(--color-firma); margin-bottom: 2rem; }
-    .info-text { font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; color: #555; margin-bottom: 3rem; }
+            <button type="submit" class="w-full py-6 border border-[#d4c3a5]/30 text-[10px] tracking-[0.6em] uppercase hover:bg-[#d4c3a5] hover:text-[#0d1a16] transition-seda relative overflow-hidden group">
+              <span class="relative z-10">Enviar Protocolo de Consulta</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    .channel-item { margin-bottom: 2rem; }
-    .channel-label { display: block; font-family: var(--font-descriptor); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-oro); margin-bottom: 0.5rem; }
-    .channel-link { font-family: var(--font-mono); font-size: 1.1rem; text-decoration: none; color: var(--color-firma); transition: opacity 0.3s; }
-    .channel-link:hover { opacity: 0.6; }
-
-    /* SEDES */
-    .locations-block { background-color: white; padding: 4rem; border: 1px solid rgba(31,64,55,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.02); }
-    .locations-title { font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 3rem; color: var(--color-firma); border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-    
-    .city-item { margin-bottom: 2.5rem; }
-    .city-item h4 { font-family: var(--font-apellidos); font-size: 1.2rem; margin-bottom: 0.3rem; color: var(--color-firma); }
-    .city-item p { font-size: 0.85rem; color: #888; letter-spacing: 0.02em; }
-
-    /* NAV & FOOTER */
-    .nav-header { padding: 1.5rem 3rem; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); box-sizing: border-box; }
-    .nav-container { display: flex;
+</Layout>

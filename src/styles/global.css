@@ -1,25 +1,63 @@
-/* src/styles/global.css *//* 1. CARGA DE FUENTES (Rutas directas a carpeta public, sin /fonts/) */@font-face {
-font-family: 'ClashDisplay-Semibold';
+/* --- MASTER PLAN VISUAL: BAHOS & BURBANO --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 1. DECLARACIÓN DE FUENTES LOCALES (Archivos .woff en /public/fonts/) */
+@font-face {
+font-family: 'Clash Display';
 src: url('/ClashDisplay-Semibold.woff') format('woff');
-font-weight: 600; font-style: normal; font-display: swap;
-}@font-face {
-font-family: 'ClashDisplay-Light';
-src: url('/ClashDisplay-Light.woff') format('woff');
-font-weight: 300; font-style: normal; font-display: swap;
-}/* 2. VARIABLES GLOBALES */:root {
---color-firma: #1F4037;
---color-oro: #8A704D;
---bg-color: #FDFDFB;
-/* Mapeo de Fuentes */
---font-apellidos: 'ClashDisplay-Semibold', serif;
---font-descriptor: 'ClashDisplay-Light', sans-serif;
---font-mono: 'B612 Mono', monospace;
---font-body: 'Inter', sans-serif;
---font-serif: 'Libre Baskerville', serif;
-}body {
-margin: 0; padding: 0;
-background-color: var(--bg-color);
-color: var(--color-firma);
-font-family: var(--font-body);
--webkit-font-smoothing: antialiased;
+font-weight: 600;
+font-style: normal;
+font-display: swap;
 }
+@font-face {
+font-family: 'Clash Display';
+src: url('/ClashDisplay-Light.woff') format('woff');
+font-weight: 300;
+font-style: normal;
+font-display: swap;
+}
+:root {
+--color-bosque: #0d1a16;
+--color-acero: #e5e7eb;
+--color-oro-champagne: #d4c3a5;
+--color-cianotipo: #1a2a3a;
+--font-titles: 'Clash Display', sans-serif;
+--font-body: 'Plus Jakarta Sans', sans-serif;
+--font-mono: 'B612 Mono', monospace;
+}
+@layer base {
+body {
+@apply bg-[#0d1a16] text-[#e5e7eb] font-['Plus_Jakarta_Sans'] antialiased selection:bg-[#d4c3a5] selection:text-[#0d1a16];
+scroll-behavior: smooth;
+}
+/* Aplicación de jerarquía Clash Display */
+h1, h2 { @apply font-['Clash_Display'] font-semibold tracking-tight; }
+h3, h4 { @apply font-['Clash_Display'] font-light tracking-wide; }
+/* Clase específica para el Ampersand del logo */
+.font-mono-legal { font-family: var(--font-mono); }
+}
+@layer components {
+.transition-seda {
+@apply transition-all duration-[800ms] ease-[cubic-bezier(0.23,1,0.32,1)];
+}
+.linea-tension {
+@apply h-[0.5px] bg-gradient-to-r from-transparent via-[#d4c3a5]/40 to-transparent w-full;
+}
+.revelado-dorado {
+@apply transition-seda hover:text-[#d4c3a5] cursor-default;
+}
+}
+/* --- OPTIMIZACIÓN DE RENDERIZADO --- */
+.reveal-text {
+opacity: 0;
+transform: translateY(20px);
+will-change: transform, opacity;
+}
+.reveal-line {
+transform: scaleX(0);
+transform-origin: left;
+will-change: transform;
+}
+
+

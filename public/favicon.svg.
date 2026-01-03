@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" fill="url(#magic_circle_grad)"/>
+  <path d="M10 8V24M10 8H18C21 8 22.5 9.5 22.5 11.75C22.5 14 21 15.5 18 15.5H10M10 15.5H18C21 15.5 22.5 17 22.5 19.25C22.5 21.5 21 23 18 23H10" 
+        stroke="#e5e7eb" stroke-width="0.8" stroke-linecap="round"/>
+  <defs>
+    <radialGradient id="magic_circle_grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(16 16) rotate(90) scale(16)">
+      <stop stop-color="#1a2a3a"/>
+      <stop offset="1" stop-color="#0d1a16"/>
+    </radialGradient>
+  </defs>
+</svg>

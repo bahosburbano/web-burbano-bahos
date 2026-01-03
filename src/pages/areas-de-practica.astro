@@ -1,181 +1,120 @@
 ---
 // src/pages/areas-de-practica.astro
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import ImageMagic from '../components/ImageMagic.astro';
+
+const practicas = [
+  {
+    id: "publico",
+    index: "PR-01",
+    title: "Derecho Público & Constitucional",
+    image: "/area-publico.webp",
+    description: "Estructuramos la relación entre el capital y el Estado mediante un control riguroso de la legalidad administrativa y el blindaje constitucional, asegurando que la actuación pública opere dentro de los límites del poder y proteja la seguridad jurídica de proyectos e instituciones de alta incidencia."
+  },
+  {
+    id: "corporativo",
+    index: "PR-02",
+    title: "Derecho Corporativo & Compliance",
+    image: "/area-corporativo.webp",
+    description: "Transformamos la normativa empresarial en un activo estratégico. Diseñamos arquitecturas societarias y sistemas de cumplimiento que no solo mitigan riesgos transaccionales, sino que consolidan resiliencia operativa y precisión en la toma de decisiones corporativas."
+  },
+  {
+    id: "medico",
+    index: "PR-03",
+    title: "Derecho Médico & Sanitario",
+    image: "/area-medico.webp",
+    description: "Gestionamos el riesgo sistémico del sector salud desde una perspectiva regulatoria y bioética avanzada, asegurando la viabilidad jurídica de los prestadores, la protección de la praxis médica y la estabilidad institucional de la infraestructura sanitaria."
+  },
+  {
+    id: "movilidad",
+    index: "PR-04",
+    title: "Movilidad Internacional & Migratorio",
+    image: "/area-movilidad.webp",
+    description: "Gestionamos la movilidad internacional como una extensión de la estrategia de inversión, articulando la ubicación jurídica de capital y talento de alto impacto en jurisdicciones clave bajo criterios de estricta soberanía jurídica."
+  }
+];
 ---
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áreas de Práctica | Bahos & Burbano</title>
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+<Layout title="Áreas de Práctica">
+  
+  <section class="relative h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[#0d1a16]/50 z-10"></div>
+      <ImageMagic src="/cabecera-practica.webp" alt="Áreas de Práctica" aspect="wide" className="h-full w-full" />
+    </div>
+    <div class="relative z-20 px-8 md:px-24 max-w-5xl">
+      <div class="flex items-center gap-4 mb-8 reveal-text" style="animation-delay: 0.2s;">
+        <p class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5]">Intervenciones Jurídicas</p>
+        <div class="w-12 h-[1px] bg-[#d4c3a5]/30"></div>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-light mb-10 reveal-text leading-[1.1]" style="animation-delay: 0.4s;">
+        Diseñadas para estructurar <span class="italic font-serif text-[#d4c3a5]">poder</span>, estabilidad y control del riesgo.
+      </h1>
+      <div class="linea-tension w-32 reveal-line"></div>
+    </div>
+  </section>
 
-    <nav class="nav-header">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="/">Inicio</a>
-                <a href="/la-firma">La Firma</a>
-                <a href="/areas-de-practica" class="active">Práctica</a> 
-                <a href="/talento">Talento</a>
-            </div>
-            <a href="/contactenos" class="nav-cta">Consulta Estratégica</a>
-        </div>
-    </nav>
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16] relative">
+    <div class="absolute left-1/2 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-[#e5e7eb]/5 to-transparent hidden md:block"></div>
 
-    <main>
-        <header class="page-header">
-            <div class="header-image-container">
-                <ImageMagic 
-                    src="/cabecera-practica.webp" 
-                    alt="Áreas de Práctica Jurídica" 
-                    className="h-full w-full"
-                />
-            </div>
-            <div class="header-text">
-                <h1 class="page-title">Áreas de Práctica</h1>
-                <div class="gold-divider"></div>
-            </div>
-        </header>
+    <div class="max-w-7xl mx-auto space-y-48">
+      {practicas.map((p, index) => (
+        <div id={p.id} class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-20 md:gap-32 items-center group`}>
+          
+          <div class="w-full md:w-1/2 relative">
+             <div class="absolute -inset-4 border border-[#d4c3a5]/5 scale-95 group-hover:scale-100 transition-transform duration-1000"></div>
+             <ImageMagic src={p.image} alt={p.title} aspect="video" className="relative z-10" />
+             <div class="absolute top-4 left-4 z-20 font-['B612_Mono'] text-[9px] bg-[#0d1a16] text-[#d4c3a5] px-3 py-1 tracking-widest border border-[#d4c3a5]/20">
+                {p.index}
+             </div>
+          </div>
 
-        <div class="content-wrapper">
+          <div class="w-full md:w-1/2">
+            <div class="flex items-center gap-4 mb-8">
+               <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5]/40 italic">Core / {p.id.toUpperCase()}</span>
+            </div>
+            <h3 class="text-3xl md:text-5xl font-light mb-8 text-[#e5e7eb] tracking-tight group-hover:text-[#d4c3a5] transition-colors duration-700">
+              {p.title}
+            </h3>
+            <div class="w-12 h-[1px] bg-[#d4c3a5] mb-10 opacity-40 group-hover:w-24 transition-all duration-700"></div>
+            <p class="text-lg text-[#e5e7eb]/50 leading-relaxed font-light mb-12 max-w-xl">
+              {p.description}
+            </p>
             
-            <section class="area-block grid-layout">
-                <div class="area-info">
-                    <h2 class="area-title">Derecho Público y Constitucional</h2>
-                    <span class="area-focus">Arquitectura institucional y control del poder estatal.</span>
-                    <p>Intervenimos en la relación con el Estado desde una perspectiva estructural. Supervisamos la legalidad de la gestión pública y asumimos la defensa ante la jurisdicción contencioso-administrativa.</p>
-                    <ul class="area-list">
-                        <li>Gobierno de juntas directivas en entidades descentralizadas.</li>
-                        <li>Representación judicial en litigios estratégicos.</li>
-                        <li>Estructuración de contratación estatal y proyectos.</li>
-                    </ul>
-                </div>
-                <div class="area-visual">
-                    <ImageMagic src="/area-publico.webp" alt="Derecho Público" className="aspect-video shadow-xl" />
-                </div>
-            </section>
-
-            <section class="area-block grid-layout reverse">
-                <div class="area-info">
-                    <h2 class="area-title">Derecho Corporativo y Compliance</h2>
-                    <span class="area-focus">Estructuración empresarial y transacciones complejas.</span>
-                    <p>Diseñamos vehículos societarios y arquitecturas contractuales que facilitan la inversión, integrando criterios de eficiencia tributaria y cumplimiento normativo.</p>
-                    <ul class="area-list">
-                        <li>Derecho societario y transacciones M&A.</li>
-                        <li>Planeación tributaria corporativa.</li>
-                        <li>Implementación de esquemas de gobierno corporativo.</li>
-                    </ul>
-                </div>
-                <div class="area-visual">
-                    <ImageMagic src="/area-corporativo.webp" alt="Derecho Corporativo" className="aspect-video shadow-xl" />
-                </div>
-            </section>
-
-            <section class="area-block grid-layout">
-                <div class="area-info">
-                    <h2 class="area-title">Derecho Médico y Sanitario</h2>
-                    <span class="area-focus">Gestión del riesgo legal en el sector salud.</span>
-                    <p>Fortalecemos la infraestructura jurídica de la práctica médica, mitigando riesgos de responsabilidad y asegurando el cumplimiento de estándares sanitarios.</p>
-                    <ul class="area-list">
-                        <li>Defensa en responsabilidad civil médica.</li>
-                        <li>Estructuración de protocolos y consentimiento informado.</li>
-                        <li>Habilitación de servicios y normativa sanitaria.</li>
-                    </ul>
-                </div>
-                <div class="area-visual">
-                    <ImageMagic src="/area-medico.webp" alt="Derecho Médico" className="aspect-video shadow-xl" />
-                </div>
-            </section>
-
-            <section class="area-block grid-layout reverse">
-                <div class="area-info">
-                    <h2 class="area-title">Movilidad y Derecho Migratorio</h2>
-                    <span class="area-focus">Estrategia para inversión y establecimiento.</span>
-                    <p>Gestionamos la movilidad internacional como un componente estratégico de desarrollo profesional y empresarial bajo estricto cumplimiento legal.</p>
-                    <ul class="area-list">
-                        <li>Visas para inversionistas y perfiles de alto impacto.</li>
-                        <li>Procesos de residencia y naturalización.</li>
-                        <li>Cumplimiento normativo de extranjería.</li>
-                    </ul>
-                </div>
-                <div class="area-visual">
-                    <ImageMagic src="/area-movilidad.webp" alt="Movilidad Internacional" className="aspect-video shadow-xl" />
-                </div>
-            </section>
-
+            <a href="/contactenos" class="inline-flex items-center gap-4 group/link">
+               <span class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] border-b border-transparent group-hover/link:border-[#d4c3a5] transition-all pb-1">
+                 Consultar Intervención
+               </span>
+               <svg width="24" height="8" viewBox="0 0 24 8" fill="none" class="group-hover/link:translate-x-2 transition-transform">
+                  <path d="M23.3536 4.35355C23.5488 4.15829 23.5488 3.84171 23.3536 3.64645L20.1716 0.464466C19.9763 0.269204 19.6597 0.269204 19.4645 0.464466C19.2692 0.659728 19.2692 0.976311 19.4645 1.17157L22.2929 4L19.4645 6.82843C19.2692 7.02369 19.2692 7.34027 19.4645 7.53553C19.6597 7.7308 19.9763 7.7308 20.1716 7.53553L23.3536 4.35355ZM0 4.5H23V3.5H0V4.5Z" fill="#d4c3a5" opacity="0.5"/>
+               </svg>
+            </a>
+          </div>
         </div>
-    </main>
+      ))}
+    </div>
+  </section>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <span class="footer-logo">B <span class="amp">&</span> B</span>
-                <span class="footer-descriptor">Derecho | Empresa | Estado</span>
-            </div>
-            <div class="footer-center">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </div>
-            <div class="footer-right">
-                <p>Bogotá | Cali | Popayán</p>
-                <p class="copyright">© 2026 Bahos <span class="amp">&</span> Burbano.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-<style>
-    /* VARIABLES ESTRUCTURALES */
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #C5A059;
-        --font-apellidos: 'Libre Baskerville', serif;
-        --font-descriptor: 'Inter', sans-serif;
-        --font-mono: 'B612 Mono', monospace;
-    }
-
-    .amp { font-family: var(--font-mono); font-style: normal; }
-
-    /* HEADER */
-    .page-header { height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 4rem; }
-    .header-image-container { position: absolute; inset: 0; z-index: -1; }
-    .header-text { text-align: center; color: white; z-index: 10; }
-    .page-title { font-family: var(--font-apellidos); font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 0 2px 15px rgba(0,0,0,0.4); }
-    .gold-divider { width: 60px; height: 1px; background: var(--color-oro); margin: 0 auto; }
-
-    /* GRID LAYOUT */
-    .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
-    .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 8rem; }
-    .grid-layout.reverse { direction: rtl; }
-    .grid-layout.reverse .area-info { direction: ltr; }
+  <section class="py-60 px-8 bg-[#0a1412] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.02] flex items-center justify-center">
+        <span class="text-[20vw] font-bold select-none">B&B</span>
+    </div>
     
-    .area-block { border-top: 1px solid rgba(31,64,55,0.08); padding-top: 4rem; }
-    .area-title { font-family: var(--font-apellidos); font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-firma); }
-    .area-focus { display: block; font-family: 'Inter', sans-serif; font-style: italic; color: var(--color-oro); margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 0.05em; }
-    
-    .area-list { list-style: none; padding: 0; margin-top: 2rem; }
-    .area-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; font-size: 0.9rem; color: #4a4a4a; }
-    .area-list li::before { content: "—"; position: absolute; left: 0; color: var(--color-oro); }
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="mb-12 flex justify-center">
+        <div class="w-1 h-1 bg-[#d4c3a5] rounded-full mx-1"></div>
+        <div class="w-1 h-1 bg-[#d4c3a5] rounded-full mx-1"></div>
+        <div class="w-1 h-1 bg-[#d4c3a5] rounded-full mx-1"></div>
+      </div>
+      <p class="text-2xl md:text-4xl font-light leading-relaxed text-[#e5e7eb]">
+        Operamos en escenarios de alta complejidad donde la precisión técnica es el único activo que garantiza la <span class="italic font-serif text-[#d4c3a5]">seguridad jurídica</span>.
+      </p>
+      <div class="mt-20">
+        <a href="/contactenos" class="text-[10px] tracking-[0.5em] uppercase border border-[#d4c3a5]/30 px-10 py-4 hover:bg-[#d4c3a5] hover:text-[#0d1a16] transition-seda">
+            Protocolo de Inicio
+        </a>
+      </div>
+    </div>
+  </section>
 
-    /* NAV & FOOTER (Mantenidos por consistencia) */
-    .nav-header { padding: 1.5rem 3rem; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); box-sizing: border-box; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-    .nav-links { display: flex; gap: 3rem; }
-    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.6; }
-    .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--color-oro); }
-    .nav-cta { text-decoration: none; color: white; background-color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; padding: 0.8rem 1.5rem; }
-
-    .main-footer { background-color: #FDFDFB; border-top: 1px solid rgba(31,64,55,0.1); padding: 4rem 3rem; font-size: 0.75rem; color: var(--color-firma); }
-    .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; }
-
-    @media (max-width: 968px) {
-        .grid-layout, .grid-layout.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
-        .page-title { font-size: 2.5rem; }
-        .nav-links { display: none; }
-    }
-</style>
+</Layout>

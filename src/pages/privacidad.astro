@@ -1,0 +1,93 @@
+---
+// src/pages/privacidad.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacidad">
+  <section class="relative py-48 px-8 md:px-24 min-h-screen bg-[#0d1a16] overflow-hidden">
+    <div class="absolute top-10 right-10 font-['B612_Mono'] text-[8px] text-[#d4c3a5]/10 uppercase tracking-[0.5em] hidden lg:block text-right">
+      Protocolo: B&B-PRIV-2026<br/>
+      Estado: Vigente / Enero 2026
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      <header class="mb-32 reveal-text" style="animation-delay: 0.2s;">
+        <p class="text-[10px] tracking-[0.6em] uppercase text-[#d4c3a5] mb-8">Gestión de Información</p>
+        <h1 class="text-5xl md:text-7xl font-light mb-12 leading-tight">
+          Política de Tratamiento de <span class="italic font-serif text-[#d4c3a5]">Datos Personales</span>
+        </h1>
+        <div class="linea-tension w-32 opacity-40"></div>
+      </header>
+
+      <article class="space-y-24 reveal-text" style="animation-delay: 0.4s;">
+        
+        <section class="grid md:grid-cols-4 gap-12 group">
+          <div class="md:col-span-1">
+            <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5]/40 tracking-[0.4em] uppercase">Art. 01</span>
+          </div>
+          <div class="md:col-span-3">
+            <h2 class="text-xl font-light text-[#e5e7eb] mb-8 uppercase tracking-widest">Introducción y Alcance</h2>
+            <p class="text-lg text-[#e5e7eb]/60 leading-relaxed font-light">
+              Bahos & Burbano reconoce que el tratamiento adecuado de los datos personales constituye un deber legal, ético e institucional. Esta política establece los estándares bajo los cuales la Firma opera en cumplimiento de la <strong>Ley 1581 de 2012</strong> y el Decreto 1377 de 2013 de la República de Colombia.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-px bg-[#e5e7eb]/10 border border-[#e5e7eb]/10">
+          <div class="p-12 bg-[#0d1a16]">
+            <h3 class="text-[#d4c3a5] text-[10px] uppercase tracking-[0.4em] mb-8 font-['B612_Mono']">Responsable del Tratamiento</h3>
+            <p class="text-xl text-[#e5e7eb] font-light mb-2">Bahos & Burbano</p>
+            <p class="text-sm text-[#e5e7eb]/40 font-light italic">Sedes Operativas: Bogotá · Cali · Popayán</p>
+          </div>
+          <div class="p-12 bg-[#0d1a16]">
+            <h3 class="text-[#d4c3a5] text-[10px] uppercase tracking-[0.4em] mb-8 font-['B612_Mono']">Canal de Protección de Datos</h3>
+            <p class="text-xl text-[#e5e7eb] font-light mb-2">infolegal@bahosburbano.com</p>
+            <p class="text-sm text-[#e5e7eb]/40 font-light italic">Respuesta bajo protocolo institucional</p>
+          </div>
+        </section>
+
+        <section class="grid md:grid-cols-4 gap-12">
+          <div class="md:col-span-1">
+            <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5]/40 tracking-[0.4em] uppercase">Art. 06</span>
+          </div>
+          <div class="md:col-span-3">
+            <h2 class="text-xl font-light text-[#e5e7eb] mb-12 uppercase tracking-widest">Finalidades del Tratamiento</h2>
+            <ul class="space-y-8">
+              {[
+                "Prestación de servicios jurídicos de alta complejidad y consultoría técnica.",
+                "Gestión contractual, precontractual y análisis de conflicto de intereses.",
+                "Cumplimiento de obligaciones legales ante autoridades administrativas y judiciales.",
+                "Comunicación institucional y difusión de criterio de autor jurídico."
+              ].map((item) => (
+                <li class="group flex gap-6 items-start">
+                  <span class="text-[#d4c3a5] font-['B612_Mono'] text-xs mt-1">/</span>
+                  <p class="text-lg text-[#e5e7eb]/60 font-light group-hover:text-[#e5e7eb] transition-colors duration-500">
+                    {item}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <footer class="pt-24 border-t border-[#e5e7eb]/5 flex flex-col md:flex-row justify-between items-end gap-8">
+          <div class="space-y-4">
+            <p class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5]/40 font-['B612_Mono']">
+              Última actualización: Enero 2026
+            </p>
+            <p class="text-[11px] text-[#e5e7eb]/20 font-light">
+              Bahos & Burbano | Arquitectura Jurídica para decisiones de alta incidencia.
+            </p>
+          </div>
+          <div class="opacity-10">
+             <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 10H70V30H10V10Z" stroke="#d4c3a5" stroke-width="0.5"/>
+                <path d="M20 20H60" stroke="#d4c3a5" stroke-width="0.2"/>
+             </svg>
+          </div>
+        </footer>
+
+      </article>
+    </div>
+  </section>
+</Layout>

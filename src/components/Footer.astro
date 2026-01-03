@@ -1,0 +1,96 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#0d1a16] pt-32 pb-12 px-8 md:px-24 border-t border-[#e5e7eb]/5 relative overflow-hidden">
+  <div class="absolute top-10 right-10 font-['B612_Mono'] text-[8px] text-[#d4c3a5]/5 pointer-events-none select-none uppercase tracking-[0.5em] hidden lg:block text-right">
+    Protocolo de Seguridad: B&B-SEC-2026<br/>
+    Cifrado de Información: Nivel 4
+  </div>
+
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+      
+      <div class="md:col-span-2">
+        <div class="mb-10">
+          <h2 class="font-['Clash_Display'] font-semibold tracking-[0.15em] text-lg uppercase text-[#e5e7eb]">
+            Bahos <span class="font-['B612_Mono'] font-normal text-[#d4c3a5] mx-0.5">&</span> Burbano
+          </h2>
+          <p class="font-['Clash_Display'] font-light tracking-[0.4em] text-[8px] uppercase text-[#d4c3a5]/60 mt-1">
+            Arquitectura Jurídica
+          </p>
+        </div>
+        
+        <p class="text-[#e5e7eb]/40 text-sm leading-relaxed max-w-sm font-light">
+          Institución diseñada para la intervención de estructuras de poder y la gestión de riesgo sistémico en escenarios de alta complejidad.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-10 opacity-80">Navegación</h3>
+        <ul class="space-y-5">
+          {[
+            { name: 'La Firma', slug: 'la-firma' },
+            { name: 'Áreas de Práctica', slug: 'areas-de-practica' },
+            { name: 'Talento', slug: 'talento' },
+            { name: 'Contacto', slug: 'contactenos' }
+          ].map((item) => (
+            <li>
+              <a href={`/${item.slug}`} 
+                 class="text-[11px] uppercase tracking-widest text-[#e5e7eb]/60 hover:text-[#d4c3a5] transition-seda font-light block">
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-10 opacity-80">Legal & Seguridad</h3>
+        <ul class="space-y-5">
+          <li>
+            <a href="/privacidad" class="text-[10px] uppercase tracking-widest text-[#e5e7eb]/30 hover:text-[#d4c3a5] transition-seda flex items-center gap-2">
+              <span class="w-1 h-1 bg-[#d4c3a5]/30 rounded-full"></span>
+              Protección de Datos
+            </a>
+          </li>
+          <li>
+            <a href="/seguridad" class="text-[10px] uppercase tracking-widest text-[#e5e7eb]/30 hover:text-[#d4c3a5] transition-seda flex items-center gap-2">
+              <span class="w-1 h-1 bg-[#d4c3a5]/30 rounded-full"></span>
+              Seguridad de la Información
+            </a>
+          </li>
+          <li>
+            <a href="/exencion" class="text-[10px] uppercase tracking-widest text-[#e5e7eb]/30 hover:text-[#d4c3a5] transition-seda flex items-center gap-2">
+              <span class="w-1 h-1 bg-[#d4c3a5]/30 rounded-full"></span>
+              Exención de Responsabilidad
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-12 border-t border-[#e5e7eb]/5 flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="flex gap-8 items-center">
+        {['Bogotá', 'Cali', 'Popayán'].map((city) => (
+          <div class="flex items-center gap-3">
+            <span class="w-[2px] h-[2px] bg-[#d4c3a5]"></span>
+            <span class="text-[9px] tracking-[0.4em] uppercase text-[#e5e7eb]/30 hover:text-[#e5e7eb] transition-seda cursor-default">
+              {city}
+            </span>
+          </div>
+        ))}
+      </div>
+      
+      <div class="flex flex-col items-end gap-2 text-right">
+        <p class="text-[9px] tracking-[0.3em] uppercase text-[#e5e7eb]/20 font-light italic">
+          © {currentYear} Bahos <span class="font-['B612_Mono']">&</span> Burbano
+        </p>
+        <p class="text-[8px] tracking-[0.4em] uppercase text-[#d4c3a5]/20 font-['B612_Mono']">
+          Ubicuidad Estratégica | Non-Disclosure Basis
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

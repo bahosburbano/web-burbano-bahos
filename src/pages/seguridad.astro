@@ -1,0 +1,111 @@
+---
+// src/pages/seguridad.astro
+import Layout from '../layouts/Layout.astro';
+import ImageMagic from '../components/ImageMagic.astro';
+---
+
+<Layout title="Seguridad de la Información">
+  
+  <section class="relative h-[60vh] flex items-center overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0 opacity-30">
+      <ImageMagic src="/pilares-home.webp" alt="Seguridad de la Información" aspect="wide" className="h-full w-full" />
+    </div>
+    <div class="relative z-10 px-8 md:px-24 max-w-5xl">
+      <div class="flex items-center gap-4 mb-8 reveal-text" style="animation-delay: 0.2s;">
+        <p class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5]">Magic Circle Standards</p>
+        <div class="w-12 h-[1px] bg-[#d4c3a5]/30"></div>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-light mb-8 reveal-text leading-tight" style="animation-delay: 0.4s;">
+        Seguridad de la <span class="italic font-serif text-[#d4c3a5]">Información</span>
+      </h1>
+      <p class="text-xl font-light text-[#e5e7eb]/60 max-w-2xl reveal-text" style="animation-delay: 0.6s;">
+        Protocolos avanzados para la protección de activos estratégicos y blindaje del secreto profesional.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16]">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-24">
+        <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-12">Filosofía de Protección</h2>
+        <p class="text-2xl md:text-4xl font-light text-[#e5e7eb] leading-tight">
+          Para Bahos & Burbano, la información es el <span class="text-[#d4c3a5]">activo estratégico</span> sobre el cual se construye nuestra arquitectura jurídica y la defensa de nuestros clientes.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-px bg-[#e5e7eb]/10 border border-[#e5e7eb]/10 mb-32">
+        {[
+          { 
+            label: "Confidencialidad", 
+            desc: "Secreto profesional blindado mediante protocolos de acceso restringido y cifrado AES-256.",
+            id: "SEC-01"
+          },
+          { 
+            label: "Integridad", 
+            desc: "Garantizamos la inmutabilidad y validez jurídica de los expedientes digitales mediante hashing y firmas digitales.",
+            id: "SEC-02"
+          },
+          { 
+            label: "Disponibilidad", 
+            desc: "Arquitectura de nube privada con redundancia geográfica para asegurar acceso ubicuo y seguro.",
+            id: "SEC-03"
+          }
+        ].map(item => (
+          <div class="p-10 bg-[#0d1a16] group hover:bg-[#0a1412] transition-all duration-500">
+            <span class="font-['B612_Mono'] text-[9px] text-[#d4c3a5]/40 block mb-8 italic">{item.id}</span>
+            <h3 class="text-[#d4c3a5] text-[11px] uppercase tracking-[0.3em] mb-6 group-hover:translate-x-2 transition-transform">{item.label}</h3>
+            <p class="text-sm text-[#e5e7eb]/50 font-light leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-24 items-start">
+        <div class="space-y-12">
+          <h2 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-8">Capacidades Técnicas</h2>
+          
+          <div class="space-y-8">
+            <div class="group">
+              <h3 class="text-[#e5e7eb] text-lg font-light mb-4">Ciberseguridad Avanzada</h3>
+              <p class="text-sm text-[#e5e7eb]/50 font-light leading-relaxed">
+                Desplegamos medidas de cifrado de datos en reposo y tránsito. Nuestras comunicaciones operan bajo estándares de seguridad militar, minimizando cualquier vector de intercepción o fuga de datos.
+              </p>
+            </div>
+            
+            <div class="group">
+              <h3 class="text-[#e5e7eb] text-lg font-light mb-4">Resiliencia y Recuperación</h3>
+              <p class="text-sm text-[#e5e7eb]/50 font-light leading-relaxed">
+                Implementamos copias de seguridad inmutables y protocolos de recuperación ante desastres que garantizan la continuidad de la representación jurídica incluso en escenarios de crisis sistémica.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative p-12 bg-black/40 border border-[#d4c3a5]/10 rounded-sm">
+          <div class="absolute top-4 right-6 font-['B612_Mono'] text-[8px] text-[#d4c3a5]/20 uppercase">Core Status: Secure</div>
+          <h4 class="text-[#d4c3a5] text-[10px] uppercase tracking-widest mb-8">Protocolo de Privilegio</h4>
+          <p class="text-sm text-[#e5e7eb]/60 font-light leading-relaxed mb-8 italic">
+            "Entendemos que en la alta decisión, el riesgo de información es riesgo jurídico. Nuestra infraestructura está diseñada para que el cliente solo se preocupe por la estrategia, mientras nosotros blindamos el entorno."
+          </p>
+          <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#d4c3a5]/20 to-transparent"></div>
+          <p class="mt-8 text-[9px] font-['B612_Mono'] text-[#d4c3a5]/40 tracking-widest uppercase">
+            Socio Responsable: Manuel Burbano
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-48 px-8 bg-black text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-[#d4c3a5] rounded-full animate-ping"></div>
+    </div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <p class="text-2xl md:text-3xl font-light text-[#e5e7eb]/80 leading-relaxed mb-12">
+        La confianza de nuestros clientes se basa en un hecho técnico: <span class="italic font-serif text-[#d4c3a5]">su información está protegida por la misma arquitectura que su defensa legal.</span>
+      </p>
+      <div class="linea-tension max-w-xs mx-auto opacity-30"></div>
+    </div>
+  </section>
+
+</Layout>

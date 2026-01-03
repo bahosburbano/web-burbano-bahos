@@ -1,38 +1,84 @@
 ---
+// src/components/ImageMagic.astro
 interface Props {
   src: string;
   alt: string;
   className?: string;
+  aspect?: "video" | "square" | "portrait" | "wide";
 }
-const { src, alt, className = "" } = Astro.props;
+
+const { src, alt, className = "", aspect = "video" } = Astro.props;
+
+const aspectRatios = {
+  video: "aspect-video",
+  square: "aspect-square",
+  portrait: "aspect-[3/4]",
+  wide: "aspect-[21/9]",
+};
+
+const aspectClass = aspectRatios[aspect];
 ---
 
-<div class={`relative overflow-hidden group shadow-2xl ${className}`}>
-  <div class="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay z-10 noise-layer"></div>
-  
-  <img 
-    src={src} 
-    alt={alt} 
-    class="img-magic-circle w-full h-full object-cover"
+<div class={`relative overflow-hidden bg-[#0a1412] group ${aspectClass} ${className} reveal-frame`}>
+  <div class="absolute inset-0 bg-[#1a2a3a] mix-blend-multiply z-10 opacity-60"></div>
+
+  <div class="absolute inset-0 z-20 opacity-[0.03] pointer-events-none mix-blend-overlay grain-overlay"></div>
+
+  <img
+    src={src}
+    alt={alt}
     loading="lazy"
+    decoding="async"
+    class="w-full h-full object-cover object-center 
+           filter grayscale contrast-[1.2] brightness-[0.9]
+           transition-all duration-[1500ms] ease-[cubic-bezier(0.23,1,0.32,1)]
+           group-hover:scale-[1.03] group-hover:brightness-100 group-hover:contrast-[1.1]
+           img-magic-reveal"
   />
+
+  <div class="absolute inset-0 z-30 opacity-40 mix-blend-soft-light pointer-events-none
+              bg-[radial-gradient(circle_at_center,_transparent_30%,_#0d1a16_100%)]">
+  </div>
 </div>
 
 <style>
-  .noise-layer {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  /* Efecto de Marco de Arquitecto */
+  .reveal-frame {
+    mask-image: linear-gradient(to right, black, black);
+    mask-repeat: no-repeat;
+    mask-size: 0% 100%;
+    animation: reveal-mask 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 
-  .img-magic-circle {
-    /* Estado Base: Blanco y Negro Editorial */
-    filter: grayscale(100%) contrast(1.1) brightness(0.9);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: scale(1.01);
+  /* Animación de Grano Cinematográfico */
+  .grain-overlay {
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: grain-shift 8s steps(10) infinite;
   }
 
-  .group:hover .img-magic-circle {
-    /* Estado Hover: Revelado Frío y Desaturado */
-    filter: grayscale(40%) contrast(1.05) sepia(10%) hue-rotate(140deg);
-    transform: scale(1.03);
+  /* Revelado tipo Cianotipo (Entrada suave) */
+  .img-magic-reveal {
+    opacity: 0;
+    filter: grayscale(1) contrast(1.5) blur(5px);
+    animation: chemical-reveal 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes reveal-mask {
+    to { mask-size: 100% 100%; }
+  }
+
+  @keyframes chemical-reveal {
+    to { 
+      opacity: 0.9; 
+      filter: grayscale(0.8) contrast(1.2) blur(0);
+    }
+  }
+
+  @keyframes grain-shift {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -1%); }
+    20% { transform: translate(1%, 1%); }
+    /* ... añade variaciones para un look orgánico */
   }
 </style>

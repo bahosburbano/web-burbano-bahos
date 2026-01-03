@@ -1,225 +1,149 @@
 ---
 // src/pages/talento.astro
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import ImageMagic from '../components/ImageMagic.astro';
+
+const socios = [
+  {
+    id: "SOC-01",
+    nombre: "FAUER BAHOS",
+    rol: "Socio Fundador | Derecho Público y Estructuras Institucionales",
+    imagen: "/socio-fauer.webp",
+    bio: [
+      "Su práctica se orienta a la comprensión, control y estructuración del poder estatal, con énfasis en el Derecho Público y los regímenes que gobiernan la actuación de las entidades públicas. Interviene en escenarios donde confluyen administración, jurisdicción y control constitucional, con una lectura precisa de los equilibrios institucionales.",
+      "Ha participado directamente en litigios de alta complejidad ante las máximas instancias judiciales del país y en escenarios internacionales de protección de derechos, así como en procesos de articulación técnica con órganos centrales del Estado."
+    ],
+    formacion: ["Abogado, Universidad del Cauca.", "Especialización en Derecho Minero Energético, Universidad Externado de Colombia.", "Magíster en Derecho Constitucional, Universitat de València."],
+    academia: "Docente Universitario, Universidad del Cauca.",
+    areas: ["Litigio Constitucional y Administrativo de Alta Complejidad.", "Gobernanza de Entidades Públicas y Descentralizadas.", "Regímenes de Crisis, Reorganización y Liquidación Estatal."]
+  },
+  {
+    id: "SOC-02",
+    nombre: "MANUEL BURBANO",
+    rol: "Socio Fundador | Derecho Corporativo y Estructuración Empresarial",
+    imagen: "/socio-manuel.webp",
+    bio: [
+      "Su práctica se orienta al diseño jurídico de organizaciones empresariales y a la configuración de estructuras societarias capaces de operar con estabilidad en entornos regulatorios complejos. Interviene en la construcción de marcos contractuales y corporativos que ordenan el riesgo y preservan el valor.",
+      "Cuenta con experiencia específica en Derecho Médico y Sanitario, sector en el que ha participado en la estructuración jurídica de clínicas y centros especializados, integrando regulación sectorial, relaciones laborales y protección de activos de información."
+    ],
+    formacion: ["Abogado, Pontificia Universidad Javeriana.", "Especialización en Derecho Comercial, Pontificia Universidad Javeriana.", "Maestría en Derecho Empresarial (en curso), Pontificia Universidad Javeriana."],
+    areas: ["Derecho Societario y Gobierno Corporativo.", "Procesos de M&A y Reorganización Empresarial.", "Derecho Médico y Sanitario.", "Cumplimiento Normativo y Gestión Jurídica del Riesgo Sectorial."]
+  }
+];
 ---
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talento | Bahos & Burbano</title>
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+<Layout title="Talento">
+  
+  <section class="relative h-[60vh] flex items-center justify-center overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0 opacity-30">
+      <ImageMagic src="/pilares-home.webp" alt="Talento Bahos & Burbano" aspect="wide" className="h-full w-full" />
+    </div>
+    <div class="relative z-10 text-center px-8">
+      <div class="flex flex-col items-center gap-6">
+        <p class="text-[10px] tracking-[0.6em] uppercase text-[#d4c3a5] reveal-text" style="animation-delay: 0.2s;">03 — TALENTO</p>
+        <h1 class="text-4xl md:text-6xl font-light max-w-4xl mx-auto leading-tight reveal-text" style="animation-delay: 0.4s;">
+          Trayectorias que operan en el <span class="italic font-serif text-[#d4c3a5]">núcleo</span> del sistema jurídico.
+        </h1>
+        <div class="linea-tension w-32 opacity-40"></div>
+      </div>
+    </div>
+  </section>
 
-    <nav class="nav-header">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="/">Inicio</a>
-                <a href="/la-firma">La Firma</a>
-                <a href="/areas-de-practica">Práctica</a>
-                <a href="/talento" class="active">Talento</a>
+  <section class="py-32 px-8 md:px-24 bg-[#0d1a16] border-b border-[#e5e7eb]/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-xl md:text-2xl text-[#e5e7eb]/60 leading-relaxed font-light reveal-text">
+        En Bahos & Burbano, cada asunto es concebido desde el más alto nivel de responsabilidad. Nuestra práctica se define por la <span class="text-[#e5e7eb]">lectura estructural</span> del Derecho y la solidez del criterio institucional.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16]">
+    <div class="max-w-7xl mx-auto space-y-60">
+      {socios.map((socio, index) => (
+        <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-24 relative`}>
+          
+          <div class="w-full lg:w-2/5">
+            <div class="lg:sticky lg:top-40 group">
+              <div class="relative mb-12">
+                <div class="absolute -inset-4 border border-[#d4c3a5]/10 scale-95 group-hover:scale-100 transition-transform duration-1000"></div>
+                <ImageMagic src={socio.imagen} alt={socio.nombre} aspect="portrait" className="shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000" />
+                <div class="absolute top-6 left-0 bg-[#d4c3a5] text-[#0d1a16] px-4 py-1 font-['B612_Mono'] text-[9px] tracking-widest z-20">
+                  {socio.id}
+                </div>
+              </div>
+              
+              <div class="space-y-4">
+                <h2 class="font-['Clash_Display'] text-3xl font-semibold tracking-[0.1em] text-[#e5e7eb] uppercase">
+                  {socio.nombre.split(' ')[0]} <span class="text-[#d4c3a5]">{socio.nombre.split(' ')[1]}</span>
+                </h2>
+                <div class="w-12 h-[1px] bg-[#d4c3a5]"></div>
+                <p class="text-[10px] tracking-[0.3em] text-[#d4c3a5]/70 uppercase leading-relaxed max-w-xs">
+                  {socio.rol}
+                </p>
+              </div>
             </div>
-            <a href="/contactenos" class="nav-cta">Consulta Estratégica</a>
+          </div>
+
+          <div class="w-full lg:w-3/5 space-y-20 pt-10">
+            <div>
+              <h3 class="font-['B612_Mono'] text-[9px] tracking-[0.5em] uppercase text-[#d4c3a5]/40 mb-10">/ Perfil Ejecutivo</h3>
+              <div class="space-y-8">
+                {socio.bio.map(p => (
+                  <p class="text-xl text-[#e5e7eb]/70 leading-relaxed font-light">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 pt-16 border-t border-[#e5e7eb]/10">
+              <div>
+                <h4 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-10">Curriculum / Formación</h4>
+                <ul class="space-y-6">
+                  {socio.formacion.map(f => (
+                    <li class="group/item flex gap-4">
+                      <span class="text-[#d4c3a5] opacity-30 font-['B612_Mono'] text-[10px] mt-1">→</span>
+                      <p class="text-sm text-[#e5e7eb]/50 font-light leading-snug group-hover/item:text-[#e5e7eb] transition-colors italic">
+                        {f}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                
+                {socio.academia && (
+                  <div class="mt-12 p-6 bg-black/20 border-l border-[#d4c3a5]/30">
+                    <h4 class="text-[9px] tracking-[0.3em] uppercase text-[#d4c3a5] mb-4 opacity-60">Actividad Académica</h4>
+                    <p class="text-xs text-[#e5e7eb]/40 font-light italic">{socio.academia}</p>
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <h4 class="text-[10px] tracking-[0.4em] uppercase text-[#d4c3a5] mb-10">Áreas de Intervención</h4>
+                <ul class="space-y-6">
+                  {socio.areas.map(a => (
+                    <li class="flex items-start gap-4 text-sm text-[#e5e7eb]/50 font-light leading-snug group-hover:text-[#e5e7eb] transition-colors">
+                      <span class="text-[#d4c3a5] mt-1 font-['B612_Mono'] text-[10px]">[+]</span>
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
+      ))}
+    </div>
+  </section>
 
-    <main class="content-wrapper">
-        <header class="page-header">
-            <span class="section-label">03 — Autoría Jurídica</span>
-            <h1 class="page-title">Talento</h1>
-            <div class="gold-line"></div>
-            <div class="intro-text">
-                <p>En <strong>Bahos <span class="amp">&</span> Burbano</strong>, cada asunto es concebido desde el nivel más alto de responsabilidad. La firma se estructura sobre la convergencia de trayectorias que operan en el núcleo del sistema jurídico: la relación entre el poder público, la empresa y los marcos normativos.</p>
-            </div>
-        </header>
+  <section class="py-48 px-8 bg-black text-center relative overflow-hidden">
+    <div class="max-w-3xl mx-auto relative z-10">
+      <p class="text-[10px] tracking-[0.6em] text-[#d4c3a5] mb-12 uppercase">Compromiso Institucional</p>
+      <p class="text-2xl md:text-3xl font-light text-[#e5e7eb]/80 leading-relaxed mb-16">
+        En la alta práctica jurídica, la sofisticación no admite delegación: <span class="italic font-serif text-[#d4c3a5]">cada intervención es una pieza de autoría técnica directa.</span>
+      </p>
+      <div class="h-12 w-[1px] bg-gradient-to-b from-[#d4c3a5] to-transparent mx-auto"></div>
+    </div>
+  </section>
 
-        <section class="partner-profile">
-            <div class="profile-header">
-                <div class="photo-container">
-                    <ImageMagic 
-                        src="/socio-fauer.webp" 
-                        alt="Fauer Bahos - Socio Fundador" 
-                        className="w-full h-full aspect-square shadow-xl"
-                    />
-                </div>
-                <div class="profile-title-block">
-                    <h2 class="partner-name">Fauer Bahos</h2>
-                    <span class="partner-role">Socio Fundador | Derecho Público y Estructuras Institucionales</span>
-                </div>
-            </div>
-            
-            <div class="profile-body">
-                <p>Su práctica se centra en la estructuración del poder estatal y los regímenes que gobiernan las entidades públicas. Interviene en escenarios donde confluyen administración y control constitucional con una lectura precisa de los equilibrios institucionales.</p>
-                <p>Ha participado en litigios de alta complejidad ante máximas instancias judiciales y organismos internacionales. Su experiencia en cargos directivos le otorga una visión interna del funcionamiento real de la gobernanza pública.</p>
-
-                <div class="credentials-grid">
-                    <div class="credential-box">
-                        <h3>Formación</h3>
-                        <ul>
-                            <li>Universidad del Cauca.</li>
-                            <li>Especialización en D. Minero Energético, Universidad Externado.</li>
-                            <li>Magíster en D. Constitucional, Universitat de València (España).</li>
-                        </ul>
-                    </div>
-                    <div class="credential-box">
-                        <h3>Actividad Académica</h3>
-                        <ul>
-                            <li>Profesor de Derecho Público, Universidad del Cauca.</li>
-                        </ul>
-                    </div>
-                    <div class="credential-box full-width">
-                        <h3>Ámbitos de Práctica</h3>
-                        <ul class="practice-list">
-                            <li>Litigio Constitucional y Administrativo.</li>
-                            <li>Gobernanza de Entidades Públicas.</li>
-                            <li>Regímenes de Crisis y Reorganización Estatal.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="partner-profile">
-            <div class="profile-header">
-                <div class="photo-container">
-                    <ImageMagic 
-                        src="/socio-manuel.webp" 
-                        alt="Manuel Burbano - Socio Fundador" 
-                        className="w-full h-full aspect-square shadow-xl"
-                    />
-                </div>
-                <div class="profile-title-block">
-                    <h2 class="partner-name">Manuel Burbano</h2>
-                    <span class="partner-role">Socio Fundador | Derecho Corporativo y Estructuración Empresarial</span>
-                </div>
-            </div>
-            
-            <div class="profile-body">
-                <p>Diseña organizaciones empresariales capaces de operar con estabilidad en entornos regulatorios complejos. Construye marcos contractuales que ordenan el riesgo y aseguran coherencia normativa en la operación corporativa.</p>
-                <p>Experto en Derecho Médico y Sanitario, ha estructurado jurídicamente clínicas y centros especializados. Interviene en procesos de reorganización societaria con una aproximación rigurosa al cumplimiento normativo.</p>
-
-                <div class="credentials-grid">
-                    <div class="credential-box">
-                        <h3>Formación</h3>
-                        <ul>
-                            <li>Pontificia Universidad Javeriana.</li>
-                            <li>Maestría en Derecho Empresarial (en curso), Universidad Javeriana.</li>
-                        </ul>
-                    </div>
-                    <div class="credential-box full-width">
-                        <h3>Ámbitos de Práctica</h3>
-                        <ul class="practice-list">
-                            <li>Derecho Societario y Gobierno Corporativo.</li>
-                            <li>Procesos de M&A y Reorganización.</li>
-                            <li>Derecho Médico y Sanitario.</li>
-                            <li>Gestión Jurídica del Riesgo Sectorial.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-final">
-            <p class="cta-intro">Los asuntos complejos exigen análisis especializado e inmediato.</p>
-            <a href="/contactenos" class="cta-button">Iniciar Evaluación Técnica</a>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-bg-wrapper">
-             <ImageMagic src="/footer-globo.webp" alt="Global Perspective" className="w-full h-full opacity-10" />
-        </div>
-        <div class="footer-content">
-            <div class="footer-block identity">
-                <span class="footer-logo">BAHOS <span class="amp">&</span> BURBANO</span>
-                <span class="footer-descriptor">DERECHO | EMPRESA | ESTADO</span>
-            </div>
-            
-            <div class="footer-block nav">
-                <a href="/la-firma">La Firma</a>
-                <a href="/areas-de-practica">Práctica</a>
-                <a href="/talento">Talento</a>
-            </div>
-
-            <div class="footer-block presence">
-                <span class="footer-header">UBICUIDAD</span>
-                <p>Bogotá | Cali | Popayán</p>
-                <a href="mailto:contacto@bahosburbano.com" class="footer-email">contacto@bahosburbano.com</a>
-            </div>
-        </div>
-        <div class="footer-socket">
-            <p>© 2026 Bahos & Burbano. La excelencia jurídica como sistema de orden.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-<style>
-    /* VARIABLES ESTRUCTURALES */
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #C5A059;
-        --font-apellidos: 'Libre Baskerville', serif;
-        --font-descriptor: 'Inter', sans-serif;
-        --font-mono: 'B612 Mono', monospace;
-    }
-
-    .amp { font-family: var(--font-mono); font-style: normal; }
-    
-    /* NAV */
-    .nav-header { padding: 1.5rem 3rem; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); box-sizing: border-box; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; margin-right: 3rem; opacity: 0.6; }
-    .nav-links a.active { opacity: 1; color: var(--color-oro); }
-    .nav-cta { text-decoration: none; color: white; background-color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; padding: 0.8rem 1.5rem; }
-
-    /* LAYOUT */
-    .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 12rem 2rem 6rem; }
-    .page-header { text-align: center; margin-bottom: 8rem; }
-    .page-title { font-family: var(--font-apellidos); font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--color-firma); }
-    .gold-line { width: 60px; height: 1px; background: var(--color-oro); margin: 0 auto 3rem auto; }
-    .intro-text { max-width: 700px; margin: 0 auto; font-size: 1.15rem; line-height: 1.8; color: #444; font-style: italic; }
-
-    /* PERFILES */
-    .partner-profile { margin-bottom: 12rem; display: grid; grid-template-columns: 350px 1fr; gap: 5rem; align-items: start; }
-    .photo-container { width: 100%; position: sticky; top: 120px; }
-    
-    .partner-name { font-family: var(--font-apellidos); font-size: 2.8rem; color: var(--color-firma); margin: 0; }
-    .partner-role { display: block; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-oro); margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.4; }
-
-    .profile-body p { font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; color: #333; }
-
-    /* CREDENCIALES */
-    .credentials-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 4rem; border-top: 1px solid #eee; padding-top: 3rem; }
-    .credential-box h3 { font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-oro); margin-bottom: 1.2rem; }
-    .credential-box li { font-size: 0.95rem; margin-bottom: 0.8rem; color: #555; list-style: square; margin-left: 1.2rem; }
-    .practice-list { column-count: 2; column-gap: 3rem; }
-
-    /* FOOTER MEJORADO */
-    .main-footer { background-color: #0d1a16; color: white; padding: 8rem 3rem 4rem; position: relative; overflow: hidden; }
-    .footer-bg-wrapper { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-    .footer-content { position: relative; z-index: 2; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5rem; }
-    
-    .footer-logo { font-family: var(--font-apellidos); font-size: 1.5rem; display: block; margin-bottom: 1rem; color: var(--color-oro); }
-    .footer-descriptor { font-family: var(--font-descriptor); font-size: 0.7rem; letter-spacing: 0.3em; opacity: 0.6; }
-    .footer-purpose { margin-top: 2rem; font-family: var(--font-apellidos); font-style: italic; opacity: 0.7; font-size: 1rem; max-width: 350px; }
-
-    .nav a { display: block; text-decoration: none; color: white; margin-bottom: 1.2rem; font-family: var(--font-descriptor); font-size: 0.75rem; letter-spacing: 0.2em; opacity: 0.6; transition: 0.3s; }
-    .nav a:hover { opacity: 1; color: var(--color-oro); }
-
-    .footer-header { color: var(--color-oro); font-size: 0.7rem; letter-spacing: 0.2em; margin-bottom: 1.5rem; display: block; }
-    .footer-email { text-decoration: none; color: var(--color-oro); font-family: var(--font-mono); font-size: 0.8rem; margin-top: 2rem; display: inline-block; }
-
-    .footer-socket { position: relative; z-index: 2; padding-top: 3rem; text-align: center; opacity: 0.4; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
-
-    @media (max-width: 1024px) {
-        .partner-profile { grid-template-columns: 1fr; gap: 3rem; }
-        .photo-container { max-width: 300px; position: static; }
-        .footer-content { grid-template-columns: 1fr; text-align: center; }
-        .footer-purpose { margin: 2rem auto; }
-        .practice-list { column-count: 1; }
-    }
-</style>
+</Layout>

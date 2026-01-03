@@ -1,185 +1,120 @@
 ---
 // src/pages/index.astro
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import ImageMagic from '../components/ImageMagic.astro';
+
+const areas = [
+  { title: "Derecho Público & Constitucional", img: "/area-publico.webp", href: "/servicios/publico" },
+  { title: "Derecho Corporativo & Compliance", img: "/area-corporativo.webp", href: "/servicios/corporativo" },
+  { title: "Derecho Médico & Sanitario", img: "/area-medico.webp", href: "/servicios/medico" },
+  { title: "Movilidad Internacional & Migratorio", img: "/area-movilidad.webp", href: "/servicios/movilidad" }
+];
 ---
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahos & Burbano | Arquitectura Jurídica</title>
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <nav class="nav-header">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="/" class="active">Inicio</a>
-                <a href="/la-firma">La Firma</a> 
-                <a href="/areas-de-practica">Práctica</a>
-                <a href="/talento">Talento</a>
-            </div>
-            <a href="/contactenos" class="nav-cta">Consulta Estratégica</a>
-        </div>
-    </nav>
-
-    <main>
-        
-        <section class="hero-section">
-            <div class="hero-bg-wrapper">
-                <ImageMagic 
-                    src="/hero-home.webp" 
-                    alt="Bahos & Burbano - Arquitectura Jurídica" 
-                    className="w-full h-full"
-                />
-            </div>
-            <div class="hero-content">
-                <span class="hero-descriptor">DERECHO <span class="amp">&</span> EMPRESA <span class="amp">&</span> ESTADO</span>
-                <h1 class="hero-title">Arquitectura jurídica<br>de alto nivel.</h1>
-                <p class="hero-subtitle">Incidencia estructural y blindaje estratégico<br>en entornos de alta complejidad.</p>
-                
-                <div class="hero-actions">
-                    <a href="/contactenos" class="btn-primary">Iniciar Evaluación Técnica</a>
-                    <a href="/areas-de-practica" class="btn-secondary">Explorar Áreas</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="differential-section">
-            <div class="differential-grid">
-                <div class="differential-content">
-                    <span class="section-label">Criterio de Autor</span>
-                    <blockquote class="differential-quote">
-                        "Operamos bajo un modelo de involucramiento directo. No delegamos el núcleo intelectual; lo resolvemos mediante una arquitectura normativa diseñada para resistir el escrutinio institucional."
-                    </blockquote>
-                </div>
-                <div class="differential-image">
-                    <ImageMagic 
-                        src="/criterio-autor.webp" 
-                        alt="Criterio de Autor - Detalle" 
-                        className="aspect-[4/5] shadow-2xl"
-                    />
-                </div>
-            </div>
-        </section>
-
-        <section class="pillars-visual-header">
-            <ImageMagic 
-                src="/pilares-home.webp" 
-                alt="Pilares Institucionales" 
-                className="h-[40vh] w-full"
-            />
-        </section>
-
-        <section class="pillars-section">
-            <div class="pillar-item">
-                <h3 class="pillar-heading">Derecho Público <span class="amp">&</span><br>Constitucional</h3>
-                <span class="pillar-arrow">→</span>
-            </div>
-            <div class="pillar-item">
-                <h3 class="pillar-heading">Derecho Corporativo <span class="amp">&</span><br>Compliance</h3>
-                <span class="pillar-arrow">→</span>
-            </div>
-            <div class="pillar-item">
-                <h3 class="pillar-heading">Derecho Médico <span class="amp">&</span><br>Sanitario</h3>
-                <span class="pillar-arrow">→</span>
-            </div>
-            <div class="pillar-item">
-                <h3 class="pillar-heading">Movilidad Internacional <span class="amp">&</span><br>Migratorio</h3>
-                <span class="pillar-arrow">→</span>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <span class="footer-logo">B <span class="amp">&</span> B</span>
-                <span class="footer-descriptor">Derecho | Empresa | Estado</span>
-            </div>
-            <div class="footer-center">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </div>
-            <div class="footer-right">
-                <p>Bogotá | Cali | Popayán | </p>
-                <p class="copyright">© 2026 Bahos <span class="amp">&</span> Burbano.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-<style>
-    /* VARIABLES Y RESETS */
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #C5A059;
-        --font-apellidos: 'Libre Baskerville', serif;
-        --font-descriptor: 'Inter', sans-serif;
-        --font-body: 'Inter', sans-serif;
-        --font-mono: 'B612 Mono', monospace;
-    }
-
-    .amp { font-family: var(--font-mono); font-style: normal; }
+<Layout title="Arquitectura Jurídica">
+  
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[#0d1a16]/40 z-10"></div>
+      <ImageMagic src="/hero-home.webp" alt="Bahos & Burbano Hero" aspect="video" className="h-full w-full" />
+    </div>
     
-    /* NAV */
-    .nav-header { padding: 1.5rem 3rem; background: rgba(253,253,251,0.95); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); box-sizing: border-box; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-    .nav-links { display: flex; gap: 3rem; }
-    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; opacity: 0.6; transition: all 0.3s; }
-    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--color-oro); }
-    .nav-cta { text-decoration: none; color: #FDFDFB; background-color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; padding: 0.8rem 1.8rem; transition: all 0.4s; }
-    .nav-cta:hover { background-color: var(--color-oro); transform: translateY(-2px); }
+    <div class="relative z-20 text-center px-6 max-w-5xl">
+      <p class="text-[10px] tracking-[0.6em] uppercase text-[#d4c3a5] mb-8 reveal-text" style="animation-delay: 0.2s;">
+        Precisión Estructural
+      </p>
+      <h1 class="text-4xl md:text-7xl font-light leading-[1.1] mb-10 reveal-text" style="animation-delay: 0.4s;">
+        La autoridad jurídica nace de la <span class="italic font-serif text-[#d4c3a5]">precisión</span> con la que se estructura la decisión.
+      </h1>
+      <div class="linea-tension max-w-xs mx-auto mb-10 opacity-60"></div>
+      <p class="text-lg md:text-xl font-light tracking-wide text-[#e5e7eb]/80 reveal-text" style="animation-delay: 0.6s;">
+        Arquitectura jurídica para decisiones de alta incidencia.
+      </p>
+    </div>
 
-    /* HERO */
-    .hero-section { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero-bg-wrapper { position: absolute; inset: 0; z-index: -1; }
-    .hero-content { max-width: 900px; padding: 0 2rem; text-align: center; color: white; z-index: 10; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-    .hero-descriptor { display: block; font-family: var(--font-descriptor); font-size: 0.75rem; letter-spacing: 0.4em; margin-bottom: 2rem; opacity: 0.9; }
-    .hero-title { font-family: var(--font-apellidos); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; }
-    .hero-subtitle { font-family: var(--font-body); font-weight: 300; font-size: 1.1rem; line-height: 1.6; opacity: 0.9; margin-bottom: 3.5rem; }
-    .hero-actions { display: flex; justify-content: center; gap: 1.5rem; }
-    
-    .btn-primary { text-decoration: none; background-color: white; color: var(--color-firma); padding: 1.2rem 2.5rem; font-family: var(--font-descriptor); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; transition: all 0.4s ease; border: 1px solid white; }
-    .btn-primary:hover { background-color: transparent; color: white; }
-    .btn-secondary { text-decoration: none; background-color: transparent; color: white; padding: 1.2rem 2.5rem; font-family: var(--font-descriptor); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.4); transition: all 0.4s ease; }
-    .btn-secondary:hover { background-color: rgba(255,255,255,0.1); border-color: white; }
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 opacity-30">
+      <div class="w-[1px] h-12 bg-gradient-to-b from-[#d4c3a5] to-transparent"></div>
+    </div>
+  </section>
 
-    /* DIFFERENTIAL */
-    .differential-section { padding: 10rem 3rem; background-color: #FDFDFB; }
-    .differential-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: center; }
-    .section-label { font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--color-oro); margin-bottom: 2.5rem; display: block; }
-    .differential-quote { font-family: var(--font-apellidos); font-size: clamp(1.5rem, 3vw, 2.2rem); font-style: italic; line-height: 1.4; color: var(--color-firma); position: relative; }
+  <section id="manifiesto" class="py-40 px-8 bg-[#0d1a16]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+      <div class="order-2 md:order-1 relative">
+        <div class="absolute -top-4 -left-4 w-20 h-20 border-t border-l border-[#d4c3a5]/20 z-0"></div>
+        <ImageMagic src="/manifiesto.webp" alt="Manifiesto Jurídico" aspect="portrait" className="relative z-10 shadow-2xl" />
+      </div>
+      <div class="order-1 md:order-2">
+        <h2 class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5] mb-12">Manifiesto Institucional</h2>
+        <p class="text-3xl md:text-5xl font-light leading-tight mb-10 text-[#e5e7eb]">
+          Definimos el derecho como el sistema que <span class="text-[#d4c3a5]">organiza el poder</span>.
+        </p>
+        <div class="w-12 h-[1px] bg-[#d4c3a5] mb-10"></div>
+        <p class="text-xl text-[#e5e7eb]/60 leading-relaxed font-light max-w-md">
+          Intervenimos estructuras corporativas e institucionales para convertirlas en activos jurídicos resilientes frente a la volatilidad regulatoria.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    /* PILLARS */
-    .pillars-visual-header { border-top: 1px solid rgba(31,64,55,0.05); }
-    .pillars-section { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(31,64,55,0.1); }
-    .pillar-item { padding: 5rem 2.5rem; border-right: 1px solid rgba(31,64,55,0.05); transition: all 0.5s; display: flex; flex-direction: column; justify-content: space-between; min-height: 280px; }
-    .pillar-item:hover { background: var(--color-firma); }
-    .pillar-item:hover .pillar-heading { color: white; }
-    .pillar-heading { font-family: var(--font-apellidos); font-size: 1.25rem; line-height: 1.3; transition: color 0.4s; }
-    .pillar-arrow { font-family: var(--font-mono); font-size: 1.2rem; color: var(--color-oro); text-align: right; transform: translateX(-10px); opacity: 0; transition: all 0.4s; }
-    .pillar-item:hover .pillar-arrow { opacity: 1; transform: translateX(0); }
+  <section class="py-40 px-8 border-y border-[#e5e7eb]/5 bg-[#0a1412]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div>
+          <h2 class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5] mb-6">Especialidades</h2>
+          <p class="text-4xl font-light tracking-tight">Áreas de Práctica</p>
+        </div>
+        <a href="/servicios" class="group flex items-center gap-4 text-[10px] tracking-widest uppercase pb-2">
+          <span class="border-b border-[#d4c3a5]/30 group-hover:border-[#d4c3a5] transition-seda">Ver todas</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="group-hover:translate-x-2 transition-seda">
+            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#d4c3a5" stroke-width="0.5"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {areas.map((area, index) => (
+          <a href={area.href} class="group block relative overflow-hidden">
+            <div class="mb-8 overflow-hidden">
+              <ImageMagic src={area.img} alt={area.title} aspect="square" />
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="font-['B612_Mono'] text-[9px] text-[#d4c3a5] pt-1">0{index + 1}</span>
+              <div>
+                <h3 class="text-[12px] tracking-[0.2em] uppercase font-light leading-relaxed group-hover:text-[#d4c3a5] transition-seda">
+                  {area.title}
+                </h3>
+                <div class="w-0 group-hover:w-full h-[1px] bg-[#d4c3a5]/40 mt-4 transition-all duration-700"></div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-    /* FOOTER */
-    .main-footer { background-color: #f8f8f6; padding: 5rem 3rem; color: var(--color-firma); }
-    .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; }
+  <section class="relative py-60 overflow-hidden bg-black">
+    <div class="absolute inset-0 z-0 opacity-20">
+      <ImageMagic src="/pilares-home.webp" alt="Pilares de la firma" aspect="wide" className="h-full w-full" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+        {[
+          { label: "Identidad", value: "Autoría Técnica" },
+          { label: "Alcance", value: "Ubicuidad Estratégica" },
+          { label: "Fundamento", value: "Rigor Constitucional" }
+        ].map((pilar) => (
+          <div class="text-center group">
+            <p class="text-[9px] tracking-[0.6em] text-[#d4c3a5] mb-6 uppercase opacity-60 group-hover:opacity-100 transition-seda">
+              {pilar.label}
+            </p>
+            <span class="text-2xl font-light tracking-wider block group-hover:scale-105 transition-seda italic font-serif">
+              {pilar.value}
+            </span>
+            <div class="mt-8 w-1 h-1 bg-[#d4c3a5] mx-auto rounded-full"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-    /* RESPONSIVE */
-    @media (max-width: 1024px) { 
-        .differential-grid { grid-template-columns: 1fr; text-align: center; }
-        .differential-image { max-width: 500px; margin: 0 auto; }
-        .pillars-section { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) { 
-        .hero-title { font-size: 2.8rem; }
-        .hero-actions { flex-direction: column; }
-        .pillars-section { grid-template-columns: 1fr; }
-        .nav-links { display: none; }
-    }
-</style>
+</Layout>

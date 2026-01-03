@@ -1,0 +1,129 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css'; // <--- ESTA ES LA CONEXIÓN MAESTRA
+import Footer from '../components/Footer.astro';
+import ImageMagic from '../components/ImageMagic.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preload" href="/ClashDisplay-Semibold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/ClashDisplay-Light.woff" as="font" type="font/woff" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Plus+Jakarta+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <title>{title} | Bahos & Burbano</title>
+  <meta name="title" content={`${title} | Bahos & Burbano`} />
+  <meta name="description" content="Bahos & Burbano | Firma Jurídica Boutique. Especialistas en derecho público, corporativo y sanitario. Arquitectura jurídica para decisiones de alta incidencia." />
+  <meta name="keywords" content="abogados colombia, derecho publico, derecho corporativo, derecho medico, bahos y burbano, arquitectura juridica" />
+  <link rel="canonical" href="https://www.bahosburbano.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.bahosburbano.com/" />
+  <meta property="og:title" content={`${title} | Bahos & Burbano`} />
+  <meta property="og:description" content="Arquitectura jurídica para decisiones de alta incidencia. Firma boutique especializada en la gestión de riesgo sistémico." />
+  <meta property="og:image" content="/og-image.jpg" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.bahosburbano.com/" />
+  <meta property="twitter:title" content={`${title} | Bahos & Burbano`} />
+  <meta property="twitter:description" content="Intervención de estructuras de poder y gestión de riesgo regulatorio en Colombia." />
+  <meta property="twitter:image" content="/og-image.jpg" />
+
+  <meta name="theme-color" content="#0d1a16" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+
+  
+  <body class="bg-[#0d1a16] text-[#e5e7eb] font-['Plus_Jakarta_Sans'] antialiased selection:bg-[#d4c3a5] selection:text-[#0d1a16]">
+    
+    <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center pointer-events-none">
+      <a href="/" class="pointer-events-auto group flex items-center gap-4">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-seda group-hover:rotate-90">
+          <path d="M12 8V32M12 8H22C26 8 28 10 28 13C28 16 26 18 22 18H12M12 18H22C26 18 28 20 28 23C28 26 26 28 22 28H12" stroke="#d4c3a5" stroke-width="0.75"/>
+        </svg>
+        
+        <div class="flex flex-col leading-none">
+          <h1 class="font-['Clash_Display'] font-semibold tracking-[0.15em] text-sm uppercase">
+            Bahos <span class="font-['B612_Mono'] font-normal text-[#d4c3a5] mx-0.5">&</span> Burbano
+          </h1>
+          <p class="font-['Clash_Display'] font-light tracking-[0.4em] text-[8px] uppercase text-[#d4c3a5]/60 mt-1">
+            Arquitectura Jurídica
+          </p>
+        </div>
+      </a>
+      
+     <nav class="hidden md:flex gap-10 pointer-events-auto">
+  {[
+    { name: 'Inicio', slug: '' },
+    { name: 'La Firma', slug: 'la-firma' },
+    { name: 'Áreas de Práctica', slug: 'areas-de-practica' },
+    { name: 'Talento', slug: 'talento' },
+    { name: 'Contáctenos', slug: 'contactenos' }
+  ].map((item) => (
+    <a href={`/${item.slug}`} 
+       class="text-[10px] tracking-[0.3em] uppercase hover:text-[#d4c3a5] transition-seda relative overflow-hidden group">
+      <span class="inline-block transition-transform duration-500 group-hover:-translate-y-full">{item.name}</span>
+      <span class="absolute left-0 top-full transition-transform duration-500 group-hover:-translate-y-full text-[#d4c3a5] italic">{item.name}</span>
+    </a>
+  ))}
+</nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <style is:global>
+      :root {
+        --color-oro: #d4c3a5;
+        --color-bosque: #0d1a16;
+        --ease-boutique: cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      /* Transición seda característica de firmas de lujo */
+      .transition-seda {
+        transition: all 0.8s var(--ease-boutique);
+      }
+      
+      /* Efecto Cinematográfico de Entrada */
+      .reveal-text {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+        animation: revealCinematic 1.5s var(--ease-boutique) forwards;
+      }
+
+      @keyframes revealCinematic {
+        to { 
+          opacity: 1; 
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
+
+      /* Personalización de Scrollbar para estética Top Tier */
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: var(--color-bosque); }
+      ::-webkit-scrollbar-thumb { background: #1a2e28; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--color-oro); }
+    </style>
+  </body>
+</html>
+
+
+
+

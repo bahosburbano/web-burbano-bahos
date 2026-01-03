@@ -1,175 +1,143 @@
 ---
 // src/pages/la-firma.astro
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import ImageMagic from '../components/ImageMagic.astro';
+
+const fundamentos = [
+  {
+    id: "01",
+    title: "Autoría Técnica",
+    description: "Un compromiso de responsabilidad directa. La arquitectura jurídica nace de la experiencia de los socios, asegurando una ejecución sin intermediaciones."
+  },
+  {
+    id: "02",
+    title: "Rigor Constitucional",
+    description: "La norma superior no como concepto abstracto, sino como herramienta operativa para blindar la toma de decisiones frente al escrutinio institucional."
+  },
+  {
+    id: "03",
+    title: "Ubicuidad Estratégica",
+    description: "Una estructura ágil que trasciende la limitación territorial del despacho tradicional, permitiendo intervención precisa en cualquier jurisdicción bajo un estándar de élite."
+  }
+];
 ---
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Firma | Bahos & Burbano</title>
-    <link href="https://fonts.googleapis.com/css2?family=B612+Mono&family=Libre+Baskerville:ital@0;1&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <nav class="nav-header">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="/">Inicio</a>
-                <a href="/la-firma" class="active">La Firma</a> 
-                <a href="/areas-de-practica">Práctica</a>
-                <a href="/talento">Talento</a>
-            </div>
-            <a href="/contactenos" class="nav-cta">Consulta Estratégica</a>
-        </div>
-    </nav>
-
-    <main>
-        <header class="firma-header">
-            <div class="header-visual">
-                <ImageMagic src="/cabecera-firma.webp" alt="La Firma Bahos & Burbano" className="h-full w-full" />
-            </div>
-            <div class="header-overlay">
-                <span class="section-label">02 — NOSOTROS</span>
-                <h1 class="page-title">La Firma</h1>
-                <div class="gold-line"></div>
-            </div>
-        </header>
-
-        <div class="content-wrapper">
-            
-            <section class="manifesto-grid">
-                <div class="editorial-column">
-                    <h2 class="section-heading">El Derecho como Arquitectura de Poder</h2>
-                    <div class="editorial-text">
-                        <p>En <strong>Bahos <span class="amp">&</span> Burbano</strong>, concebimos el derecho como un sistema de arquitectura normativa que organiza, limita y proyecta el poder. Nuestra práctica se concentra en el diseño jurídico de alto nivel, orientado a la estabilidad y el control normativo.</p>
-                        <blockquote class="highlight-quote">"La autoridad jurídica no se impone por la forma, sino por la precisión con la que se estructura la decisión."</blockquote>
-                        <p>Somos una firma boutique de alta especialidad que articula pensamiento jurídico riguroso con criterio estratégico en contextos de alta complejidad.</p>
-                    </div>
-                </div>
-                <div class="visual-column">
-                    <ImageMagic src="/manifiesto.webp" alt="Manifiesto Jurídico" className="aspect-[3/4] shadow-2xl" />
-                </div>
-            </section>
-
-            <section class="pillars-section">
-                <h3 class="pillars-title">Fundamentos de Nuestra Práctica</h3>
-                <div class="pillars-grid">
-                    <div class="pillar-card">
-                        <span class="pillar-icon">I.</span>
-                        <h4>El Derecho como Estructura</h4>
-                        <p>Una constitucionalización funcional del derecho como instrumento operativo que ordena la actuación del Estado.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <span class="pillar-icon">II.</span>
-                        <h4>Autoría Técnica Directa</h4>
-                        <p>La estrategia es diseñada y ejecutada directamente por los socios. No delegamos el núcleo intelectual del asunto.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <span class="pillar-icon">III.</span>
-                        <h4>Estructura Ágil</h4>
-                        <p>Adoptamos una operativa moderna para responder con precisión sin las limitaciones territoriales del despacho tradicional.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="value-grid">
-                <div class="value-image">
-                    <ImageMagic src="/pluma-autor.webp" alt="Propuesta de Valor" className="aspect-video" />
-                </div>
-                <div class="value-content">
-                    <div class="text-block">
-                        <h3>Propuesta de Valor Institucional</h3>
-                        <p>Nos posicionamos como una firma orientada al control jurídico avanzado y la seguridad estructural concebida desde principios constitucionales.</p>
-                    </div>
-                    <div class="text-block">
-                        <h3>Trayectoria e Identidad</h3>
-                        <p>Construida en escenarios de alta sensibilidad jurídica: gobernanza, defensa ante altas cortes y estructuración corporativa avanzada.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="cta-final">
-                <p class="cta-intro">Los asuntos complejos exigen análisis especializado e inmediato.</p>
-                <a href="/contactenos" class="cta-button">Iniciar Evaluación Técnica</a>
-            </section>
-        </div>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <span class="footer-logo">B <span class="amp">&</span> B</span>
-                <span class="footer-descriptor">Derecho | Empresa | Estado</span>
-            </div>
-            <div class="footer-center">
-                <a href="#">Privacidad</a>
-                <a href="#">Términos</a>
-            </div>
-            <div class="footer-right">
-                <p>Bogotá | Cali | Popayán</p>
-                <p class="copyright">© 2026 Bahos <span class="amp">&</span> Burbano.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-<style>
-    :root {
-        --color-firma: #1F4037;
-        --color-oro: #C5A059;
-        --font-apellidos: 'Libre Baskerville', serif;
-        --font-descriptor: 'Inter', sans-serif;
-        --font-mono: 'B612 Mono', monospace;
-    }
-
-    .amp { font-family: var(--font-mono); font-style: normal; }
-
-    /* HEADER */
-    .firma-header { height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .header-visual { position: absolute; inset: 0; z-index: -1; }
-    .header-overlay { text-align: center; color: white; z-index: 10; }
-    .section-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-oro); display: block; margin-bottom: 1rem; letter-spacing: 0.3em; }
-    .page-title { font-family: var(--font-apellidos); font-size: 4rem; margin: 0 0 1.5rem 0; }
-    .gold-line { width: 60px; height: 1px; background: var(--color-oro); margin: 0 auto; }
-
-    /* LAYOUTS */
-    .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 6rem 2rem; }
+<Layout title="La Firma">
+  
+  <section class="relative h-[80vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[#0d1a16]/60 z-10"></div>
+      <ImageMagic src="/cabecera-firma.webp" alt="La Firma - Bahos & Burbano" aspect="wide" className="h-full w-full" />
+    </div>
     
-    .manifesto-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: flex-start; margin-bottom: 10rem; }
-    .editorial-text p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; color: #444; }
-    .highlight-quote { border-left: 2px solid var(--color-oro); padding-left: 2.5rem; margin: 3.5rem 0; font-family: var(--font-apellidos); font-size: 1.5rem; font-style: italic; color: var(--color-firma); }
+    <div class="relative z-20 px-8 md:px-24 max-w-5xl">
+      <div class="flex items-center gap-4 mb-8 reveal-text" style="animation-delay: 0.2s;">
+        <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5] tracking-widest">EST. 2026</span>
+        <div class="w-12 h-[1px] bg-[#d4c3a5]/30"></div>
+        <p class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5]">Sección 02</p>
+      </div>
+      <h1 class="text-6xl md:text-8xl font-light mb-8 reveal-text" style="animation-delay: 0.4s;">
+        La <span class="italic font-serif">Firma</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-light text-[#e5e7eb]/70 leading-relaxed max-w-2xl reveal-text" style="animation-delay: 0.6s;">
+        Una institución diseñada para la intervención de estructuras de poder y la gestión de riesgo sistémico.
+      </p>
+    </div>
 
-    .pillars-section { margin-bottom: 10rem; border-top: 1px solid rgba(31,64,55,0.08); padding-top: 5rem; }
-    .pillars-title { font-family: var(--font-descriptor); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--color-oro); margin-bottom: 4rem; text-align: center; }
-    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; }
-    .pillar-card h4 { font-family: var(--font-apellidos); font-size: 1.3rem; margin: 1.5rem 0 1rem 0; color: var(--color-firma); }
-    .pillar-card p { font-size: 0.95rem; line-height: 1.7; color: #666; }
+    <div class="absolute bottom-10 right-10 z-20 font-['B612_Mono'] text-[9px] text-[#d4c3a5]/20 uppercase tracking-[0.4em] hidden md:block">
+      Lat: 4.5709° N / Long: 74.0721° W
+    </div>
+  </section>
 
-    .value-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; margin-bottom: 10rem; }
-    .value-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-    .text-block h3 { font-family: var(--font-apellidos); font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--color-firma); border-bottom: 1px solid var(--color-oro); padding-bottom: 0.5rem; display: inline-block; }
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16]">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5] mb-16 opacity-60">Filosofía Operativa</h2>
+      
+      <div class="grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-7">
+          <p class="text-3xl md:text-6xl font-light leading-[1.1] text-[#e5e7eb] mb-12">
+            El Derecho como <span class="text-[#d4c3a5]">Arquitectura</span> de Poder.
+          </p>
+        </div>
+        <div class="lg:col-span-5 flex flex-col justify-end">
+          <p class="text-lg text-[#e5e7eb]/60 leading-relaxed font-light mb-8">
+            Definimos el derecho como el sistema que organiza el poder. Intervenimos estructuras corporativas e institucionales para convertirlas en activos jurídicos resilientes.
+          </p>
+          <div class="w-20 h-[1px] bg-[#d4c3a5] mb-8"></div>
+          <p class="text-lg text-[#e5e7eb]/60 leading-relaxed font-light">
+            Operamos donde convergen Empresa y Estado, con un rigor técnico propio de la alta decisión.
+          </p>
+        </div>
+      </div>
 
-    .cta-final { text-align: center; padding: 8rem 0; background: #f9f9f7; border: 1px solid rgba(31,64,55,0.05); }
-    .cta-button { text-decoration: none; border: 1px solid var(--color-firma); padding: 1.2rem 3.5rem; font-family: var(--font-descriptor); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; color: var(--color-firma); transition: all 0.4s ease; }
-    .cta-button:hover { background: var(--color-firma); color: white; }
+      <div class="mt-32 py-20 border-y border-[#e5e7eb]/5 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-[#d4c3a5]/5 translate-y-full group-hover:translate-y-0 transition-transform duration-1000"></div>
+        <p class="text-2xl md:text-4xl italic font-serif text-center text-[#d4c3a5] relative z-10 leading-relaxed">
+          "La autoridad jurídica nace de la precisión con la que se estructura la decisión."
+        </p>
+      </div>
+    </div>
+  </section>
 
-    /* FOOTER & NAV */
-    .nav-header { padding: 1.5rem 3rem; background: rgba(253,253,251,0.98); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid rgba(31,64,55,0.05); box-sizing: border-box; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-    .nav-links a { text-decoration: none; color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.75rem; text-transform: uppercase; margin-right: 3rem; opacity: 0.6; }
-    .nav-links a.active { opacity: 1; border-bottom: 1px solid var(--color-oro); }
-    .nav-cta { text-decoration: none; color: white; background-color: var(--color-firma); font-family: var(--font-descriptor); font-size: 0.7rem; text-transform: uppercase; padding: 0.8rem 1.5rem; }
+  <section id="criterio" class="py-40 px-8 md:px-24 border-t border-[#e5e7eb]/5 bg-[#0a1412]">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+      <div class="relative group">
+        <div class="absolute -top-6 -right-6 w-32 h-32 border-r border-t border-[#d4c3a5]/10 z-0 transition-all group-hover:scale-110"></div>
+        <ImageMagic src="/criterio-autor.webp" alt="Criterio de Autor" aspect="portrait" className="relative z-10" />
+        <div class="absolute top-10 left-0 z-20 bg-[#d4c3a5] text-[#0d1a16] px-4 py-1 font-['B612_Mono'] text-[9px] tracking-widest uppercase">
+          A-01 / Core Logic
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5] mb-10">Sello de Calidad</h2>
+        <h3 class="text-4xl md:text-5xl font-light mb-10 tracking-tight">Criterio de Autor</h3>
+        <p class="text-xl text-[#e5e7eb]/60 leading-relaxed font-light mb-10">
+          La maestría jurídica es intransferible. Operamos bajo un modelo de involucramiento total, donde el núcleo intelectual es diseñado directamente por los socios.
+        </p>
+        <div class="flex items-center gap-6">
+          <div class="h-[1px] w-12 bg-[#d4c3a5]/40"></div>
+          <p class="text-xs tracking-[0.2em] uppercase text-[#d4c3a5]/80 font-['B612_Mono']">
+            Non-delegable Expertise
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    .main-footer { background-color: #FDFDFB; border-top: 1px solid rgba(31,64,55,0.1); padding: 4rem 3rem; font-size: 0.75rem; color: var(--color-firma); }
-    .footer-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; }
+  <section class="py-40 px-8 md:px-24 bg-[#0d1a16]">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-[10px] tracking-[0.5em] uppercase text-[#d4c3a5] mb-24 text-center">Fundamentos Institucionales</h2>
+      <div class="grid md:grid-cols-3 gap-px bg-[#e5e7eb]/10 border border-[#e5e7eb]/10">
+        {fundamentos.map(f => (
+          <div class="p-12 bg-[#0d1a16] hover:bg-[#0a1412] transition-all duration-500 group">
+            <span class="font-['B612_Mono'] text-[10px] text-[#d4c3a5] mb-10 block opacity-50">{f.id}</span>
+            <h4 class="text-sm tracking-[0.3em] uppercase text-[#e5e7eb] mb-8 group-hover:text-[#d4c3a5] transition-colors">
+              {f.title}
+            </h4>
+            <p class="text-sm text-[#e5e7eb]/40 leading-relaxed font-light group-hover:text-[#e5e7eb]/70 transition-colors">
+              {f.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-    @media (max-width: 968px) {
-        .manifesto-grid, .pillars-grid, .value-content { grid-template-columns: 1fr; gap: 3rem; }
-        .page-title { font-size: 3rem; }
-        .nav-links { display: none; }
-    }
-</style>
+  <section class="py-60 px-8 md:px-24 text-center bg-black">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16 inline-block">
+        <svg width="40" height="1" viewBox="0 0 40 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="0.5" x2="40" y2="0.5" stroke="#d4c3a5" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <p class="text-2xl md:text-4xl font-light leading-relaxed mb-16 text-[#e5e7eb]">
+        El derecho, cuando se diseña con precisión, no solo ordena sistemas; <span class="italic font-serif text-[#d4c3a5]">consolida poder legítimo</span>.
+      </p>
+      <a href="/contactenos" class="inline-block border border-[#d4c3a5]/30 px-12 py-5 text-[10px] tracking-[0.5em] uppercase hover:bg-[#d4c3a5] hover:text-[#0d1a16] transition-seda">
+        Iniciar Consulta Técnica
+      </a>
+    </div>
+  </section>
+
+</Layout>
